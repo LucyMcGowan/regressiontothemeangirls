@@ -76,10 +76,10 @@ plot_overall = ggsurvplot(
   fit = fit_overall, 
   ### Customize the look of the plot 
   palette = rom_cols, 
-  ggtheme = ggplot2::theme(
+  ggtheme = theme(
     panel.background = element_rect(fill = "#F5E6E8", color = NA),  
     plot.background  = element_rect(fill = "#F5E6E8", color = NA),
-    panel.grid       = element_line(color = "#E3D3D6"), 
+    panel.grid = element_line(color = "#E3D3D6"), 
     axis.text = element_text(size = 20, color = "#2B1E21"), 
     axis.title = element_text(size = 20, face = "bold", color = "#2B1E21")), 
   xlab = "Proportion of Book Completed",
@@ -108,10 +108,10 @@ plot_stratified = ggsurvplot(
   fit = fit_stratified, 
   ### Customize the look of the plot 
   palette = rom_cols, 
-  ggtheme = ggplot2::theme(
+  ggtheme = theme(
     panel.background = element_rect(fill = "#F5E6E8", color = NA), 
     plot.background  = element_rect(fill = "#F5E6E8", color = NA),
-    panel.grid       = element_line(color = "#E3D3D6"), 
+    panel.grid = element_line(color = "#E3D3D6"), 
     axis.text = element_text(size = 20, color = "#2B1E21"), 
     axis.title = element_text(size = 20, face = "bold", color = "#2B1E21")), 
   xlab = "Proportion of Book Completed",
@@ -147,10 +147,10 @@ plot_overall2 = ggsurvplot(
   fit = fit_overall2, 
   ### Customize the look of the plot 
   palette = rom_cols, 
-  ggtheme = ggplot2::theme(
+  ggtheme = theme(
     panel.background = element_rect(fill = "#F5E6E8", color = NA),  
     plot.background  = element_rect(fill = "#F5E6E8", color = NA),
-    panel.grid       = element_line(color = "#E3D3D6"), 
+    panel.grid = element_line(color = "#E3D3D6"), 
     axis.text = element_text(size = 20, color = "#2B1E21"), 
     axis.title = element_text(size = 20, face = "bold", color = "#2B1E21")), 
   xlab = "Pages of Book Completed",
@@ -177,10 +177,10 @@ plot_stratified2 = ggsurvplot(
   fit = fit_stratified2, 
   ##### Customize the look of the plot 
   palette = rom_cols, 
-  ggtheme = ggplot2::theme(
+  ggtheme = theme(
     panel.background = element_rect(fill = "#F5E6E8", color = NA),  # light pink
     plot.background  = element_rect(fill = "#F5E6E8", color = NA),
-    panel.grid       = element_line(color = "#E3D3D6"), 
+    panel.grid = element_line(color = "#E3D3D6"), 
     axis.text = element_text(size = 20, color = "#2B1E21"), 
     axis.title = element_text(size = 20, face = "bold", color = "#2B1E21")), 
   xlab = "Proportion of Book Completed",
@@ -210,7 +210,7 @@ rom_dat |>
   theme(
     panel.background = element_rect(fill = "#F5E6E8", color = NA),  # light pink
     plot.background  = element_rect(fill = "#F5E6E8", color = NA),
-    panel.grid       = element_line(color = "#E3D3D6"), 
+    panel.grid = element_line(color = "#E3D3D6"), 
     axis.text = element_text(size = 14, color = "#2B1E21"), 
     axis.title = element_text(size = 14, face = "bold", color = "#2B1E21")
     ) +  
