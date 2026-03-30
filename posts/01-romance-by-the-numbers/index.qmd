@@ -1,0 +1,7 @@
+---
+title: "Romance by the Numbers"
+author: "Sarah Lotspeich"
+date: "2026-03-30"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
