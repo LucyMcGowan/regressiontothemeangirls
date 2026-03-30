@@ -1,1 +1,675 @@
-/* css styles */
+/* =========================================================
+   BURN BOOK — A Mean Girls Quarto Theme
+   "She doesn't even go here."
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Caveat:wght@400;600;700&family=Permanent+Marker&family=Special+Elite&family=Abril+Fatface&display=swap');
+
+/* ─── VARIABLES ──────────────────────────────────────────── */
+:root {
+  --bb-pink:        #FF2D8B;
+  --bb-pink-light:  #FF8EC7;
+  --bb-red:         #D21F3C;
+  --bb-pink-pale:   #FFD6EC;
+  --bb-purple:      #311B92;
+  --bb-cream:       #FFF5F0;
+  --bb-paper:       #FFFAF6;
+  --bb-ink:         #1A0A10;
+  --bb-tape:        rgba(255, 220, 100, 0.55);
+  --bb-tape-blue:   rgba(180, 220, 255, 0.60);
+  --bb-shadow:      rgba(200, 0, 28, 0.18);
+
+  --font-reg: 'Lato', sans-serif;
+  --font-hand:      'Caveat', cursive;
+  --font-marker:    'Permanent Marker', cursive;
+  --font-type:      'Special Elite', cursive;
+  --font-title:     'Abril Fatface', serif;
+}
+
+/* ─── BASE ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background-color: #FDF5F8;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 45, 139, 0.05) 0px,
+      rgba(255, 45, 139, 0.05) 1px,
+      transparent 1px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 45, 139, 0.05) 0px,
+      rgba(255, 45, 139, 0.05) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+  font-family: var(--font-reg);
+  color: var(--bb-ink);
+  min-height: 100vh;
+}
+
+/* ─── NAVBAR ─────────────────────────────────────────────── */
+.navbar,
+#quarto-header .navbar {
+  border-bottom: 4px solid var(--bb-pink);
+  box-shadow: 0 4px 24px rgba(200, 0, 28, 0.45);
+  font-family: var(--font-marker);
+  background-color: var(--bb-pink-light);
+  letter-spacing: 0.04em;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  color: #fff !important;
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  text-shadow: 3px 3px 0 var(--bb-pink), 5px 5px 0 rgba(0,0,0,0.2);
+  letter-spacing: 0.02em;
+}
+
+.navbar .nav-link,
+.navbar .navbar-nav .nav-link {
+  color: #FFD6EC !important;
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: color 0.2s, transform 0.15s;
+}
+.navbar .nav-link:hover {
+  color: #fff !important;
+  transform: rotate(-2deg) scale(1.08);
+}
+
+/* ─── MAIN CONTENT AREA ──────────────────────────────────── */
+#quarto-content,
+.quarto-container,
+main {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.quarto-container > *,
+#quarto-content .page-columns {
+  position: relative;
+}
+
+/* ─── CONTENT COLUMNS / ARTICLE ──────────────────────────── */
+.page-columns .column-body,
+.page-body,
+article {
+  background: var(--bb-paper);
+  background-image:
+    /* ruled lines */
+    repeating-linear-gradient(
+      transparent,
+      transparent 27px,
+      rgba(255, 142, 199, 0.35) 27px,
+      rgba(255, 142, 199, 0.35) 28px
+    );
+  background-size: 100% 28px;
+  border: 2px solid rgba(255, 45, 139, 0.15);
+  border-radius: 3px;
+  box-shadow:
+    -6px 6px 0 0 rgba(200, 0, 28, 0.07),
+    0 6px 28px rgba(200, 0, 28, 0.10),
+    inset 0 0 60px rgba(255, 214, 236, 0.10);
+  padding: 2.5rem 3rem 3rem;
+  position: relative;
+  /* left binding margin */
+  border-left: 6px solid var(--bb-pink-light);
+}
+
+/* Red margin line */
+.page-columns .column-body::before,
+article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 3.8rem;
+  bottom: 0;
+  width: 2px;
+  background: rgba(200, 0, 28, 0.30);
+  pointer-events: none;
+}
+
+/* Torn top edge effect */
+.page-columns .column-body::after,
+article::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--bb-paper) 0px,
+    var(--bb-paper) 8px,
+    transparent 8px,
+    transparent 12px,
+    var(--bb-paper) 12px,
+    var(--bb-paper) 14px,
+    transparent 14px,
+    transparent 16px
+  );
+}
+
+/* ─── TITLES ──────────────────────────────────────────────── */
+h1, .title, #title-block-header .title {
+  font-family: var(--font-title);
+  color: var(--bb-purple);
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-shadow:
+    3px 3px 0 var(--bb-pink-pale),
+    4px 4px 0 rgba(200, 0, 28, 0.2);
+  margin-bottom: 0.3em;
+  position: relative;
+  display: inline-block;
+}
+
+/* Highlighter effect on h1 */
+h1::after, .title::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: -4px;
+  right: -4px;
+  height: 12px;
+  background: rgba(255, 45, 139, 0.22);
+  transform: rotate(-0.5deg);
+  z-index: -1;
+}
+
+h2 {
+  font-family: var(--font-marker);
+  color: var(--bb-pink);
+  font-size: 1.9rem;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 0.4rem;
+  transform: rotate(-0.4deg);
+}
+
+
+h3 {
+  font-family: var(--font-marker);
+  color: var(--bb-purple);
+  font-size: 1.6rem;
+  transform: rotate(0.6deg);
+  margin-bottom: 0.4rem;
+}
+
+h4, h5, h6 {
+  font-family: var(--font-type);
+  color: var(--bb-ink);
+  letter-spacing: 0.05em;
+}
+
+/* ─── BODY TEXT ──────────────────────────────────────────── */
+p, li, td, th {
+  font-family: var(--font-reg);
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--bb-ink);
+}
+
+/* Every other paragraph gets a tiny rotation for chaos */
+p:nth-child(even) {
+  transform: rotate(0.25deg);
+}
+p:nth-child(odd) {
+  transform: rotate(-0.15deg);
+}
+
+/* ─── LINKS ──────────────────────────────────────────────── */
+a {
+  color: var(--bb-purple);
+  text-decoration: underline wavy var(--bb-pink-light);
+  font-weight: 600;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+a:hover {
+  color: var(--bb-pink);
+  text-decoration-color: var(--bb-purple);
+}
+
+/* ─── CALLOUTS (notes, warnings, tips) ───────────────────── */
+.callout {
+  border-left: 5px solid var(--bb-pink) !important;
+  background: var(--bb-pink-pale) !important;
+  border-radius: 0 4px 4px 0;
+  font-family: var(--font-hand);
+  transform: rotate(-0.3deg);
+  box-shadow: 3px 3px 0 rgba(255, 45, 139, 0.18);
+}
+
+.callout-title {
+  font-family: var(--font-marker) !important;
+  color: var(--bb-purple) !important;
+  font-size: 1rem !important;
+}
+
+/* ─── BLOCKQUOTE — like a handwritten note ───────────────── */
+blockquote {
+  background: var(--bb-pink-pale);
+  border: none;
+  border-left: none;
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  color: var(--bb-purple);
+  font-weight: 600;
+  padding: 1.2rem 1.8rem;
+  transform: rotate(-1.2deg);
+  position: relative;
+  margin: 2rem 0.5rem;
+  box-shadow: 4px 4px 0 var(--bb-pink-light);
+}
+
+/* Tape strip on blockquote */
+blockquote::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 60px;
+  height: 18px;
+  background: var(--bb-tape);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ─── CODE ────────────────────────────────────────────────── */
+code {
+  background: #FFE8F3;
+  color: var(--bb-pink);
+  font-family: var(--font-type);
+  font-size: 0.9em;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  border: 1px dashed var(--bb-pink-light);
+}
+
+
+
+/* ─── TABLES ──────────────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-hand);
+  font-size: 1rem;
+  transform: rotate(-0.2deg);
+  box-shadow: 4px 4px 0 var(--bb-pink-light);
+}
+
+thead tr {
+  background: var(--bb-purple);
+  color: #fff;
+}
+
+thead th {
+  font-family: var(--font-marker);
+  letter-spacing: 0.05em;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  border-bottom: 3px solid var(--bb-pink);
+}
+
+tbody tr {
+  background: var(--bb-paper);
+  border-bottom: 1px dashed var(--bb-pink-light);
+  transition: background 0.15s;
+}
+tbody tr:nth-child(even) { background: var(--bb-pink-pale); }
+tbody tr:hover { background: #FFE4F2; }
+
+td { padding: 0.55rem 1rem; }
+
+/* ─── SIDEBAR ─────────────────────────────────────────────── */
+#quarto-sidebar,
+.sidebar {
+  background: var(--bb-cream);
+  border-right: 3px dashed var(--bb-pink-light);
+  font-family: var(--font-hand);
+}
+
+.sidebar-item-text,
+.sidebar-link {
+  font-family: var(--font-hand) !important;
+  font-size: 1rem;
+  color: var(--bb-ink) !important;
+}
+
+.sidebar-item-text:hover,
+.sidebar-link:hover {
+  color: var(--bb-pink) !important;
+  transform: translateX(4px);
+  display: inline-block;
+}
+
+.sidebar-title {
+  font-family: var(--font-marker) !important;
+  color: var(--bb-purple) !important;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* Active sidebar link */
+.sidebar-link.active,
+.sidebar-item .active {
+  color: var(--bb-purple) !important;
+  font-weight: 700;
+  border-left: 3px solid var(--bb-pink);
+  padding-left: 0.5rem;
+}
+
+/* ─── TABLE OF CONTENTS ───────────────────────────────────── */
+#TOC,
+nav[role="doc-toc"] {
+  background: var(--bb-pink-pale);
+  border: 2px solid var(--bb-pink-light);
+  border-radius: 3px;
+  padding: 1rem 1.2rem;
+  position: relative;
+  transform: rotate(0.4deg);
+  box-shadow: 3px 3px 0 var(--bb-pink-light);
+}
+
+/* Blue tape on TOC */
+#TOC::before,
+nav[role="doc-toc"]::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  width: 50px;
+  height: 16px;
+  background: var(--bb-tape-blue);
+  transform: rotate(-1.5deg);
+  border-radius: 2px;
+}
+
+#TOC .header,
+nav[role="doc-toc"] > ul::before {
+  font-family: var(--font-marker);
+  color: var(--bb-purple);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#TOC a,
+nav[role="doc-toc"] a {
+  font-family: var(--font-hand);
+  color: var(--bb-ink);
+  text-decoration: none;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+#TOC a:hover,
+nav[role="doc-toc"] a:hover {
+  color: var(--bb-pink);
+}
+#TOC a.active,
+nav[role="doc-toc"] a.active {
+  color: var(--bb-purple);
+  font-weight: 700;
+}
+
+/* ─── TITLE BLOCK ─────────────────────────────────────────── */
+#title-block-header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  position: relative;
+}
+
+.quarto-title-meta {
+  font-family: var(--font-type) !important;
+  color: #888;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+
+/* Author displayed like a sticky label */
+.quarto-title-meta-contents p {
+  background: #fff;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border: 1.5px solid var(--bb-pink-light);
+  border-radius: 2px;
+  font-family: var(--font-hand);
+  transform: rotate(-1deg);
+  box-shadow: 2px 2px 0 var(--bb-pink-light);
+  font-size: 1rem;
+}
+
+/* ─── BUTTONS / INTERACTIVE ───────────────────────────────── */
+.btn, button {
+  font-family: var(--font-marker) !important;
+  background: var(--bb-pink) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 var(--bb-purple);
+  transition: transform 0.1s, box-shadow 0.1s;
+  letter-spacing: 0.04em;
+}
+.btn:hover, button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--bb-purple);
+}
+.btn:active, button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--bb-purple);
+}
+
+/* ─── SEARCH ──────────────────────────────────────────────── */
+#quarto-search .aa-Form,
+.quarto-search input {
+  border: 2px solid var(--bb-pink) !important;
+  background: var(--bb-paper) !important;
+  font-family: var(--font-hand) !important;
+  border-radius: 2px !important;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+footer, .nav-footer {
+  background: var(--bb-purple) !important;
+  color: var(--bb-pink-pale) !important;
+  font-family: var(--font-type);
+  letter-spacing: 0.04em;
+  font-size: 0.85rem;
+  border-top: 4px solid var(--bb-pink);
+  text-align: center;
+  padding: 1.2rem;
+}
+
+footer a, .nav-footer a {
+  color: var(--bb-pink-light) !important;
+}
+
+/* ─── LISTING / BLOG CARDS ────────────────────────────────── */
+.quarto-listing-default .list-group-item,
+.card {
+  background: var(--bb-paper) !important;
+  border: 2px solid var(--bb-pink-light) !important;
+  border-radius: 2px !important;
+  font-family: var(--font-hand);
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 3px 3px 0 var(--bb-pink-light);
+}
+.card:hover,
+.quarto-listing-default .list-group-item:hover {
+  transform: rotate(-1deg) translateY(-3px);
+  box-shadow: 6px 6px 0 var(--bb-pink);
+}
+
+.card-title {
+  font-family: var(--font-marker);
+  color: var(--bb-purple);
+}
+
+/* ─── CATEGORIES / TAGS ───────────────────────────────────── */
+.quarto-category,
+.badge,
+span.badge {
+  background: var(--bb-pink) !important;
+  color: #fff !important;
+  font-family: var(--font-hand) !important;
+  font-size: 0.88rem !important;
+  border-radius: 2px !important;
+  padding: 0.2em 0.6em !important;
+  font-weight: 700 !important;
+  display: inline-block;
+  transform: rotate(-1.5deg);
+  box-shadow: 2px 2px 0 var(--bb-purple);
+}
+
+/* ─── HORIZONTAL RULE ─────────────────────────────────────── */
+hr {
+  border: none;
+  border-top: 3px dashed var(--bb-pink-light);
+  margin: 2rem 0;
+  position: relative;
+}
+
+hr::after {
+  content: '♥';
+  position: absolute;
+  top: -0.75em;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--bb-pink);
+  font-size: 1.1rem;
+  background: var(--bb-paper);
+  padding: 0 0.5rem;
+}
+
+/* ─── SELECTION ───────────────────────────────────────────── */
+::selection {
+  background: rgba(255, 45, 139, 0.3);
+  color: var(--bb-purple);
+}
+
+/* ─── SCROLLBAR ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FFE8F3; }
+::-webkit-scrollbar-thumb {
+  background: var(--bb-pink);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--bb-purple); }
+
+/* ─── RED MARGIN LINE ─────────────────────────────────────── */
+.page-columns .column-body::before,
+article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 3.8rem;
+  bottom: 0;
+  width: 2px;
+  background: rgba(200, 0, 28, 0.25);
+  pointer-events: none;
+}
+
+/* ─── MISC QUARTO OVERRIDES ───────────────────────────────── */
+
+.quarto-title-banner h1 {
+  color: var(--bb-pink)!important;
+  text-shadow:
+    3px 3px 0 var(--bb-pink-pale),
+    4px 4px 0 rgba(200, 0, 28, 0.2);
+}
+
+/* Quarto figure captions */
+.figure-caption, figcaption {
+  font-family: var(--font-hand);
+  color: #888;
+  font-style: normal;
+  font-size: 0.9rem;
+  text-align: center;
+  transform: rotate(0.5deg);
+}
+
+/* ─── IMAGES — polaroid with tape ────────────────────────── */
+img:not(.navbar-brand img):not(.card-img-top):not([class*="icon"]) {
+  border: 7px solid #fff;
+  border-bottom-width: 28px;
+  box-shadow: 3px 5px 14px rgba(180, 0, 28, 0.15);
+  transform: rotate(-1.5deg);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+}
+img:not(.navbar-brand img):not(.card-img-top):not([class*="icon"]):hover {
+  transform: rotate(1deg) scale(1.02);
+  box-shadow: 6px 8px 20px rgba(180, 0, 28, 0.22);
+}
+
+/* Tape on figures wrapping images */
+figure {
+  position: relative;
+  display: table; /* shrinkwrap to image width */
+  margin: 2rem auto;
+}
+
+figure::before {
+  content: '';
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 72px;
+  height: 22px;
+  background: var(--bb-tape);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.10),
+    inset 0 0 0 1px rgba(255,255,255,0.45);
+  z-index: 2;
+}
+
+/* Alternate tape angle & color every other figure */
+figure:nth-of-type(even)::before {
+  background: var(--bb-tape-blue);
+  transform: translateX(-50%) rotate(2.5deg);
+  left: 35%;
+  width: 60px;
+}
+
+/* Second tape strip on some figures */
+figure:nth-of-type(3n)::after {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  right: -12px;
+  width: 55px;
+  height: 20px;
+  background: rgba(255, 200, 220, 0.65);
+  border-radius: 2px;
+  transform: rotate(88deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  z-index: 2;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .page-columns .column-body,
+  article {
+    padding: 1.4rem 1.2rem;
+    border-left: 4px solid var(--bb-pink-light);
+  }
+  .page-columns .column-body::before {
+    display: none;
+  }
+  h1, .title {
+    font-size: 2rem;
+  }
+}

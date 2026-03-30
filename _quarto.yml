@@ -2,18 +2,16 @@ project:
   type: website
 
 website:
-  title: "website"
+  title: "Regression to the Mean Girls"
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/LucyMcGowan/regressiontothemeangirls
+      - icon: instagram
+        href: https://instagram.com/regressiontothemeangirls
 format:
   html:
     theme: cosmo
     css: styles.css
-
-editor: visual
 
