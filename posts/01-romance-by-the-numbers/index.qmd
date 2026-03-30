@@ -32,7 +32,7 @@ library(stringr) ## for cleaning string fields (tropes)
 
 # Read the data
 rom_dat = read_sheet("https://docs.google.com/spreadsheets/d/10HZevTEd4CWjqIcVMbED2nkpmnXDV6NVxCKenCsUqv0/edit?usp=sharing") |> 
-  dplyr::mutate(Main_Trope = toupper(Main_Trope)) ## clean up text (make tropes all upper case)
+  mutate(Main_Trope = toupper(Main_Trope)) ## clean up text (make tropes all upper case)
 ```
 
 There are a lot of different tropes, and this sample captured `r length(unique(rom_dat$Main_Trope))` unique ones. However, a few of them were fairly uncommon, so the tropes were regrouped with others that were thematically similar (with the help of ChatGPT).
@@ -44,7 +44,7 @@ table(rom_dat$Main_Trope)
 # Create trope groupings (collapse less-frequent tropes)
 rom_dat = rom_dat |> 
   mutate(
-    Main_Trope_Grouped = dplyr::case_when(
+    Main_Trope_Grouped = case_when(
       Main_Trope %in% c("FAKE DATING", "FORCED PROXIMITY", "SURPRISE PREGNANCY", "NO STRINGS ATTACHED") ~ "CONTRIVED/SITUATIONAL SETUP",
       Main_Trope %in% c("BROTHER'S BEST FRIEND", "CELEBRITY ROMANCE", "SINGLE DAD") ~ "POWER/STATUS/TABOO",
       .default = Main_Trope
@@ -164,7 +164,7 @@ plot_overall2
 summary(fit_overall2)$table["median"]
 ```
 
-**Results (continued):** On average, a book couple first kisses `r as.numeric(round(summary(fit_overall2)$table["median"] * 100))`% pages into the book (across all tropes), but broken down...
+**Results (continued):** On average, a book couple first kisses `r as.numeric(round(summary(fit_overall2)$table["median"]))`% pages into the book (across all tropes), but broken down...
 
 ### Stratified (Each Trope Separately)
 
