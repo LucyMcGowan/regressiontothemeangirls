@@ -217,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the data</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>rom_dat <span class="ot">=</span> <span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/10HZevTEd4CWjqIcVMbED2nkpmnXDV6NVxCKenCsUqv0/edit?usp=sharing"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Main_Trope =</span> <span class="fu">toupper</span>(Main_Trope)) <span class="do">## clean up text (make tropes all upper case)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Main_Trope =</span> <span class="fu">toupper</span>(Main_Trope)) <span class="do">## clean up text (make tropes all upper case)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There are a lot of different tropes, and this sample captured 13 unique ones. However, a few of them were fairly uncommon, so the tropes were regrouped with others that were thematically similar (with the help of ChatGPT).</p>
 <div class="cell">
@@ -243,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create trope groupings (collapse less-frequent tropes)</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rom_dat <span class="ot">=</span> rom_dat <span class="sc">|&gt;</span> </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Main_Trope_Grouped =</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Main_Trope_Grouped =</span> <span class="fu">case_when</span>(</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>      Main_Trope <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"FAKE DATING"</span>, <span class="st">"FORCED PROXIMITY"</span>, <span class="st">"SURPRISE PREGNANCY"</span>, <span class="st">"NO STRINGS ATTACHED"</span>) <span class="sc">~</span> <span class="st">"CONTRIVED/SITUATIONAL SETUP"</span>,</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      Main_Trope <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"BROTHER'S BEST FRIEND"</span>, <span class="st">"CELEBRITY ROMANCE"</span>, <span class="st">"SINGLE DAD"</span>) <span class="sc">~</span> <span class="st">"POWER/STATUS/TABOO"</span>,</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> Main_Trope</span>
@@ -282,10 +282,10 @@ RIVALS-TO-LOVERS/ENEMIES-TO-LOVERS              SECOND CHANCE ROMANCE
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">fit =</span> fit_overall, </span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Customize the look of the plot </span></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">palette =</span> rom_cols, </span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggtheme =</span> ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggtheme =</span> <span class="fu">theme</span>(</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#F5E6E8"</span>, <span class="at">color =</span> <span class="cn">NA</span>),  </span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#F5E6E8"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid       =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"#E3D3D6"</span>), </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"#E3D3D6"</span>), </span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"#2B1E21"</span>), </span>
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"#2B1E21"</span>)), </span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Proportion of Book Completed"</span>,</span>
@@ -324,10 +324,10 @@ RIVALS-TO-LOVERS/ENEMIES-TO-LOVERS              SECOND CHANCE ROMANCE
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">fit =</span> fit_stratified, </span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Customize the look of the plot </span></span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">palette =</span> rom_cols, </span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggtheme =</span> ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggtheme =</span> <span class="fu">theme</span>(</span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#F5E6E8"</span>, <span class="at">color =</span> <span class="cn">NA</span>), </span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#F5E6E8"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid       =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"#E3D3D6"</span>), </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"#E3D3D6"</span>), </span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"#2B1E21"</span>), </span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"#2B1E21"</span>)), </span>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Proportion of Book Completed"</span>,</span>
@@ -384,10 +384,10 @@ Main_Trope_Grouped=RIVALS-TO-LOVERS/ENEMIES-TO-LOVERS
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">fit =</span> fit_overall2, </span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Customize the look of the plot </span></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">palette =</span> rom_cols, </span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggtheme =</span> ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggtheme =</span> <span class="fu">theme</span>(</span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#F5E6E8"</span>, <span class="at">color =</span> <span class="cn">NA</span>),  </span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#F5E6E8"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid       =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"#E3D3D6"</span>), </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"#E3D3D6"</span>), </span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"#2B1E21"</span>), </span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"#2B1E21"</span>)), </span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Pages of Book Completed"</span>,</span>
@@ -411,7 +411,7 @@ Main_Trope_Grouped=RIVALS-TO-LOVERS/ENEMIES-TO-LOVERS
    183 </code></pre>
 </div>
 </div>
-<p><strong>Results (continued):</strong> On average, a book couple first kisses 1.83^{4}% pages into the book (across all tropes), but broken down…</p>
+<p><strong>Results (continued):</strong> On average, a book couple first kisses 183% pages into the book (across all tropes), but broken down…</p>
 </section>
 <section id="stratified-each-trope-separately-1" class="level3">
 <h3 class="anchored" data-anchor-id="stratified-each-trope-separately-1">Stratified (Each Trope Separately)</h3>
@@ -424,10 +424,10 @@ Main_Trope_Grouped=RIVALS-TO-LOVERS/ENEMIES-TO-LOVERS
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">fit =</span> fit_stratified2, </span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">##### Customize the look of the plot </span></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">palette =</span> rom_cols, </span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggtheme =</span> ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggtheme =</span> <span class="fu">theme</span>(</span>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#F5E6E8"</span>, <span class="at">color =</span> <span class="cn">NA</span>),  <span class="co"># light pink</span></span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#F5E6E8"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid       =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"#E3D3D6"</span>), </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"#E3D3D6"</span>), </span>
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"#2B1E21"</span>), </span>
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"#2B1E21"</span>)), </span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Proportion of Book Completed"</span>,</span>
@@ -478,7 +478,7 @@ Main_Trope_Grouped=RIVALS-TO-LOVERS/ENEMIES-TO-LOVERS
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#F5E6E8"</span>, <span class="at">color =</span> <span class="cn">NA</span>),  <span class="co"># light pink</span></span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#F5E6E8"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid       =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"#E3D3D6"</span>), </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"#E3D3D6"</span>), </span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">color =</span> <span class="st">"#2B1E21"</span>), </span>
 <span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"#2B1E21"</span>)</span>
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span>  </span>
