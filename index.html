@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Regression to the Mean Girls</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -41,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -116,7 +113,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -190,7 +187,32 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Ym9va3MlMkNyb21hbmNlJTJDYW5hbHlzaXM=" data-listing-date-sort="1774843200000" data-listing-file-modified-sort="1774905373000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1747">
+<div class="quarto-post image-right" data-index="0" data-categories="c2V2ZXJhbmNlJTJDciUyQ2FuYWx5c2lzJTJDd29yZCUyMGNsb3VkJTJDbmxwJTJDcmVmaW5lcg==" data-listing-date-sort="1788753600000" data-listing-file-modified-sort="1788382250661" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2356">
+<div class="thumbnail"><a href="./posts/02-mysterious-and-important/index.html" class="no-external">
+
+<img loading="lazy" src="./posts/02-mysterious-and-important/featured.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/02-mysterious-and-important/index.html" class="no-external">The Work Is Mysterious and Important: The Data of Severance</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/02-mysterious-and-important/index.html" class="no-external">
+First, and most importantly, here I am hanging with Dan Erickson after Jen’s amazing one woman show.
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/02-mysterious-and-important/index.html" class="no-external">
+<div class="listing-date">
+Sep 7, 2026
+</div>
+<div class="listing-author">
+Lucy D’Agostino McGowan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Ym9va3MlMkNyb21hbmNlJTJDYW5hbHlzaXM=" data-listing-date-sort="1788148800000" data-listing-file-modified-sort="1788380382944" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1747">
 <div class="thumbnail"><a href="./posts/01-romance-by-the-numbers/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/01-romance-by-the-numbers/image.png" class="thumbnail-image">
@@ -207,7 +229,7 @@ Romance novels (in)famously guarantee happily ever afters (HEAs) and follow one 
 <div class="metadata">
 <a href="./posts/01-romance-by-the-numbers/index.html" class="no-external">
 <div class="listing-date">
-Mar 30, 2026
+Aug 31, 2026
 </div>
 <div class="listing-author">
 Sarah Lotspeich
@@ -269,14 +291,13 @@ Sarah Lotspeich
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
