@@ -4,7 +4,7 @@
 ### Checklist
 
 - [ ] Post lives in `posts/NN-my-slug/`, copied from `posts/_template/`
-- [ ] Front matter filled in: `title`, `description`, `author`, `date`, `image`, `categories`
+- [ ] Front matter filled in: `title`, `author`, `date`, `image`, `categories` (and `draft: true` left in place)
 - [ ] `featured.png` added to the post folder 
 - [ ] Any new R/Python packages added to `.devcontainer/` and committed
 - [ ] Ran `quarto render` with no errors

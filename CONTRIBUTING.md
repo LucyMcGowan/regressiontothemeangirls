@@ -47,6 +47,7 @@ The block between the `---` lines at the top.
 | `date` | Publish date, `YYYY-MM-DD`. |
 | `image` | `featured.png` — the thumbnail (see step 5). |
 | `categories` | Lower-case tags in `[brackets]`. Reuse existing tags where you can. |
+| `draft` | Leave it as `true`. It keeps your post off the home page while you work; we will remove it to publish. |
 
 ## 4. Write the post
 

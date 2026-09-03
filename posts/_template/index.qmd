@@ -3,30 +3,26 @@
 # TEMPLATE — don't edit this file. In the terminal run (NN = next free number, you can check what the next free number is in the posts folder, i.e. 03):
 #     cp -r posts/_template posts/NN-your-slug
 # then edit posts/NN-your-slug/index.qmd and delete this comment block.
-# The fields below are the only front matter you set; the rest is inherited
-# from posts/_metadata.yml.
 # ---------------------------------------------------------------------------
 title: "Your Post Title"  
 author: "Your Name"                              
 date: "2026-01-31"                               
 image: "featured.png"                             
 categories: [severance, r, analysis] # lower-case tags (reuse existing ones where you can)
+draft: true # leave this for now
 ---
 
 
 ## Context, Please
 
-A paragraph of background: what the episode was about, who the guest is, and
-what question the analysis below answers.
+A paragraph of background: what the episode was about what question the analysis below answers.
 
 ## Behind the Scenes
 
-Where the data comes from, any packages or transcripts you relied on, and
-anything a reader needs to reproduce the analysis.
+Where the data comes from, any packages you relied on, and anything a reader needs to reproduce the analysis.
 
 ## Analysis
 
-Write your analysis as normal prose interspersed with code chunks.
 
 ```{r}
 #| label: example-chunk
@@ -34,7 +30,7 @@ Write your analysis as normal prose interspersed with code chunks.
 #| message: false
 # A code chunk. Load packages and do your analysis here.
 # Site defaults already set: warnings/messages hidden, code shown but foldable,
-# figures 8x5in at 300 dpi, centre-aligned. Override any of those with the
+# figures 8x5in at 300 dpi, center-aligned. Override any of those with the
 # #| options at the top of the chunk.
 # Need a package that isn't installed? Add it to .devcontainer/ (see CONTRIBUTING.md).
 library(ggplot2)
@@ -44,8 +40,7 @@ mtcars |>
   geom_point()
 ```
 
-You can also refer to computed values inline, like this: the dataset has
-`r nrow(mtcars)` rows.
+You can also refer to computed values inline, like this: the dataset has `r nrow(mtcars)` rows.
 
 ### A figure with a caption
 
