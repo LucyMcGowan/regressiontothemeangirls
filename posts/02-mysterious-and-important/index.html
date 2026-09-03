@@ -2,19 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Lucy D’Agostino McGowan">
 <meta name="dcterms.date" content="2026-09-07">
 
-<title>The Work Is Mysterious and Important: The Data of Severance – Regression to the Mean Girls</title>
+<title>The Work Is Mysterious and Important: Severance Data – Regression to the Mean Girls</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -73,10 +79,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-e3adbaa939bcd423dddc8c8a834270b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -157,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">The Work Is Mysterious and Important: The Data of Severance</h1>
+      <div class="quarto-title-block"><div><h1 class="title">The Work Is Mysterious and Important: Severance Data</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
                                 <div class="quarto-categories">
                 <div class="quarto-category">severance</div>
                 <div class="quarto-category">r</div>
@@ -203,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="columns">
 <div class="column">
-<p>First, and most importantly, here I am hanging with Dan Erickson after Jen’s amazing one woman show. If only I had thought to ask him to take me on as the show’s statistician, I think I would really thrive in this role!!</p>
+<p>First, and most importantly, here I am hanging with Dan Erickson, creator of <em>Severance</em>, after Jen’s amazing one woman show. If only I had thought to ask him to take me on as the show’s statistician, I think I would really thrive in this role!!</p>
 </div><div class="column">
 <p><img src="lucy-and-dan.jpeg" class="img-fluid"></p>
 </div>
@@ -223,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Below is a word cloud of Seth Milchick’s most frequently used words of the past [<em>few</em>] quarter[<em>s</em>] alone. [<em>Lumon</em>] recommended that Mr.&nbsp;Milchick begin simplifying his language so as to achieve clearer comprehension from his subordinates and peers.</p>
 <p>Lumon claimed (as detailed above) that Milchick is using too many big words. <em>I don’t see evidence of this!</em></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mdr)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mdr)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wordcloud2)</span>
@@ -248,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">|&gt;</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wordcloud2</span>(<span class="at">backgroundColor =</span> <span class="st">"#030303"</span>,</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>             <span class="at">fontFamily =</span> <span class="st">"Noto Sans Mono"</span>,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="wordcloud2 html-widget html-fill-item" id="htmlwidget-2756f79f2ee279509ac0" style="width:100%;height:464px;"></div>
 <script type="application/json" data-for="htmlwidget-2756f79f2ee279509ac0">{"x":{"word":["mark","dylan","irving","helly","outie","time","cobel","innie","office","day","kier","lumon","scout","grow","huang","morning","feel","hey","burt","eagan","floor","mdr","refiners","severed","party","hope","seat","word","afraid","company","experience","happy","milchick","ready","remember","rest","stop","ahead","call","called","card","casey","childish","department","dieter","drummond","elevator","enjoy","evening","excuse","eyes","fire","forward","happened","hate","head","hollow","life","love","means","meantime","mind","night","return","special","start","stay","team","told","balloons","brother","care","check","choose","desk","doors","employ","employee","escort","favorite","folly","found","fourth","game","gonna","hair","happen","heard","helena","home","hours","leave","management","marshmallows","minute","minutes","ortbo","paintings","petey","quarter","question","read","refinement","send","sit","sound","table","tonight","trust","understand","waterfall","wife","woe","wonderful","wondering","yesterday"],"freq":[35,33,23,22,16,16,12,12,12,11,11,11,11,10,10,10,9,9,8,8,8,8,8,8,7,6,6,6,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],"fontFamily":"Noto Sans Mono","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":4.114285714285714,"backgroundColor":"#030303","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
@@ -256,7 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Hmm, I’m not seeing that many big words! Maybe we should remove proper names.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>transcripts <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>transcripts <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Mil"</span>, speaker)) <span class="sc">|&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
@@ -276,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">|&gt;</span></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wordcloud2</span>(<span class="at">backgroundColor =</span> <span class="st">"#030303"</span>,</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">fontFamily =</span> <span class="st">"Noto Sans Mono"</span>,</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="wordcloud2 html-widget html-fill-item" id="htmlwidget-b57d42ddb42e4e349fdd" style="width:100%;height:464px;"></div>
 <script type="application/json" data-for="htmlwidget-b57d42ddb42e4e349fdd">{"x":{"word":["outie","time","innie","office","day","grow","morning","feel","hey","floor","refiners","severed","party","hope","seat","word","afraid","company","experience","happy","ready","remember","rest","stop","ahead","call","called","card","childish","department","drummond","elevator","enjoy","evening","excuse","eyes","fire","forward","happened","hate","head","hollow","life","love","means","meantime","mind","night","return","special","start","stay","team","told","balloons","brother","care","check","choose","desk","doors","employ","employee","escort","favorite","folly","found","fourth","game","gonna","hair","happen","heard","helena","home","hours","leave","management","marshmallows","minute","minutes","ortbo","paintings","quarter","question","read","refinement","send","sit","sound","table","tonight","trust","understand","waterfall","wife","woe","wonderful","wondering","yesterday","agreed","apologize","appendix","appreciation","begin","behavior","betterment","block","board","break","bringing","brought","building","chapter","choice","circle","coffee","colleagues","completely","concerns","contingency","continue","count","dance","dark","departed","deserve","disclosure","dismissal","door","drink","duties","earth","empathy","eradicate","essence","excited","eye","fame","family","feelings","feels","fellow","fellowship","file","final","fine","focus","foot","forbids","forest","founder","funeral","funny","glasgow","goddamn","goodbye","grateful","gratitude","guys","hand","handbook","honor","hour","ill","imagine","immediately","inform","information","items","key","knowledge","late","lay","leader","learned","learning","macrodata","material","measure","meet","melon","milkshake","months","moved","music","natalie","occurred","one","otc","outies","overtime","path","people","period","permanent","personage","personal","policy","pool","pretty","privacy","progress","proper","protocol","provide","pull","pus","questions","reached","reaching","refiner","reforms","regular","remind","report","respect","response","retirement","round","rube","safeguard","sets","shambolic","shit","shortly","similar","single","smuggle","source","space","spoke","stairwell","stand","statement","step","steward","sudden","talk","tallest","tempers","thousand","throw","till","tomorrow","tough","transferred","transition","truth","violated","waffle","wait","waiting","walk","wanna","wellness","wintertide","wow","wrap","wrong","yeah"],"freq":[16,16,12,12,11,10,10,9,9,8,8,8,7,6,6,6,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],"fontFamily":"Noto Sans Mono","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":6.75,"backgroundColor":"#030303","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
@@ -288,8 +294,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s see if Milchick is really using more syllables than everyone else.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>syllable_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span></span>
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>syllable_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">replace_contraction</span>(dialogue),</span>
@@ -336,7 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
 <span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co">#girafe(ggobj = p)</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -352,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="common-words">Common words</h3>
 <p>Ok, maybe by “big” Lumon meant not that the words were multisyllabic but rather uncommon. We can use Fry’s 1000 word list (Fry (1997)) to help us see if Milchick uses uncommon words more frequently than the other characters. This list claims to contain words that make up 90% of all printed text, let’s see if Milchick is using more uncommon words than his counterparts.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>words_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>words_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">replace_contraction</span>(dialogue),</span>
@@ -385,7 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="st">"Percentage of Common Words"</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="st">""</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Everyone else"</span>, <span class="st">"Milchick"</span>)) <span class="sc">+</span></span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_mdr</span>() <span class="sc">+</span> </span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -401,7 +407,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="addendum">Addendum</h3>
 <p>Some folks want to see which words are specific to Milchick – instead of weighting by frequency like in our top word cloud, we could instead weight by the <code>tf-idf</code> (term frequency, inverse document frequency). This basically tells us <em>which</em> words are uniquely used by Milchick. I would argue this is <em>not</em> what Lumon claimed to do as they were trying to say he was using <em>too many</em> big words (which implies frequency), but in any case this is fun!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tf_idf <span class="ot">&lt;-</span> words_df <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tf_idf <span class="ot">&lt;-</span> words_df <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">case_when</span>(</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    word <span class="sc">==</span> <span class="st">"innie's"</span> <span class="sc">~</span> <span class="st">"innie"</span>,</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">.default =</span> word</span>
@@ -418,7 +424,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">wordcloud2</span>(tf_idf, </span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">backgroundColor =</span> <span class="st">"#030303"</span>,</span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">fontFamily =</span> <span class="st">"Noto Sans Mono"</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="fl">0.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="wordcloud2 html-widget html-fill-item" id="htmlwidget-fabafaaa4ca04f778403" style="width:100%;height:464px;"></div>
 <script type="application/json" data-for="htmlwidget-fabafaaa4ca04f778403">{"x":{"word":["childish","meantime","folly","fourth","marshmallows","agreed","appreciation","betterment","circle","concerns","continue","count","departed","disclosure","dismissal","duties","empathy","eradicate","essence","fame","fellow","foot","material","personage","policy","proper","pull","pus","reached","regular","respect","rube","safeguard","sets","shambolic","shortly","smuggle","statement","sudden","tallest","tough","transferred","transition","violated","waterfall","abandon","abdominal","absence","absorb","accessory","accompanied","ached","achieved","action","addressing","adjusting","advantage","aggressor","agog","aiding","allowing","almonds","altercation","ama","applause","approach","approve","arrive","assault","assure","attend","authorized","awaits","awoke","awoken","bathing","bedevil","bedroll","begged","behave","believed","bewailing","bistro","biting","bloat","brambles","bride","brooks","build","bump","calendar","calls","cameras","capacity","cart","catered","challenges","chaos's","checks","cheers","chips","choking","cited","claims","cleared","clutter","collegial","comfort","commence","communication","compensation","complicated","compliment","compliments","comprises","compunction","concerned","conditions","confident","consequences","consort","constitutes","consult","consulted","converse","copious","corrected","country","courtesy","cozies","curtailed","dealing","deduct","deemed","descend","designers","developed","devour","differences","disappointing","discarded","dissuade","distress","dizzy","driven","drowned","dusk","earnest","easily","elonga","emerged","emotionally","enamel","encountered","endearment","enriches","ensure","eradicating","eternal","eulogy","eustice","exhibition","explode","feasible","feculence","fertile","financial","fitting","fixation","floater","focusing","forbidden","formal","forthwith","fortunately","fortunes","foyer","fresh","friendships","frigid","gargling","gather","gaunt","genre","glass","global","graduate","grandeur","grief","grieve","grill","grotto","grounds","gullets","gunnel","handrail","handwriting","hanging","hankering","harder","hare","heal","heat","height","heinous","hills","holiest","hollow's","humbly","hymn","ideographic","incisors","independent","index","ingratitude","inquisitive","insisted","insubordination","intake","interactions","international","investigation","jailer","jurisdiction","kit","laid","lawrence","lead","length","lies","listener","location","luxury","malaysia","management's","manner","maraca","mates","meadows","meaningful","meats","miracle","moderation","monosyllabically","moss","motivator","mournful","mutiny","nanny","national","natural","nature's","nicely","nondisclosure","nonexistence","notified","nude","obvious","occasionally","official","orgs","orientation's","outhouse","overseas","owed","packing","paintball","pair","pal","paperwork","paraphrasing","partake","participation","penalty","perchance","performed","persons","phrase","players","ply","pond","popped","potential","preparations","prepped","primary","primed","processed","professional","progeny","protect","protected","public","punishments","punitive","purged","pursue","puzzling","queries","quietly","reacclimate","reaction","readying","recital","reeks","reflected","refreshments","regularly","relations","relegated","remonstration","remove","rendition","renovation","requires","rescind","restful","returning","revoke","reward","rhyming","rivaled","roil","rustling","rwanda","sacred","sadist","salt","sanctity","sap","sardines","satiate","scalp","screen","selection","sentient","settle","severely","sharp","shattered","shoulder","shuttle","signage","silently","site","situated","social","socket","sorts","spaces","spin","stations","stocked","strapping","stray","stressed","subordinate","suffered","sugar","suite","sunrise","superiors","supervisory","support","svalbard","tales","tall","tastier","temper","tents","termed","terminate","terrific","theremin","thickened","thickets","thieving","thoughtfully","throuple","tickling","timer","tissue","torches","tore","torrent","toss","totem","tri","tucked","tumult","tuned","unauthorized","unsolicited","unveil","unwashed","urge","usual","valediction","valid","vibe","vibration","victim","viscerally","walking","wantonness","washroom","waterfall's","watermelon","weak","weighing","whimper","whore","wire","woodland","workdays","workspace","wounded","wrath","wrathfully","yearning","dylan","mark","irving","helly","time","ms","outie","innie","office","cobel","day","scout","grow","huang","lumon","morning","feel","hey","eagan","floor","kier","miss","refiners","severed","mdr","party","burt","hope","seat","word","afraid","company","experience","happy","milchick","ready","remember","rest","stop","ahead","call","called","card","casey","department","dieter","drummond","elevator","enjoy","evening","excuse","eyes","fire","forward","happened","hate","head","life","love","means","mind","night","return","special","start","stay","team","told","balloons","care","check","choose","desk","doors","employ","employee","escort","favorite","found","game","gonna","hair","happen","heard","helena","helly's","hollow","home","hours","kier's","leave","minute","minutes","ortbo","paintings","quarter","question","read","refinement","send","sit","sound","table","tonight","trust","understand","wonderful","wondering","yesterday","apologize","appendix","begin","behavior","block","board","break","bringing","brother","brought","building","burt's","chapter","choice","coffee","colleagues","completely","contingency","dance","dark","deserve","door","drink","earth","excited","eye","family","feelings","feels","fellowship","file","final","fine","focus","forbids","forest","funeral","funny","glasgow","goddamn","goodbye","grateful","gratitude","guys","hand","handbook","harmony","honor","hour","ill","imagine","immediately","inform","information","items","key","knowledge","late","lay","leader","learned","learning","macrodata","management","mark's","measure","meet","melon","milkshake","months","moved","music","natalie","occurred","one's","outie's","outies","overtime","path","people","period","permanent","personal","petey","pool","pretty","privacy","progress","protocol","provide","questions","reaching","refiner","reforms","remind","report","response","retirement","round","seth","shit","similar","single","source","space","spoke","stairwell","stand","step","steward","talk","tempers","thousand","throw","till","tomorrow","truth","waffle","wait","waiting","walk","wanna","wellness","wife","wintertide","woe's","wow","wrap","wrong","yeah","accept","access","actions","affections","ago","alert","allergic","amazing","animal","announcements","answers","apologies","appreciated","art","assume","ate","attendance","avoid","awaken","awesome","bailiff","bar","based","bear","beauty","bed","bereavement","bet","black","bleeding","blessings","blue","blueprints","bomb","branch","brave","breakfast","breath","briefly","brings","broke","brother's","bud","busy","buy","calling","canceled","car","careful","cares","carol","carry","catch","caught","cave","center","challenge","chance","chat","cheer","chemistry","chief","chose","chosen","close","closet","cobel's","code","colloquially","coming","commandeered","conducting","congratulations","conscious","contact","core","courage","cozy","cries","cruise","current","cut","days","deal","dear","death","deaths","decision","deserves","desire","destroyed","detectors","devon","dictated","died","difficult","directly","disappointed","discuss","disguise","distracting","doctor","double","dozing","dr","drew","drown","duty","earned","eat","effective","egg","eggs","elevators","elongated","em","emergency","employer","employment","environment","equipped","erotic","ether","events","everything's","evoke","exact","excellent","executive","existed","expected","experiences","failed","fair","fall","father","fault","feeling","files","fill","fix","follow","food","footage","forever","form","founder","founder's","friend","friends","front","fruit","fucked","fun","gala","gemma","gentlemen","george","ghost","gift","graner","grasp","greatly","gretchen","gråkappan","guess","hale","half","hall","hands","hard","heading","heads","hearing","helped","hip","hire","history","hold","hoped","house","idea","including","industries","innies","installed","intended","intention","interaction","interview","involved","irv","irving's","issue","jesus","job","joke","jokes","knowing","ladies","laugh","learn","leash","left","level","lift","light","line","listen","literally","locked","looked","lumon's","macrodats","makes","manage","manager","marks","mde","mdr's","mention","mercy","messages","microphones","milk","mill","mine","missed","mistake","moments","monday","mouth","murder","names","nice","note","occurrence","officially","opinion","opportunity","option","otc","otc's","outburst","outdoor","outstanding","paid","pain","painful","parents","passed","passes","past","paupers","paycheck","performance","perk","perks","perpetuity","person","petey's","photo","physical","pick","piece","planet","plans","play","pleasure","position","pre","prefer","principle","principles","print","priority","privileges","process","productive","promise","provided","quota","raised","rare","raw","reach","recall","received","recent","refining","reform","refrain","regret","relax","remain","remotely","reporting","request","requested","research","resentment","responsibility","resume","retiring","retreat","review","ring","root","run","running","sacrifice","sad","sadly","safely","safety","save","scissor","security","seek","sense","sensitive","set","severance","severing","shame","share","shown","shut","siena","sir","sister's","skin","skull","smiles","soil","solace","someday","song","sounded","speech","spend","spending","spent","spirit","standard","started","status","stead","story","straight","stuff","stupidity","successfully","suddenly","supply","suppose","supposed","surface","sweet","switch","sympathize","takes","taking","talking","tamed","teasing","tech","telling","text","thankfully","thinking","thirty","threatened","thrilled","tightening","twin","unsevered","unwell","upstairs","valuable","video","violent","visitation","voyage","wake","waking","walked","watch","water","weeks","wife's","win","woe","woke","woman","words","workers","world","worry","writing"],"freq":[15.7,15.7,11.8,11.8,11.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"fontFamily":"Noto Sans Mono","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":2.292993630573248,"backgroundColor":"#030303","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
@@ -429,7 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="zipf-frequency">Zipf Frequency</h3>
 <p>Our refiner of the quarter, <a href="https://github.com/LeopoldTal">Leopold</a>, pointed out that we could use the <code>Zipf frequency</code> of the words to get a more granular look at whether Milchick is using common language (compared to our Fry approach which just dichotomized as common/not common). As the title of my main blog, <a href="https://livefreeordichotomize.com">livefreeordichotomize</a>, would suggest, I am ALWAYS here to avoid dichotomizing. The <code>Zipf frequency</code> is the log (base 10) of the number of times a word appears per billion words (i.e., a word with <code>Zipf frequency</code> of 3 appears once per million words). Ok, let’s try that! We’ve calculated this for our main guy, Milchick, along with some other characters to compare him to and plotted the density. The dashed lines represent the medians.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>words_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span> </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
@@ -447,17 +453,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, dialogue) <span class="sc">|&gt;</span></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">gsub</span>(<span class="st">"'s"</span>, <span class="st">""</span>, word))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">gsub</span>(<span class="st">"'s"</span>, <span class="st">""</span>, word))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordfreq <span class="im">import</span> zipf_frequency</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordfreq <span class="im">import</span> zipf_frequency</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> r.words_df</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>zipf <span class="op">=</span> df[<span class="st">'word'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> word: zipf_frequency(word, <span class="st">'en'</span>))</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>r.zipf <span class="op">=</span> zipf.tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>r.zipf <span class="op">=</span> zipf.tolist()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>words_df<span class="sc">$</span>zipf <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(zipf)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>words_df<span class="sc">$</span>zipf <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(zipf)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>words_df <span class="ot">&lt;-</span> words_df <span class="sc">|&gt;</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(zipf <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
@@ -481,7 +487,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_mdr</span>() <span class="sc">+</span> </span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -492,6 +498,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Fascinating, this is a great view of the language! Of the ones we examined, most of our main characters have a median Zipf frequency between 4.7 (Cobel) and 4.7 (Ms.&nbsp;Huang), with the exception of Milchick (4.6) and Irving (4.6). Now, one angle is that Milchick is using too big of words, but another is that Ms.&nbsp;Huang, his likely accuser, is just using too basic of words compared to the others. Or maybe she is onto something, his Zipf frequency distribution is (statistically) significantly different from everyone else (p = &lt;0.001).</p>
 
+
+<!-- -->
 
 </section>
 </section>
@@ -548,13 +556,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -566,6 +575,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -895,7 +955,364 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The Work Is Mysterious and Important: Severance Data"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Lucy D'Agostino McGowan"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2026-09-07"</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [severance, r, analysis, word cloud, nlp, refiner]</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "featured.png"</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>::: columns</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>::: column</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>First, and most importantly, here I am hanging with Dan Erickson, creator of *Severance*, after Jen's amazing one woman show. If only I had thought to ask him to take me on as the show's statistician, I think I would really thrive in this role!!</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>::: </span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>::: column</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="al">![](lucy-and-dan.jpeg)</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context, Please</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>I am a huge fan of the show <span class="co">[</span><span class="ot">Severance</span><span class="co">](https://tv.apple.com/us/show/severance/)</span>. As I mention in the episode, I just *love* the amazing attention to detail throughout, it is such a fun show to watch and rewatch as a fan! I started collecting data while watching the show during its first season which resulted in an R package, <span class="co">[</span><span class="ot">mdr</span><span class="co">](https://lucymcgowan.github.io/mdr/)</span>, as well as an elaborate fan site where I host lots of silly little analyses.</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![](sev.gif)</span><span class="co">](https://mdr.lucymcgowan.com)</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>For today, I am going to walk through an in depth analysis on whether Seth Milchick actually uses "too many big words" as he was told during a performance review in Season 2.</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Behind the Scenes</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>This analysis was made possible by the <span class="co">[</span><span class="ot">mdr</span><span class="co">](https://lucymcgowan.github.io/mdr/)</span> R package, which uses transcripts originally compiled by <span class="co">[</span><span class="ot">the Severance wiki</span><span class="co">](https://severance.wiki/)</span>.</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analysis</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>Below is a word cloud of Seth Milchick's most frequently used words of the past <span class="sc">\[</span>*few*\] quarter\[*s*\] alone. \[*Lumon*<span class="sc">\]</span> recommended that Mr. Milchick begin simplifying his language so as to achieve clearer comprehension from his subordinates and peers.</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>Lumon claimed (as detailed above) that Milchick is using too many big words. *I don't see evidence of this!*</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-align: center</span></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mdr)</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wordcloud2)</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(textclean)</span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggiraph)</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lexicon)</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">266</span>)</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>transcripts <span class="sc">|&gt;</span> </span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Mil"</span>, speaker)) <span class="sc">|&gt;</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">replace_contraction</span>(dialogue)</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, dialogue) <span class="sc">|&gt;</span></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>word <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"ms"</span>, <span class="st">"miss"</span>, <span class="st">"b's"</span>), <span class="sc">!</span><span class="fu">str_detect</span>(word, <span class="st">"</span><span class="sc">\\</span><span class="st">d"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">gsub</span>(<span class="st">"'s"</span>, <span class="st">""</span>, word)) <span class="sc">|&gt;</span></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word) <span class="sc">|&gt;</span></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wordcloud2</span>(<span class="at">backgroundColor =</span> <span class="st">"#030303"</span>,</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>             <span class="at">fontFamily =</span> <span class="st">"Noto Sans Mono"</span>,</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.8</span>)</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>Hmm, I'm not seeing that many big words! Maybe we should remove proper names.</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-align: center</span></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>transcripts <span class="sc">|&gt;</span> </span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Mil"</span>, speaker)) <span class="sc">|&gt;</span></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">replace_contraction</span>(dialogue)</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, dialogue) <span class="sc">|&gt;</span></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">gsub</span>(<span class="st">"'s"</span>, <span class="st">""</span>, word)) <span class="sc">|&gt;</span></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span>word <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"ms"</span>, <span class="st">"miss"</span>, <span class="st">"b"</span>, </span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"cobel"</span>, <span class="st">"mark"</span>, <span class="st">"dylan"</span>, <span class="st">"helly"</span>, <span class="st">"irving"</span>,</span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"bailiff"</span>, <span class="st">"casey"</span>, <span class="st">"dr"</span>, <span class="st">"eagan"</span>, <span class="st">"gretchen"</span>,</span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"harmony"</span>, <span class="st">"huang"</span>, <span class="st">"irv"</span>, <span class="st">"kier"</span>, <span class="st">"lawrence"</span>,</span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"milchick"</span>, <span class="st">"petey"</span>, <span class="st">"rwanda"</span>, <span class="st">"siena"</span>, <span class="st">"burt"</span>, <span class="st">"lumon"</span>, <span class="st">"scout"</span>, <span class="st">"mdr"</span>, <span class="st">"dieter"</span>, <span class="st">"seth"</span>),</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">str_detect</span>(word, <span class="st">"</span><span class="sc">\\</span><span class="st">d"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word) <span class="sc">|&gt;</span></span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wordcloud2</span>(<span class="at">backgroundColor =</span> <span class="st">"#030303"</span>,</span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>             <span class="at">fontFamily =</span> <span class="st">"Noto Sans Mono"</span>,</span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.6</span>)</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a>Here's the thing, I don't think there are that many big words! We are of course making some assumptions here (mainly that the words we see in the on screen dialogue are representative of how he speaks off screen), but I think this is reasonable. Ok, maybe the word cloud is not the best way to see this (although we are just doing the same analysis Lumon claims to!), let's instead compare the percentage of multisyllabic words Milchick uses compared to the rest of the characters.</span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a><span class="fu">### Syllable count</span></span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a>Let's see if Milchick is really using more syllables than everyone else.</span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-align: center</span></span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a>syllable_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span></span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">replace_contraction</span>(dialogue),</span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a>    <span class="at">milchick =</span> <span class="fu">grepl</span>(<span class="st">"Mil"</span>, speaker)</span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, dialogue) </span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a>safe_syllable_count <span class="ot">&lt;-</span> <span class="fu">possibly</span>(</span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a>  <span class="cf">function</span>(x) qdap<span class="sc">::</span><span class="fu">syllable_count</span>(x)<span class="sc">$</span>syllables, </span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a>  <span class="at">otherwise =</span> <span class="cn">NA_real_</span></span>
+<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a>syllable_df<span class="sc">$</span>syllables <span class="ot">&lt;-</span> <span class="fu">map_dbl</span>(syllable_df<span class="sc">$</span>word, safe_syllable_count)</span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a>means_df <span class="ot">&lt;-</span> syllable_df <span class="sc">|&gt;</span></span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(syllables), syllables <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(milchick) <span class="sc">|&gt;</span></span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_syllables =</span> <span class="fu">mean</span>(syllables),</span>
+<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a>            <span class="at">se_syllables =</span> <span class="fu">sd</span>(syllables) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">n</span>()),</span>
+<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a>            <span class="at">lcl =</span> mean_syllables <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se_syllables,</span>
+<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a>            <span class="at">ucl =</span> mean_syllables <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se_syllables)</span>
+<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> syllable_df <span class="sc">|&gt;</span></span>
+<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(syllables), syllables <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(milchick, syllables) <span class="sc">|&gt;</span></span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(milchick) <span class="sc">|&gt;</span></span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> count<span class="sc">/</span><span class="fu">sum</span>(count) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> syllables, <span class="at">y =</span> percent, <span class="at">fill =</span> milchick,</span>
+<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a>             <span class="at">tooltip =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{round(percent, 1)}% of the words spoken by {ifelse(milchick, 'Milchick','everyone else')} had {syllables} {ifelse(syllables !=1, 'syllables', 'syllable')}"</span>)))<span class="sc">+</span></span>
+<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col_interactive</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"#E84646"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"#3C8DAD"</span>),</span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a>                    <span class="at">name =</span> <span class="st">""</span>,</span>
+<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Everyone Else"</span>, <span class="st">"Milchick"</span>)) <span class="sc">+</span></span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"red"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"blue"</span>)) <span class="sc">+</span></span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Syllable Count"</span>,</span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Words"</span>,</span>
+<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_mdr</span>() <span class="sc">+</span></span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">1</span>),</span>
+<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a>                     <span class="at">minor_breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">6</span>, <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a><span class="co">#girafe(ggobj = p)</span></span>
+<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a>p</span>
+<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a>Looking at the distribution above, it looks like no, in general Milchick is in line with the other speakers. Milchick uses an average of <span class="in">`r means_df |&gt; filter(milchick == TRUE) |&gt; pull(mean_syllables) |&gt; round(2)`</span> (95% CI: <span class="in">`r means_df |&gt; filter(milchick == TRUE) |&gt; pull(lcl) |&gt; round(2)`</span> - <span class="in">`r means_df |&gt; filter(milchick == TRUE) |&gt; pull(ucl) |&gt; round(2)`</span>) syllables per word, whereas everyone else is close behind with an average of <span class="in">`r means_df |&gt; filter(milchick == FALSE) |&gt; pull(mean_syllables) |&gt; round(2)`</span> (95% CI: <span class="in">`r means_df |&gt; filter(milchick == FALSE) |&gt; pull(lcl) |&gt; round(2)`</span> - <span class="in">`r means_df |&gt; filter(milchick == FALSE) |&gt; pull(ucl) |&gt; round(2)`</span>). While this difference is technically statistically significant, we do not think it is scientifically meaningful.</span>
+<span id="cb9-184"><a href="#cb9-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-185"><a href="#cb9-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-186"><a href="#cb9-186" aria-hidden="true" tabindex="-1"></a><span class="fu">### Common words</span></span>
+<span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-188"><a href="#cb9-188" aria-hidden="true" tabindex="-1"></a>Ok, maybe by "big" Lumon meant not that the words were multisyllabic but rather uncommon. We can use Fry's 1000 word list (Fry (1997)) to help us see if Milchick uses uncommon words more frequently than the other characters. This list claims to contain words that make up 90% of all printed text, let's see if Milchick is using more uncommon words than his counterparts. </span>
+<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-193"><a href="#cb9-193" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-align: center</span></span>
+<span id="cb9-195"><a href="#cb9-195" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-196"><a href="#cb9-196" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a>words_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span></span>
+<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
+<span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">replace_contraction</span>(dialogue),</span>
+<span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a>    <span class="at">milchick =</span> <span class="fu">grepl</span>(<span class="st">"Mil"</span>, speaker)</span>
+<span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, dialogue) </span>
+<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a>fry_words <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">word =</span> <span class="fu">tolower</span>(sw_fry_1000)) <span class="sc">|&gt;</span></span>
+<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">is_common =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>()</span>
+<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a>words_summary <span class="ot">&lt;-</span> words_df <span class="sc">|&gt;</span></span>
+<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(fry_words, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">is_common =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(is_common), <span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(milchick) <span class="sc">|&gt;</span></span>
+<span id="cb9-214"><a href="#cb9-214" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb9-215"><a href="#cb9-215" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_words =</span> <span class="fu">n</span>(),</span>
+<span id="cb9-216"><a href="#cb9-216" aria-hidden="true" tabindex="-1"></a>    <span class="at">common_words =</span> <span class="fu">sum</span>(is_common),</span>
+<span id="cb9-217"><a href="#cb9-217" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_common =</span> common_words <span class="sc">/</span> total_words,</span>
+<span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a>    <span class="at">se =</span> <span class="fu">sqrt</span>(p_common <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p_common) <span class="sc">/</span> <span class="fu">n</span>()),</span>
+<span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct_common =</span> p_common <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a>    <span class="at">lcl =</span> (p_common <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se) <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a>    <span class="at">ucl =</span> (p_common <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(words_summary, </span>
+<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> milchick, <span class="at">y =</span> pct_common, <span class="at">fill =</span> milchick)) <span class="sc">+</span></span>
+<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"#E84646"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"#3C8DAD"</span>)) <span class="sc">+</span></span>
+<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="st">"Percentage of Common Words"</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="st">""</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Everyone else"</span>, <span class="st">"Milchick"</span>)) <span class="sc">+</span></span>
+<span id="cb9-230"><a href="#cb9-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_mdr</span>() <span class="sc">+</span> </span>
+<span id="cb9-231"><a href="#cb9-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb9-232"><a href="#cb9-232" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-233"><a href="#cb9-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-234"><a href="#cb9-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-235"><a href="#cb9-235" aria-hidden="true" tabindex="-1"></a>Well look at that, Milchick is in line with the rest of the characters! <span class="in">`r words_summary |&gt; filter(milchick == TRUE) |&gt; pull(pct_common) |&gt; round(1)`</span>% of Milchick's words are "common" (95% CI: <span class="in">`r words_summary |&gt; filter(milchick == TRUE) |&gt; pull(lcl) |&gt; round(1)`</span> - <span class="in">`r words_summary |&gt; filter(milchick == TRUE) |&gt; pull(ucl) |&gt; round(1)`</span>) compared to <span class="in">`r words_summary |&gt; filter(milchick == FALSE) |&gt; pull(pct_common) |&gt; round(1)`</span>% for everyone else <span class="in">`r words_summary |&gt; filter(milchick == FALSE) |&gt; pull(lcl) |&gt; round(1)`</span> - <span class="in">`r words_summary |&gt; filter(milchick == FALSE) |&gt; pull(ucl) |&gt; round(1)`</span>). Notably, these are both much lower than 90%, as (according to Fry) would be expected in written text, so maybe everyone is using weird vocabulary, but it is not at all unique to Milchick! We will be taking this up with the board.</span>
+<span id="cb9-236"><a href="#cb9-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-237"><a href="#cb9-237" aria-hidden="true" tabindex="-1"></a>*This analysis was made possible by the [mdr](https://lucymcgowan.github.io/mdr) R package, which used data originally compiled by [the Severance wiki](https://severance.wiki/). It uses data through season 2 episode 5.*</span>
+<span id="cb9-238"><a href="#cb9-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-239"><a href="#cb9-239" aria-hidden="true" tabindex="-1"></a><span class="fu">### Addendum</span></span>
+<span id="cb9-240"><a href="#cb9-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-241"><a href="#cb9-241" aria-hidden="true" tabindex="-1"></a>Some folks want to see which words are specific to Milchick -- instead of weighting by frequency like in our top word cloud, we could instead weight by the <span class="in">`tf-idf`</span> (term frequency, inverse document frequency). This basically tells us *which* words are uniquely used by Milchick. I would argue this is *not* what Lumon claimed to do as they were trying to say he was using *too many* big words (which implies frequency), but in any case this is fun!</span>
+<span id="cb9-242"><a href="#cb9-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-243"><a href="#cb9-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-244"><a href="#cb9-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-247"><a href="#cb9-247" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-248"><a href="#cb9-248" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb9-249"><a href="#cb9-249" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-250"><a href="#cb9-250" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-251"><a href="#cb9-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-252"><a href="#cb9-252" aria-hidden="true" tabindex="-1"></a>tf_idf <span class="ot">&lt;-</span> words_df <span class="sc">|&gt;</span></span>
+<span id="cb9-253"><a href="#cb9-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">case_when</span>(</span>
+<span id="cb9-254"><a href="#cb9-254" aria-hidden="true" tabindex="-1"></a>    word <span class="sc">==</span> <span class="st">"innie's"</span> <span class="sc">~</span> <span class="st">"innie"</span>,</span>
+<span id="cb9-255"><a href="#cb9-255" aria-hidden="true" tabindex="-1"></a>    <span class="at">.default =</span> word</span>
+<span id="cb9-256"><a href="#cb9-256" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span></span>
+<span id="cb9-257"><a href="#cb9-257" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(word, <span class="st">"</span><span class="sc">\\</span><span class="st">d"</span>), word <span class="sc">!=</span> <span class="st">"b's"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-258"><a href="#cb9-258" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-259"><a href="#cb9-259" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(milchick, word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-260"><a href="#cb9-260" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_tf_idf</span>(word, milchick, n) <span class="sc">|&gt;</span></span>
+<span id="cb9-261"><a href="#cb9-261" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(milchick) <span class="sc">|&gt;</span></span>
+<span id="cb9-262"><a href="#cb9-262" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">n =</span> <span class="fu">round</span>(tf_idf <span class="sc">*</span> <span class="dv">10000</span>, <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-263"><a href="#cb9-263" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(word, n) <span class="sc">|&gt;</span></span>
+<span id="cb9-264"><a href="#cb9-264" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) </span>
+<span id="cb9-265"><a href="#cb9-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-266"><a href="#cb9-266" aria-hidden="true" tabindex="-1"></a><span class="fu">wordcloud2</span>(tf_idf, </span>
+<span id="cb9-267"><a href="#cb9-267" aria-hidden="true" tabindex="-1"></a>           <span class="at">backgroundColor =</span> <span class="st">"#030303"</span>,</span>
+<span id="cb9-268"><a href="#cb9-268" aria-hidden="true" tabindex="-1"></a>           <span class="at">fontFamily =</span> <span class="st">"Noto Sans Mono"</span>,</span>
+<span id="cb9-269"><a href="#cb9-269" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="fl">0.2</span>)</span>
+<span id="cb9-270"><a href="#cb9-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-271"><a href="#cb9-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-272"><a href="#cb9-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-273"><a href="#cb9-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-274"><a href="#cb9-274" aria-hidden="true" tabindex="-1"></a><span class="fu">### Zipf Frequency</span></span>
+<span id="cb9-275"><a href="#cb9-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-276"><a href="#cb9-276" aria-hidden="true" tabindex="-1"></a>Our refiner of the quarter, <span class="co">[</span><span class="ot">Leopold</span><span class="co">](https://github.com/LeopoldTal)</span>, pointed out that we could use the <span class="in">`Zipf frequency`</span> of the words to get a more granular look at whether Milchick is using common language (compared to our Fry approach which just dichotomized as common/not common). As the title of my main blog, <span class="co">[</span><span class="ot">livefreeordichotomize</span><span class="co">](https://livefreeordichotomize.com)</span>, would suggest, I am ALWAYS here to avoid dichotomizing. The <span class="in">`Zipf frequency`</span> is the log (base 10) of the number of times a word appears per billion words (i.e., a word with <span class="in">`Zipf frequency`</span> of 3 appears once per million words). Ok, let's try that! We've calculated this for our main guy, Milchick, along with some other characters to compare him to and plotted the density. The dashed lines represent the medians.</span>
+<span id="cb9-277"><a href="#cb9-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-278"><a href="#cb9-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-281"><a href="#cb9-281" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-282"><a href="#cb9-282" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb9-283"><a href="#cb9-283" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-284"><a href="#cb9-284" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-285"><a href="#cb9-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-286"><a href="#cb9-286" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb9-287"><a href="#cb9-287" aria-hidden="true" tabindex="-1"></a>words_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span> </span>
+<span id="cb9-288"><a href="#cb9-288" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-289"><a href="#cb9-289" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
+<span id="cb9-290"><a href="#cb9-290" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">replace_contraction</span>(dialogue),</span>
+<span id="cb9-291"><a href="#cb9-291" aria-hidden="true" tabindex="-1"></a>    <span class="at">character =</span> <span class="fu">case_when</span>(</span>
+<span id="cb9-292"><a href="#cb9-292" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Mil"</span>, speaker) <span class="sc">~</span> <span class="st">"Milchick"</span>,</span>
+<span id="cb9-293"><a href="#cb9-293" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Cob"</span>, speaker) <span class="sc">~</span> <span class="st">"Cobel"</span>,</span>
+<span id="cb9-294"><a href="#cb9-294" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Mark"</span>, speaker) <span class="sc">~</span> <span class="st">"Mark"</span>,</span>
+<span id="cb9-295"><a href="#cb9-295" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Hel"</span>, speaker) <span class="sc">~</span> <span class="st">"Helly/Helena"</span>,</span>
+<span id="cb9-296"><a href="#cb9-296" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Irv"</span>, speaker) <span class="sc">~</span> <span class="st">"Irving"</span>,</span>
+<span id="cb9-297"><a href="#cb9-297" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Huang"</span>, speaker) <span class="sc">~</span> <span class="st">"Ms. Huang"</span>,</span>
+<span id="cb9-298"><a href="#cb9-298" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Dylan"</span>, speaker) <span class="sc">~</span> <span class="st">"Dylan"</span>,</span>
+<span id="cb9-299"><a href="#cb9-299" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="st">"Everyone else"</span></span>
+<span id="cb9-300"><a href="#cb9-300" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-301"><a href="#cb9-301" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-302"><a href="#cb9-302" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, dialogue) <span class="sc">|&gt;</span></span>
+<span id="cb9-303"><a href="#cb9-303" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-304"><a href="#cb9-304" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">gsub</span>(<span class="st">"'s"</span>, <span class="st">""</span>, word))</span>
+<span id="cb9-305"><a href="#cb9-305" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-306"><a href="#cb9-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-309"><a href="#cb9-309" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-310"><a href="#cb9-310" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb9-311"><a href="#cb9-311" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-312"><a href="#cb9-312" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-313"><a href="#cb9-313" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordfreq <span class="im">import</span> zipf_frequency</span>
+<span id="cb9-314"><a href="#cb9-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-315"><a href="#cb9-315" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> r.words_df</span>
+<span id="cb9-316"><a href="#cb9-316" aria-hidden="true" tabindex="-1"></a>zipf <span class="op">=</span> df[<span class="st">'word'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> word: zipf_frequency(word, <span class="st">'en'</span>))</span>
+<span id="cb9-317"><a href="#cb9-317" aria-hidden="true" tabindex="-1"></a>r.zipf <span class="op">=</span> zipf.tolist()</span>
+<span id="cb9-318"><a href="#cb9-318" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-319"><a href="#cb9-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-322"><a href="#cb9-322" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-323"><a href="#cb9-323" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb9-324"><a href="#cb9-324" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-align: center</span></span>
+<span id="cb9-325"><a href="#cb9-325" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
+<span id="cb9-326"><a href="#cb9-326" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-327"><a href="#cb9-327" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-328"><a href="#cb9-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-329"><a href="#cb9-329" aria-hidden="true" tabindex="-1"></a>words_df<span class="sc">$</span>zipf <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(zipf)</span>
+<span id="cb9-330"><a href="#cb9-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-331"><a href="#cb9-331" aria-hidden="true" tabindex="-1"></a>words_df <span class="ot">&lt;-</span> words_df <span class="sc">|&gt;</span></span>
+<span id="cb9-332"><a href="#cb9-332" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(zipf <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb9-333"><a href="#cb9-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-334"><a href="#cb9-334" aria-hidden="true" tabindex="-1"></a>zipf_medians <span class="ot">&lt;-</span> words_df <span class="sc">|&gt;</span></span>
+<span id="cb9-335"><a href="#cb9-335" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(character) <span class="sc">|&gt;</span></span>
+<span id="cb9-336"><a href="#cb9-336" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">median_zipf =</span> <span class="fu">median</span>(zipf))</span>
+<span id="cb9-337"><a href="#cb9-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-338"><a href="#cb9-338" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(words_df, <span class="fu">aes</span>(<span class="at">x =</span> zipf, <span class="at">fill =</span> character)) <span class="sc">+</span></span>
+<span id="cb9-339"><a href="#cb9-339" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb9-340"><a href="#cb9-340" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">data =</span> zipf_medians, </span>
+<span id="cb9-341"><a href="#cb9-341" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">xintercept =</span> median_zipf,</span>
+<span id="cb9-342"><a href="#cb9-342" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> character), </span>
+<span id="cb9-343"><a href="#cb9-343" aria-hidden="true" tabindex="-1"></a>             <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb9-344"><a href="#cb9-344" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="at">data =</span> zipf_medians, <span class="fu">aes</span>(<span class="at">label =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Median: {round(median_zipf,1)}"</span>),</span>
+<span id="cb9-345"><a href="#cb9-345" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="fl">0.5</span>),</span>
+<span id="cb9-346"><a href="#cb9-346" aria-hidden="true" tabindex="-1"></a>             <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb9-347"><a href="#cb9-347" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>character) <span class="sc">+</span></span>
+<span id="cb9-348"><a href="#cb9-348" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-349"><a href="#cb9-349" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Zipf frequency (log10 occurances per a billion words)"</span>,</span>
+<span id="cb9-350"><a href="#cb9-350" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
+<span id="cb9-351"><a href="#cb9-351" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-352"><a href="#cb9-352" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_mdr</span>() <span class="sc">+</span> </span>
+<span id="cb9-353"><a href="#cb9-353" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb9-354"><a href="#cb9-354" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-355"><a href="#cb9-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-356"><a href="#cb9-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-357"><a href="#cb9-357" aria-hidden="true" tabindex="-1"></a>Fascinating, this is a great view of the language! Of the ones we examined, most of our main characters have a median Zipf frequency between <span class="in">`r zipf_medians |&gt; filter(character == "Cobel") |&gt; pull(median_zipf) |&gt; round(1)`</span> (Cobel) and <span class="in">`r zipf_medians |&gt; filter(character == "Ms. Huang") |&gt; pull(median_zipf) |&gt; round(1)`</span> (Ms. Huang), with the exception of Milchick (<span class="in">`r zipf_medians |&gt; filter(character == "Milchick") |&gt; pull(median_zipf) |&gt; round(1)`</span>) and Irving (<span class="in">`r zipf_medians |&gt; filter(character == "Irving") |&gt; pull(median_zipf) |&gt; round(1)`</span>). Now, one angle is that Milchick is using too big of words, but another is that Ms. Huang, his likely accuser, is just using too basic of words compared to the others. Or maybe she is onto something, his Zipf frequency distribution is (statistically) significantly different from everyone else (p = <span class="in">`r scales::pvalue_format()(ks.test(words_df$zipf[words_df$character == "Milchick"], words_df$zipf[words_df$character != "Milchick"])$p.value)`</span>).</span>
+<span id="cb9-358"><a href="#cb9-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-359"><a href="#cb9-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-360"><a href="#cb9-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-363"><a href="#cb9-363" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-364"><a href="#cb9-364" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb9-365"><a href="#cb9-365" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb9-366"><a href="#cb9-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-367"><a href="#cb9-367" aria-hidden="true" tabindex="-1"></a><span class="fu">ks.test</span>(words_df<span class="sc">$</span>zipf[words_df<span class="sc">$</span>character <span class="sc">==</span> <span class="st">"Ms. Huang"</span>], words_df<span class="sc">$</span>zipf[words_df<span class="sc">$</span>character <span class="sc">!=</span> <span class="st">"Ms. Huang"</span>])<span class="sc">$</span>p.value</span>
+<span id="cb9-368"><a href="#cb9-368" aria-hidden="true" tabindex="-1"></a><span class="fu">ks.test</span>(words_df<span class="sc">$</span>zipf[words_df<span class="sc">$</span>character <span class="sc">==</span> <span class="st">"Milchick"</span>], words_df<span class="sc">$</span>zipf[words_df<span class="sc">$</span>character <span class="sc">!=</span> <span class="st">"Milchick"</span>])</span>
+<span id="cb9-369"><a href="#cb9-369" aria-hidden="true" tabindex="-1"></a><span class="fu">ks.test</span>(words_df<span class="sc">$</span>zipf[words_df<span class="sc">$</span>character <span class="sc">==</span> <span class="st">"Milchick"</span>], words_df<span class="sc">$</span>zipf[words_df<span class="sc">$</span>character <span class="sc">==</span> <span class="st">"Cobel"</span>])</span>
+<span id="cb9-370"><a href="#cb9-370" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-371"><a href="#cb9-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-372"><a href="#cb9-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-373"><a href="#cb9-373" aria-hidden="true" tabindex="-1"></a></span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
