@@ -1,0 +1,33 @@
+{
+  "name": "Regression to the Mean Girls",
+
+  // Base image maintained for Quarto: Quarto CLI + R + Python preinstalled.
+  "image": "ghcr.io/mcanouil/quarto-codespaces:latest",
+  "remoteUser": "vscode",
+
+  "features": {
+    // R packages the existing posts use. Add yours to the end of this list
+    // (comma separated). CRAN names as-is; GitHub packages as github::owner/repo.
+    "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
+      "packages": "tidyverse,survival,survminer,googlesheets4,tidytext,wordcloud2,textclean,ggiraph,lexicon,reticulate,glue,scales,languageserver,github::LucyMcGowan/mdr",
+      "installSystemRequirements": true
+    }
+  },
+
+  // Python packages (Quarto's Jupyter engine + what the posts import).
+  // Add yours to .devcontainer/requirements.txt.
+  "postCreateCommand": "pip install --break-system-packages -r .devcontainer/requirements.txt",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "quarto.quarto",
+        "REditorSupport.r",
+        "ms-python.python"
+      ]
+    },
+    "codespaces": {
+      "openFiles": ["CONTRIBUTING.md"]
+    }
+  }
+}

@@ -3,14 +3,14 @@ title: "The Work Is Mysterious and Important: Severance Data"
 author: "Lucy D'Agostino McGowan"
 date: "2026-09-07"
 categories: [severance, r, analysis, word cloud, nlp, refiner]
-image: "featured.jpg"
+image: "featured.png"
 ---
 
 ::: columns
 
 ::: column
 
-First, and most importantly, here I am hanging with Dan Erickson after Jen's amazing one woman show. If only I had thought to ask him to take me on as the show's statistician, I think I would really thrive in this role!!
+First, and most importantly, here I am hanging with Dan Erickson, creator of *Severance*, after Jen's amazing one woman show. If only I had thought to ask him to take me on as the show's statistician, I think I would really thrive in this role!!
 
 ::: 
 

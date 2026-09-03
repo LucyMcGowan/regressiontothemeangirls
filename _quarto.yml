@@ -1,5 +1,9 @@
 project:
   type: website
+  render:
+    # Only render site pages. README.md / CONTRIBUTING.md are GitHub docs.
+    - "*.qmd"
+    - "posts/**/*.qmd"
 
 website:
   title: "Regression to the Mean Girls"

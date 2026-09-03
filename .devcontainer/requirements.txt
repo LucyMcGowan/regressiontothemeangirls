@@ -1,0 +1,6 @@
+# Python packages available in the dev container / Codespace.
+# Add any your post imports, then rebuild the container.
+jupyter
+pandas
+matplotlib
+wordfreq

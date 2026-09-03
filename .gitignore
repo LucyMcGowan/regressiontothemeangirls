@@ -3,4 +3,6 @@
 **/*.quarto_ipynb
 .DS_Store
 _site/
-_freeze/
+
+# _freeze/ IS committed: it holds rendered code output so the site can be
+# published without running R or Python. Contributors commit it with their post.

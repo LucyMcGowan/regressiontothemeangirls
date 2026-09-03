@@ -211,6 +211,17 @@ h4, h5, h6 {
   letter-spacing: 0.05em;
 }
 
+div.quarto-post a {
+  color: var(--bb-purple);
+}
+
+div.quarto-post h3 {
+  font-family: var(--font-title);
+    text-shadow:
+    3px 3px 0 var(--bb-pink-pale),
+    4px 4px 0 rgba(200, 0, 28, 0.2);
+    transform: rotate(0deg);
+}
 /* ─── BODY TEXT ──────────────────────────────────────────── */
 p, li, td, th {
   font-family: var(--font-reg);

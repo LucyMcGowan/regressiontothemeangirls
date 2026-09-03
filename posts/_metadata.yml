@@ -1,8 +1,32 @@
-# options specified here will apply to all posts in this folder
+# Settings shared by every post in this folder.
+# Guests should not need to set any of these in their own front matter —
+# a post only needs: title, description, author, date, image, categories.
 
-# freeze computational output
-# (see https://quarto.org/docs/projects/code-execution.html#freeze)
+# Re-use frozen computational output. A post is only re-executed when its
+# own source changes, so the publish workflow never needs R or Python.
+# Contributors must render locally and commit the resulting _freeze/ files.
+# https://quarto.org/docs/projects/code-execution.html#freeze
 freeze: true
 
-# Enable banner style title blocks
+# Banner-style title block (title / author / date on a coloured banner).
 title-block-banner: true
+
+format:
+  html:
+    # Show code by default, but let readers collapse it.
+    # Override per chunk with #| code-fold: true  (or false).
+    code-fold: show
+    code-summary: "Show the code"
+    code-tools: true
+    # Default size (inches) and resolution for generated figures.
+    # Override per chunk with #| fig-width / #| fig-height.
+    fig-width: 8
+    fig-height: 5
+    fig-dpi: 300
+    fig-align: center
+
+execute:
+  # Hide package start-up messages and warnings site-wide.
+  # Override per chunk with #| warning: true / #| message: true.
+  warning: false
+  message: false

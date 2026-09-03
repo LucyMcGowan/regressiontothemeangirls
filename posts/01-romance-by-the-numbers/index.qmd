@@ -3,7 +3,7 @@ title: "Romance by the Numbers: First Sparks Across Tropes"
 author: "Sarah Lotspeich"
 date: "2026-08-31"
 categories: [books, romance, analysis]
-image: "image.png"
+image: "featured.png"
 ---
 
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/73wCKKrkBm9Dl7rFtlRZ2h?utm_source=generator&si=fadc6a7a7a46444e" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
