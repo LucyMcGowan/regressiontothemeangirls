@@ -6,6 +6,9 @@ categories: [severance, r, analysis, word cloud, nlp, refiner]
 image: "featured.png"
 ---
 
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/79hjf89LtM8eoJK6b1Nvr8?utm_source=generator&si=43aca1db747d46b3" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+
 ::: columns
 
 ::: column
@@ -272,7 +275,8 @@ Our refiner of the quarter, [Leopold](https://github.com/LeopoldTal), pointed ou
 #| warning: false
 
 library(reticulate)
-words_df <- transcripts |> 
+use_virtualenv("rttmg", required = TRUE)
+words_df <- transcripts |>
   mutate(
     dialogue = str_replace_all(dialogue, "’", "'"),
     dialogue = replace_contraction(dialogue),
