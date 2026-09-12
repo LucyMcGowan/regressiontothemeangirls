@@ -1,5 +1,47 @@
 [
   {
+    "objectID": "posts/03-law-and-order-timeline/index.html",
+    "href": "posts/03-law-and-order-timeline/index.html",
+    "title": "The Speed of Justice, According to Law & Order",
+    "section": "",
+    "text": "Law & Order is a TV show that has been on the air since 1990. (It originally aired from 1990 to 2010, then was revived in 2022.) Its basic formula is summarized neatly by the opening narration, which is followed by a famous DUN-DUN sound: “In the criminal justice system, the people are represented by two separate, yet equally important, groups: the police, who investigate crime; and the district attorneys, who prosecute the offenders. These are their stories.”\nAs an avid watcher of the show and its spinoffs, especially Law & Order: Special Victims Unit, I have long wondered: How long does it actually take in Law & Order land for the criminal justice system to work, compared with how long it takes in reality?\nI started a newsletter called Wrong Number with two friends, Caitlin Gilbert and John Harden, to nerd out on data fixations like this one! More details about how I got the data and did the analysis are in my first post, which this one is adapted from. While you’re there, check out Caitlin’s post about theme park accidents and John’s about the kinds of trees that are found in each city."
+  },
+  {
+    "objectID": "posts/03-law-and-order-timeline/index.html#context-please",
+    "href": "posts/03-law-and-order-timeline/index.html#context-please",
+    "title": "The Speed of Justice, According to Law & Order",
+    "section": "",
+    "text": "Law & Order is a TV show that has been on the air since 1990. (It originally aired from 1990 to 2010, then was revived in 2022.) Its basic formula is summarized neatly by the opening narration, which is followed by a famous DUN-DUN sound: “In the criminal justice system, the people are represented by two separate, yet equally important, groups: the police, who investigate crime; and the district attorneys, who prosecute the offenders. These are their stories.”\nAs an avid watcher of the show and its spinoffs, especially Law & Order: Special Victims Unit, I have long wondered: How long does it actually take in Law & Order land for the criminal justice system to work, compared with how long it takes in reality?\nI started a newsletter called Wrong Number with two friends, Caitlin Gilbert and John Harden, to nerd out on data fixations like this one! More details about how I got the data and did the analysis are in my first post, which this one is adapted from. While you’re there, check out Caitlin’s post about theme park accidents and John’s about the kinds of trees that are found in each city."
+  },
+  {
+    "objectID": "posts/03-law-and-order-timeline/index.html#behind-the-scenes",
+    "href": "posts/03-law-and-order-timeline/index.html#behind-the-scenes",
+    "title": "The Speed of Justice, According to Law & Order",
+    "section": "Behind the Scenes",
+    "text": "Behind the Scenes\nLaw & Order has episode scene cards that demarcate major scene changes. A scene card has the date and address where the scene is supposed to be taking place. The intrepid fans on the show’s Fandom Wiki have diligently jotted down the contents of the episode scene cards for a vast majority of episodes. I compiled the available episode scene card data from every episode of Law & Order (this goes through Season 25, Episode 12).\nI calculated the time between the first scene card and the final scene card to determine the length of time elapsed over the course of the episode.\nSeparately, I cross-referenced my information using a spreadsheet I came across on The Comic Board discussion forum: A fan had used the scene cards as guideposts, but also looked at the outfits the characters were wearing from scene to scene to determine whether that scene took place the same day as the preceding one, as well as using dialogue clues."
+  },
+  {
+    "objectID": "posts/03-law-and-order-timeline/index.html#analysis",
+    "href": "posts/03-law-and-order-timeline/index.html#analysis",
+    "title": "The Speed of Justice, According to Law & Order",
+    "section": "Analysis",
+    "text": "Analysis\nHere’s a histogram showing the distribution of the time elapsed in each episode. The average Law & Order episode takes place over the course of about 68 days. How does that compare with reality?\n\n\n\nA timeline of cases in Law & Order\n\n\nAccording to a 2024 report commissioned by the New York City Comptroller: “Since 2019, the average time to process a murder case has risen by 37%, by an average of 221 days, from just over nineteen months to almost 27 months.” 27 months = 821 days.\nSo, justice in Law & Order land happens about 13 times as fast as it does in reality. If anything, this is an underestimate of how quickly justice is served on the show vs. in real life, because the report measures the amount of time from the initial arrest to the resolution of the trial. An episode of L&O, by contrast, typically begins when the crime is committed. So, if anything, Law & Order should take longer than it does in reality, because the police take time to investigate the crime and identify the suspect.\nI also made a Gantt chart to display the timeline of cases, to see cases that are effectively overlapping — e.g., detectives closing one case while in the midst of another. Here it is for L&O season 1, organized by episode air date.\n\n\n\nA Gantt chart of cases in Law & Order season 1\n\n\nInterestingly, the same chart for season 24 of Law & Order: Special Victims Unit shows cases that do not overlap at all and that take much less time than the ones in Law & Order season 1: an average of just 5.3 days. Why is this the case? Sex crimes, I would imagine, take even longer to investigate and prosecute in real life than murder or other kinds of felonies, if they even make it to trial. It could be that the writers’ rooms for these shows have gotten more self-aware about the dates they put on the episode scene cards, and there is some desire to reduce overlapping dates within a season (though, in my opinion, having overlapping dates would be more true to reality, not less).\n\n\n\nA Gantt chart of cases in Law & Order: SVU season 24\n\n\nYou can find more analyses as well as the code I used to make these plots in my newsletter post!"
+  },
+  {
+    "objectID": "posts/03-law-and-order-timeline/index.html#conclusion",
+    "href": "posts/03-law-and-order-timeline/index.html#conclusion",
+    "title": "The Speed of Justice, According to Law & Order",
+    "section": "Conclusion",
+    "text": "Conclusion\nIn the fictional universe of Law & Order, justice is served swiftly and effectively, more so than in the real-life statistics on the criminal justice system."
+  },
+  {
+    "objectID": "posts/03-law-and-order-timeline/index.html#sidenotes",
+    "href": "posts/03-law-and-order-timeline/index.html#sidenotes",
+    "title": "The Speed of Justice, According to Law & Order",
+    "section": "Sidenotes",
+    "text": "Sidenotes\nI am not a legal expert, and I could be off in my collection of the data, or my interpretation of the stats. If you have additional thoughts on this, please get in touch! You can email my newsletter at wrongnumbernewsletter @ gmail.com.\nAnd finally, this summer (after the airing of the podcast episode) I went to see Mariska Hargitay, aka SVU Captain Olivia Benson in Every Brilliant Thing on Broadway. I was lucky enough to catch her last show, which also featured her husband, Peter Hermann (aka the recurring defense attorney Trevor Langan). Sadly I did not share the results of my analysis with them, but they were nice enough to sign my Playbill.\n\n\n\nEvery Brilliant Thing Playbill"
+  },
+  {
     "objectID": "posts/01-romance-by-the-numbers/index.html#context-please",
     "href": "posts/01-romance-by-the-numbers/index.html#context-please",
     "title": "Romance by the Numbers: First Sparks Across Tropes",
@@ -46,7 +88,7 @@
     "href": "index.html",
     "title": "Regression to the Mean Girls",
     "section": "",
-    "text": "The Work Is Mysterious and Important: Severance Data\n\n\n\n\n\n\n\n\nSep 7, 2026\n\n\nLucy D’Agostino McGowan\n\n\n\n\n\n\n\n\n\n\n\n\nRomance by the Numbers: First Sparks Across Tropes\n\n\n\n\n\n\n\n\nAug 31, 2026\n\n\nSarah Lotspeich\n\n\n\n\n\nNo matching items"
+    "text": "The Speed of Justice, According to Law & Order\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nChristine Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Work Is Mysterious and Important: Severance Data\n\n\n\n\n\n\n\n\nSep 7, 2026\n\n\nLucy D’Agostino McGowan\n\n\n\n\n\n\n\n\n\n\n\n\nRomance by the Numbers: First Sparks Across Tropes\n\n\n\n\n\n\n\n\nAug 31, 2026\n\n\nSarah Lotspeich\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02-mysterious-and-important/index.html#context-please",
