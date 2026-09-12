@@ -3,8 +3,7 @@ title: "The Speed of Justice, According to Law & Order"
 author: "Christine Zhang"                              
 date: "2026-09-14"                               
 image: "law_and_order_timeline.png"                             
-categories: [r, analysis, ggplot2, fandom, data analysis] # lower-case tags (reuse existing ones where you can)
-draft: true # leave this for now
+categories: [r, analysis, ggplot2, fandom, data analysis] 
 ---
 
 ## Context, Please
@@ -31,7 +30,7 @@ Here’s a histogram showing the distribution of the time elapsed in each episod
 
 According to a 2024 [report](https://comptroller.nyc.gov/reports/ensuring-timely-trials/) commissioned by the New York City Comptroller: “Since 2019, the average time to process a murder case has risen by 37%, by an average of 221 days, from just over nineteen months to **almost 27 months**.” 27 months = **821 days**. 
 
-So, justice in _Law & Order_ land happens about 13 times as fast as it does in reality. If anything, this is an understimate of how quickly justice is served on the show vs. in real life, because the report measures the amount of time from the initial arrest to the resolution of the trial. An episode of L&O, by contrast, typically begins when the crime is committed. So, if anything, _Law & Order_ should take longer than it does in reality, because the police take time to investigate the crime and identify the suspect.
+So, justice in _Law & Order_ land happens about 13 times as fast as it does in reality. If anything, this is an underestimate of how quickly justice is served on the show vs. in real life, because the report measures the amount of time from the initial arrest to the resolution of the trial. An episode of L&O, by contrast, typically begins when the crime is committed. So, if anything, _Law & Order_ should take longer than it does in reality, because the police take time to investigate the crime and identify the suspect.
 
 I also made a Gantt chart to display the timeline of cases, to see cases that are effectively overlapping — e.g., detectives closing one case while in the midst of another. Here it is for L&O season 1, organized by episode air date.
 
@@ -51,7 +50,7 @@ In the fictional universe of _Law & Order_, justice is served swiftly and effect
 
 I am not a legal expert, and I could be off in my collection of the data, or my interpretation of the stats. If you have additional thoughts on this, please get in touch! You can email my newsletter at wrongnumbernewsletter @ gmail.com.
 
-And finally, this summer (after the airing of the podcast episode) I went to see Mariska Hargitay, aka SVU Captain Olivia Benson in [Every Brilliant Thing](https://everybrilliantthing.com/) on Broadway. I was lucky enough to catch her last show, which also featured her husband, Peter Hermann (aka the recurring defense attroney Trevor Langan). Sadly I did not share the reuslts of my analysis with them, but they were nice enough to sign my Playbill.
+And finally, this summer (after the airing of the podcast episode) I went to see Mariska Hargitay, aka SVU Captain Olivia Benson in [Every Brilliant Thing](https://everybrilliantthing.com/) on Broadway. I was lucky enough to catch her last show, which also featured her husband, Peter Hermann (aka the recurring defense attorney Trevor Langan). Sadly I did not share the results of my analysis with them, but they were nice enough to sign my Playbill.
 
 ![Every Brilliant Thing Playbill](playbill.png)
 
