@@ -1,5 +1,5 @@
 ---
-title: "Weston Lambert's Available Work"  
+title: "The Art of Web Scraping Art"  
 author: "Hadley Wickham"                              
 date: "2026-09-21"                               
 image: "featured.png"                             
