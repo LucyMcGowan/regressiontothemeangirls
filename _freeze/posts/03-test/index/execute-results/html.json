@@ -1,0 +1,17 @@
+{
+  "hash": "99a5d6c581a81df5385e3fd36af3ef66",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Test\"  \nauthor: \"Your Name\"                              \ndate: \"2026-01-31\"                               \nimage: \"featured.png\"                             \ncategories: [severance, r, analysis] # lower-case tags (reuse existing ones where you can)\n---\n\n\n## Context, Please\n\nA paragraph of background: what the episode was about, who the guest is, and\nwhat question the analysis below answers.\n\n## Behind the Scenes\n\nWhere the data comes from, any packages or transcripts you relied on, and\nanything a reader needs to reproduce the analysis.\n\n## Analysis\n\nWrite your analysis as normal prose interspersed with code chunks.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# A code chunk. Load packages and do your analysis here.\n# Site defaults already set: warnings/messages hidden, code shown but foldable,\n# figures 8x5in at 300 dpi, centre-aligned. Override any of those with the\n# #| options at the top of the chunk.\n# Need a package that isn't installed? Add it to .devcontainer/ (see CONTRIBUTING.md).\nlibrary(ggplot2)\n\nmtcars |>\n  ggplot(aes(x = wt, y = mpg)) +\n  geom_point()\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/example-chunk-1.png){width=2400}\n:::\n:::\n\n\nYou can also refer to computed values inline, like this: the dataset has\n32 rows.\n\n### A figure with a caption\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhist(mtcars$mpg)\n```\n\n::: {.cell-output-display}\n![Describe what the figure shows. This text appears under the plot.](index_files/figure-html/fig-example-1.png){#fig-example width=3000}\n:::\n:::\n\n\nReference it in the text as @fig-example.\n\n<!-- Python works too, if you prefer — use a ```{python} chunk. -->\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
