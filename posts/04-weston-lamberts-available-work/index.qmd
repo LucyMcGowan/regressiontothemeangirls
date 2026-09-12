@@ -9,7 +9,7 @@ categories: [art, r, weston lambert, api]
 
 ## Context, Please
 
-There is an artist I follow on TikTok, [Weston Lambert](https://www.westonlambert.com/), and I really liked his work. He has hundreds of thousands of followers on TikTok and Instagram, so as soon as he drops anything, it gets sold immediately. I got sick of seeing his post on social media, going to the website and seeing it was already sold out. So I decided I would write a scraper that would scrape his website every fifteen minutes and then message me if anything went on sale. And that eventually worked. And that is how I got this piece.
+There is an artist I follow on TikTok, [Weston Lambert](https://www.westonlambert.com/), and I really liked his work. He has hundreds of thousands of followers on TikTok and Instagram, so as soon as he drops anything, it gets sold immediately. I got sick of seeing his post on social media, going to the website and seeing it was already sold out, so I decided I would write a scraper that would scrape his website every fifteen minutes and then message me if anything went on sale. And that eventually worked. That is how I got this piece.
 
 ![](hadley-art.gif)
 
