@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Hadley Wickham">
-<meta name="dcterms.date" content="2026-09-21">
+<meta name="author" content="Christine Zhang">
+<meta name="dcterms.date" content="2026-09-14">
 
-<title>The Art of Web Scraping Art – Regression to the Mean Girls</title>
+<title>The Speed of Justice, According to Law &amp; Order – Regression to the Mean Girls</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -110,6 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -118,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -157,12 +158,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">The Art of Web Scraping Art</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+      <div class="quarto-title-block"><div><h1 class="title">The Speed of Justice, According to Law &amp; Order</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                                 <div class="quarto-categories">
-                <div class="quarto-category">art</div>
                 <div class="quarto-category">r</div>
-                <div class="quarto-category">weston lambert</div>
-                <div class="quarto-category">api</div>
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">ggplot2</div>
+                <div class="quarto-category">fandom</div>
+                <div class="quarto-category">data analysis</div>
               </div>
                   </div>
   </div>
@@ -173,14 +175,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Hadley Wickham </p>
+               <p>Christine Zhang </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 21, 2026</p>
+        <p class="date">September 14, 2026</p>
       </div>
     </div>
     
@@ -201,67 +203,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="context-please" class="level2">
 <h2 class="anchored" data-anchor-id="context-please">Context, Please</h2>
-<p>There is an artist I follow on TikTok, <a href="https://www.westonlambert.com/">Weston Lambert</a>, and I really liked his work. He has hundreds of thousands of followers on TikTok and Instagram, so as soon as he drops anything, it gets sold immediately. I got sick of seeing his post on social media, going to the website and seeing it was already sold out, so I decided I would write a scraper that would scrape his website every fifteen minutes and then message me if anything went on sale. And that eventually worked. That is how I got this piece.</p>
-<p><img src="hadley-art.gif" class="img-fluid"></p>
+<p><a href="https://en.wikipedia.org/wiki/Law_%26_Order"><em>Law &amp; Order</em></a> is a TV show that has been on the air since 1990. (It originally aired from 1990 to 2010, then was revived in 2022.) Its basic formula is summarized neatly by the <a href="https://www.youtube.com/watch?v=lMalvNeJFLk">opening narration</a>, which is followed by a famous DUN-DUN sound: “In the criminal justice system, the people are represented by two separate, yet equally important, groups: the police, who investigate crime; and the district attorneys, who prosecute the offenders. These are their stories.”</p>
+<p>As an avid watcher of the show and its spinoffs, especially <em>Law &amp; Order: Special Victims Unit</em>, I have long wondered: How long does it actually take in Law &amp; Order land for the criminal justice system to work, compared with how long it takes in reality?</p>
+<p>I started a newsletter called <a href="https://wrongnumber.beehiiv.com/">Wrong Number</a> with two friends, Caitlin Gilbert and John Harden, to nerd out on data fixations like this one! More details about how I got the data and did the analysis are in <a href="https://wrongnumber.beehiiv.com/p/the-speed-of-justice-according-to-law-order">my first post</a>, which this one is adapted from. While you’re there, check out Caitlin’s <a href="https://wrongnumber.beehiiv.com/p/the-dark-side-of-orlando-theme-parks">post about theme park accidents</a> and John’s about <a href="https://wrongnumber.beehiiv.com/p/your-neighborhood-is-probably-getting-gen-tree-fied">the kinds of trees that are found in each city</a>.</p>
 </section>
 <section id="behind-the-scenes" class="level2">
 <h2 class="anchored" data-anchor-id="behind-the-scenes">Behind the Scenes</h2>
-<p>This runs in R with <a href="https://rvest.tidyverse.org/">rvest</a> on a GitHub Action every three hours, keeping a CSV of past listings in the <a href="https://github.com/hadley/available-work">repo</a> so it could spot unsold products it hasn’t seen before and get a push notification to my phone using <a href="https://ntfy.sh/">ntfy.sh</a>.</p>
+<p><em>Law &amp; Order</em> has episode scene cards that demarcate major scene changes. A scene card has the date and address where the scene is supposed to be taking place. The intrepid fans on the show’s Fandom Wiki have diligently jotted down the contents of the episode scene cards for a vast majority of episodes. I <a href="https://docs.google.com/spreadsheets/d/1Kx3jrh44nrAW4jhUkGhZAOQrtEzCqaCL_u3YwtJEWDI/edit?gid=11850358#gid=11850358">compiled the available episode scene card data</a> from every episode of <em>Law &amp; Order</em> (this goes through Season 25, Episode 12).</p>
+<p>I calculated the time between the first scene card and the final scene card to determine the length of time elapsed over the course of the episode.</p>
+<p>Separately, I cross-referenced my information using a <a href="https://www.thecomicboard.com/threads/law-order-timeline.14797/">spreadsheet I came across</a> on The Comic Board discussion forum: A fan had used the scene cards as guideposts, but also looked at the outfits the characters were wearing from scene to scene to determine whether that scene took place the same day as the preceding one, as well as using dialogue clues.</p>
 </section>
 <section id="analysis" class="level2">
 <h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
-<p>Weston Lambert’s shop is a single page, so we just need to read that html. A helper <code>find_products()</code> grabs every link inside the product list.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>find_products <span class="ot">&lt;-</span> <span class="cf">function</span>(html) {</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  html <span class="sc">|&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_element</span>(<span class="st">"#productList"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_elements</span>(<span class="st">"a"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://www.westonlambert.com/available-work"</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>html <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>products <span class="ot">&lt;-</span> <span class="fu">find_products</span>(html)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Here’s a histogram showing the distribution of the time elapsed in each episode. The average <em>Law &amp; Order</em> episode takes place over the course of about <strong>68 days</strong>. How does that compare with reality?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,quality=80,format=auto,onerror=redirect/uploads/asset/file/71fef6bf-31d3-4e6a-89cd-b5f7cda2f799/law_and_order_chart1.png?t=1781644913" class="img-fluid figure-img"></p>
+<figcaption>A timeline of cases in Law &amp; Order</figcaption>
+</figure>
 </div>
-<p>Then the helper function <code>extract_products()</code> turns those links into a data frame. The <code>sold_out</code> column tests for a <code>.sold-out</code> element.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>extract_products <span class="ot">&lt;-</span> <span class="cf">function</span>(products) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> products <span class="sc">|&gt;</span> <span class="fu">html_element</span>(<span class="st">".product-title"</span>) <span class="sc">|&gt;</span> <span class="fu">html_text</span>(),</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">price =</span> products <span class="sc">|&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">html_element</span>(<span class="st">".product-price"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">html_text</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">gsub</span>(<span class="st">"[$,]"</span>, <span class="st">""</span>, <span class="at">x =</span> _) <span class="sc">|&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(),</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">sold_out =</span> <span class="sc">!</span>(products <span class="sc">|&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">html_element</span>(<span class="st">".sold-out"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">html_text</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">is.na</span>()),</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">link =</span> <span class="fu">html_attr</span>(products, <span class="st">"href"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>cur <span class="ot">&lt;-</span> <span class="fu">extract_products</span>(products)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>According to a 2024 <a href="https://comptroller.nyc.gov/reports/ensuring-timely-trials/">report</a> commissioned by the New York City Comptroller: “Since 2019, the average time to process a murder case has risen by 37%, by an average of 221 days, from just over nineteen months to <strong>almost 27 months</strong>.” 27 months = <strong>821 days</strong>.</p>
+<p>So, justice in <em>Law &amp; Order</em> land happens about 13 times as fast as it does in reality. If anything, this is an understimate of how quickly justice is served on the show vs.&nbsp;in real life, because the report measures the amount of time from the initial arrest to the resolution of the trial. An episode of L&amp;O, by contrast, typically begins when the crime is committed. So, if anything, <em>Law &amp; Order</em> should take longer than it does in reality, because the police take time to investigate the crime and identify the suspect.</p>
+<p>I also made a Gantt chart to display the timeline of cases, to see cases that are effectively overlapping — e.g., detectives closing one case while in the midst of another. Here it is for L&amp;O season 1, organized by episode air date.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,quality=80,format=auto,onerror=redirect/uploads/asset/file/e1b1b4bc-2f32-4d83-9237-444b6e742bbd/law_and_order_timeline.png?t=1781645146" class="img-fluid figure-img"></p>
+<figcaption>A Gantt chart of cases in Law &amp; Order season 1</figcaption>
+</figure>
 </div>
-<p>Since I want to know only which pieces were <em>newly</em> for sale, the script stores the products in a CSV and then checks against this to only show me the new pieces.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>products_path <span class="ot">&lt;-</span> <span class="fu">data_path</span>(<span class="st">"products.csv"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>old <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(products_path)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(cur, products_path, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">subset</span>(cur, <span class="sc">!</span>sold_out <span class="sc">&amp;</span> <span class="sc">!</span>link <span class="sc">%in%</span> old<span class="sc">$</span>link)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Interestingly, the same chart for season 24 of <em>Law &amp; Order: Special Victims Unit</em> shows cases that do not overlap at all and that take much less time than the ones in <em>Law &amp; Order</em> season 1: an average of just <strong>5.3 days</strong>. Why is this the case? Sex crimes, I would imagine, take even longer to investigate and prosecute in real life than murder or other kinds of felonies, if they even make it to trial. It could be that the writers’ rooms for these shows have gotten more self-aware about the dates they put on the episode scene cards, and there is some desire to reduce overlapping dates within a season (though, in my opinion, having overlapping dates would be more true to reality, not less).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,quality=80,format=auto,onerror=redirect/uploads/asset/file/f5d49a57-181f-4b60-9883-dcbce7e245c0/svu_timeline.png?t=1784164305" class="img-fluid figure-img"></p>
+<figcaption>A Gantt chart of cases in Law &amp; Order: SVU season 24</figcaption>
+</figure>
 </div>
-<p>The push notification goes through <a href="https://ntfy.sh/">ntfy.sh</a>, which needs an app and a topic name (you pick a topic name from the ntfy service and would paste that in the topic parameter).</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ntfy<span class="sc">::</span><span class="fu">ntfy_send</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="fu">paste0</span>(<span class="fu">nrow</span>(new), <span class="st">" products available at "</span>, url),</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Update at Weston Lambert"</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">topic =</span> <span class="st">"INSERT NTFY TOPIC HERE"</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">click =</span> url</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can find more analyses as well as the code I used to make these plots in <a href="https://wrongnumber.beehiiv.com/p/the-speed-of-justice-according-to-law-order">my newsletter post</a>!</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>In the fictional universe of <em>Law &amp; Order</em>, justice is served swiftly and effectively, more so than in the real-life statistics on the criminal justice system.</p>
+</section>
+<section id="sidenotes" class="level2">
+<h2 class="anchored" data-anchor-id="sidenotes">Sidenotes</h2>
+<p>I am not a legal expert, and I could be off in my collection of the data, or my interpretation of the stats. If you have additional thoughts on this, please get in touch! You can email my newsletter at wrongnumbernewsletter @ gmail.com.</p>
+<p>And finally, this summer (after the airing of the podcast episode) I went to see Mariska Hargitay, aka SVU Captain Olivia Benson in <a href="https://everybrilliantthing.com/">Every Brilliant Thing</a> on Broadway. I was lucky enough to catch her last show, which also featured her husband, Peter Hermann (aka the recurring defense attroney Trevor Langan). Sadly I did not share the reuslts of my analysis with them, but they were nice enough to sign my Playbill.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="playbill.png" class="img-fluid figure-img"></p>
+<figcaption>Every Brilliant Thing Playbill</figcaption>
+</figure>
 </div>
-<p><em>The code behind this post lives in <a href="https://github.com/hadley/available-work">hadley/available-work</a>, which scrapes <a href="http://www.westonlambert.com/available-work">Weston Lambert’s</a> available work page with <a href="https://rvest.tidyverse.org/">rvest</a> and sends notifications through <a href="https://ntfy.sh/">ntfy.sh</a>.</em></p>
 
 
 <!-- -->
@@ -393,7 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/regressiontothemeangirls\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -720,106 +712,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The Art of Web Scraping Art"  </span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Hadley Wickham"                              </span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2026-09-21"                               </span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "featured.png"                             </span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [art, r, weston lambert, api]</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context, Please</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>There is an artist I follow on TikTok, <span class="co">[</span><span class="ot">Weston Lambert</span><span class="co">](https://www.westonlambert.com/)</span>, and I really liked his work. He has hundreds of thousands of followers on TikTok and Instagram, so as soon as he drops anything, it gets sold immediately. I got sick of seeing his post on social media, going to the website and seeing it was already sold out, so I decided I would write a scraper that would scrape his website every fifteen minutes and then message me if anything went on sale. And that eventually worked. That is how I got this piece.</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="al">![](hadley-art.gif)</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Behind the Scenes</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>This runs in R with <span class="co">[</span><span class="ot">rvest</span><span class="co">](https://rvest.tidyverse.org/)</span> on a GitHub Action every three hours, keeping a CSV of past listings in the <span class="co">[</span><span class="ot">repo</span><span class="co">](https://github.com/hadley/available-work)</span> so it could spot unsold products it hasn't seen before and get a push notification to my phone using <span class="co">[</span><span class="ot">ntfy.sh</span><span class="co">](https://ntfy.sh/)</span>.</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analysis</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>Weston Lambert's shop is a single page, so we just need to read that html. A helper <span class="in">`find_products()`</span> grabs every link inside the product list.</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>find_products <span class="ot">&lt;-</span> <span class="cf">function</span>(html) {</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  html <span class="sc">|&gt;</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_element</span>(<span class="st">"#productList"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_elements</span>(<span class="st">"a"</span>)</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://www.westonlambert.com/available-work"</span></span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>html <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>products <span class="ot">&lt;-</span> <span class="fu">find_products</span>(html)</span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>Then the helper function <span class="in">`extract_products()`</span> turns those links into a data frame. The <span class="in">`sold_out`</span> column tests for a <span class="in">`.sold-out`</span> element. </span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>extract_products <span class="ot">&lt;-</span> <span class="cf">function</span>(products) {</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> products <span class="sc">|&gt;</span> <span class="fu">html_element</span>(<span class="st">".product-title"</span>) <span class="sc">|&gt;</span> <span class="fu">html_text</span>(),</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">price =</span> products <span class="sc">|&gt;</span></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>      <span class="fu">html_element</span>(<span class="st">".product-price"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>      <span class="fu">html_text</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>      <span class="fu">gsub</span>(<span class="st">"[$,]"</span>, <span class="st">""</span>, <span class="at">x =</span> _) <span class="sc">|&gt;</span></span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(),</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">sold_out =</span> <span class="sc">!</span>(products <span class="sc">|&gt;</span></span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>      <span class="fu">html_element</span>(<span class="st">".sold-out"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>      <span class="fu">html_text</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>      <span class="fu">is.na</span>()),</span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">link =</span> <span class="fu">html_attr</span>(products, <span class="st">"href"</span>)</span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>cur <span class="ot">&lt;-</span> <span class="fu">extract_products</span>(products)</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>Since I want to know only which pieces were *newly* for sale, the script stores the products in a CSV and then checks against this to only show me the new pieces.</span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>products_path <span class="ot">&lt;-</span> <span class="fu">data_path</span>(<span class="st">"products.csv"</span>)</span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>old <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(products_path)</span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(cur, products_path, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">subset</span>(cur, <span class="sc">!</span>sold_out <span class="sc">&amp;</span> <span class="sc">!</span>link <span class="sc">%in%</span> old<span class="sc">$</span>link)</span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>The push notification goes through <span class="co">[</span><span class="ot">ntfy.sh</span><span class="co">](https://ntfy.sh/)</span>, which needs an app and a topic name (you pick a topic name from the ntfy service and would paste that in the topic parameter). </span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
-<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>ntfy<span class="sc">::</span><span class="fu">ntfy_send</span>(</span>
-<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="fu">paste0</span>(<span class="fu">nrow</span>(new), <span class="st">" products available at "</span>, url),</span>
-<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Update at Weston Lambert"</span>,</span>
-<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>  <span class="at">topic =</span> <span class="st">"INSERT NTFY TOPIC HERE"</span>,</span>
-<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>  <span class="at">click =</span> url</span>
-<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a>*The code behind this post lives in [hadley/available-work](https://github.com/hadley/available-work), which scrapes [Weston Lambert's](http://www.westonlambert.com/available-work) available work page with [rvest](https://rvest.tidyverse.org/) and sends notifications through [ntfy.sh](https://ntfy.sh/).*</span>
-</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The Speed of Justice, According to Law &amp; Order"  </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Christine Zhang"                              </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2026-09-14"                               </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "law_and_order_timeline.png"                             </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [r, analysis, ggplot2, fandom, data analysis] # lower-case tags (reuse existing ones where you can)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true # leave this for now</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context, Please</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">_Law &amp; Order_</span><span class="co">](https://en.wikipedia.org/wiki/Law_%26_Order)</span> is a TV show that has been on the air since 1990. (It originally aired from 1990 to 2010, then was revived in 2022.) Its basic formula is summarized neatly by the <span class="co">[</span><span class="ot">opening narration</span><span class="co">](https://www.youtube.com/watch?v=lMalvNeJFLk)</span>, which is followed by a famous DUN-DUN sound: “In the criminal justice system, the people are represented by two separate, yet equally important, groups: the police, who investigate crime; and the district attorneys, who prosecute the offenders. These are their stories.”</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>As an avid watcher of the show and its spinoffs, especially _Law &amp; Order: Special Victims Unit_, I have long wondered: How long does it actually take in Law &amp; Order land for the criminal justice system to work, compared with how long it takes in reality?</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>I started a newsletter called <span class="co">[</span><span class="ot">Wrong Number</span><span class="co">](https://wrongnumber.beehiiv.com/)</span> with two friends, Caitlin Gilbert and John Harden, to nerd out on data fixations like this one! More details about how I got the data and did the analysis are in <span class="co">[</span><span class="ot">my first post</span><span class="co">](https://wrongnumber.beehiiv.com/p/the-speed-of-justice-according-to-law-order)</span>, which this one is adapted from. While you’re there, check out Caitlin’s <span class="co">[</span><span class="ot">post about theme park accidents</span><span class="co">](https://wrongnumber.beehiiv.com/p/the-dark-side-of-orlando-theme-parks)</span> and John’s about <span class="co">[</span><span class="ot">the kinds of trees that are found in each city</span><span class="co">](https://wrongnumber.beehiiv.com/p/your-neighborhood-is-probably-getting-gen-tree-fied)</span>.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Behind the Scenes</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>_Law &amp; Order_ has episode scene cards that demarcate major scene changes. A scene card has the date and address where the scene is supposed to be taking place. The intrepid fans on the show’s Fandom Wiki have diligently jotted down the contents of the episode scene cards for a vast majority of episodes. I [compiled the available episode scene card data](https://docs.google.com/spreadsheets/d/1Kx3jrh44nrAW4jhUkGhZAOQrtEzCqaCL_u3YwtJEWDI/edit?gid=11850358#gid=11850358) from every episode of _Law &amp; Order_ (this goes through Season 25, Episode 12).</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>I calculated the time between the first scene card and the final scene card to determine the length of time elapsed over the course of the episode.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Separately, I cross-referenced my information using a <span class="co">[</span><span class="ot">spreadsheet I came across</span><span class="co">](https://www.thecomicboard.com/threads/law-order-timeline.14797/)</span> on The Comic Board discussion forum: A fan had used the scene cards as guideposts, but also looked at the outfits the characters were wearing from scene to scene to determine whether that scene took place the same day as the preceding one, as well as using dialogue clues.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analysis</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Here’s a histogram showing the distribution of the time elapsed in each episode. The average _Law &amp; Order_ episode takes place over the course of about **68 days**. How does that compare with reality? </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="al">![A timeline of cases in Law &amp; Order](https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,quality=80,format=auto,onerror=redirect/uploads/asset/file/71fef6bf-31d3-4e6a-89cd-b5f7cda2f799/law_and_order_chart1.png?t=1781644913)</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>According to a 2024 <span class="co">[</span><span class="ot">report</span><span class="co">](https://comptroller.nyc.gov/reports/ensuring-timely-trials/)</span> commissioned by the New York City Comptroller: “Since 2019, the average time to process a murder case has risen by 37%, by an average of 221 days, from just over nineteen months to **almost 27 months**.” 27 months = **821 days**. </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>So, justice in _Law &amp; Order_ land happens about 13 times as fast as it does in reality. If anything, this is an understimate of how quickly justice is served on the show vs. in real life, because the report measures the amount of time from the initial arrest to the resolution of the trial. An episode of L&amp;O, by contrast, typically begins when the crime is committed. So, if anything, _Law &amp; Order_ should take longer than it does in reality, because the police take time to investigate the crime and identify the suspect.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>I also made a Gantt chart to display the timeline of cases, to see cases that are effectively overlapping — e.g., detectives closing one case while in the midst of another. Here it is for L&amp;O season 1, organized by episode air date.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="al">![A Gantt chart of cases in Law &amp; Order season 1](https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,quality=80,format=auto,onerror=redirect/uploads/asset/file/e1b1b4bc-2f32-4d83-9237-444b6e742bbd/law_and_order_timeline.png?t=1781645146)</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Interestingly, the same chart for season 24 of _Law &amp; Order: Special Victims Unit_ shows cases that do not overlap at all and that take much less time than the ones in _Law &amp; Order_ season 1: an average of just **5.3 days**. Why is this the case? Sex crimes, I would imagine, take even longer to investigate and prosecute in real life than murder or other kinds of felonies, if they even make it to trial. It could be that the writers’ rooms for these shows have gotten more self-aware about the dates they put on the episode scene cards, and there is some desire to reduce overlapping dates within a season (though, in my opinion, having overlapping dates would be more true to reality, not less).</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="al">![A Gantt chart of cases in Law &amp; Order: SVU season 24](https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,quality=80,format=auto,onerror=redirect/uploads/asset/file/f5d49a57-181f-4b60-9883-dcbce7e245c0/svu_timeline.png?t=1784164305)</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>You can find more analyses as well as the code I used to make these plots in <span class="co">[</span><span class="ot">my newsletter post</span><span class="co">](https://wrongnumber.beehiiv.com/p/the-speed-of-justice-according-to-law-order)</span>!</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>In the fictional universe of _Law &amp; Order_, justice is served swiftly and effectively, more so than in the real-life statistics on the criminal justice system.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sidenotes</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>I am not a legal expert, and I could be off in my collection of the data, or my interpretation of the stats. If you have additional thoughts on this, please get in touch! You can email my newsletter at wrongnumbernewsletter @ gmail.com.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>And finally, this summer (after the airing of the podcast episode) I went to see Mariska Hargitay, aka SVU Captain Olivia Benson in <span class="co">[</span><span class="ot">Every Brilliant Thing</span><span class="co">](https://everybrilliantthing.com/)</span> on Broadway. I was lucky enough to catch her last show, which also featured her husband, Peter Hermann (aka the recurring defense attroney Trevor Langan). Sadly I did not share the reuslts of my analysis with them, but they were nice enough to sign my Playbill.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="al">![Every Brilliant Thing Playbill](playbill.png)</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
