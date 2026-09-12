@@ -2,7 +2,7 @@
 title: "The Speed of Justice, According to Law & Order"  
 author: "Christine Zhang"                              
 date: "2026-09-14"                               
-image: "law_and_order_timeline.png"                             
+image: "featured.png"                             
 categories: [r, analysis, ggplot2, fandom, data analysis] 
 ---
 
