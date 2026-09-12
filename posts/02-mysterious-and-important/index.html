@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,16 @@
 
 <title>The Work Is Mysterious and Important: Severance Data – Regression to the Mean Girls</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -73,10 +79,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -225,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Below is a word cloud of Seth Milchick’s most frequently used words of the past [<em>few</em>] quarter[<em>s</em>] alone. [<em>Lumon</em>] recommended that Mr.&nbsp;Milchick begin simplifying his language so as to achieve clearer comprehension from his subordinates and peers.</p>
 <p>Lumon claimed (as detailed above) that Milchick is using too many big words. <em>I don’t see evidence of this!</em></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mdr)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mdr)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wordcloud2)</span>
@@ -250,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">|&gt;</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wordcloud2</span>(<span class="at">backgroundColor =</span> <span class="st">"#030303"</span>,</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>             <span class="at">fontFamily =</span> <span class="st">"Noto Sans Mono"</span>,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="wordcloud2 html-widget html-fill-item" id="htmlwidget-2756f79f2ee279509ac0" style="width:100%;height:406px;"></div>
 <script type="application/json" data-for="htmlwidget-2756f79f2ee279509ac0">{"x":{"word":["mark","dylan","irving","helly","outie","time","cobel","innie","office","day","kier","lumon","scout","grow","huang","morning","feel","hey","burt","eagan","floor","mdr","refiners","severed","party","hope","seat","word","afraid","company","experience","happy","milchick","ready","remember","rest","stop","ahead","call","called","card","casey","childish","department","dieter","drummond","elevator","enjoy","evening","excuse","eyes","fire","forward","happened","hate","head","hollow","life","love","means","meantime","mind","night","return","special","start","stay","team","told","balloons","brother","care","check","choose","desk","doors","employ","employee","escort","favorite","folly","found","fourth","game","gonna","hair","happen","heard","helena","home","hours","leave","management","marshmallows","minute","minutes","ortbo","paintings","petey","quarter","question","read","refinement","send","sit","sound","table","tonight","trust","understand","waterfall","wife","woe","wonderful","wondering","yesterday"],"freq":[35,33,23,22,16,16,12,12,12,11,11,11,11,10,10,10,9,9,8,8,8,8,8,8,7,6,6,6,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],"fontFamily":"Noto Sans Mono","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":4.114285714285714,"backgroundColor":"#030303","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
@@ -258,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Hmm, I’m not seeing that many big words! Maybe we should remove proper names.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>transcripts <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>transcripts <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Mil"</span>, speaker)) <span class="sc">|&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
@@ -278,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">|&gt;</span></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wordcloud2</span>(<span class="at">backgroundColor =</span> <span class="st">"#030303"</span>,</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">fontFamily =</span> <span class="st">"Noto Sans Mono"</span>,</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="wordcloud2 html-widget html-fill-item" id="htmlwidget-b57d42ddb42e4e349fdd" style="width:100%;height:406px;"></div>
 <script type="application/json" data-for="htmlwidget-b57d42ddb42e4e349fdd">{"x":{"word":["outie","time","innie","office","day","grow","morning","feel","hey","floor","refiners","severed","party","hope","seat","word","afraid","company","experience","happy","ready","remember","rest","stop","ahead","call","called","card","childish","department","drummond","elevator","enjoy","evening","excuse","eyes","fire","forward","happened","hate","head","hollow","life","love","means","meantime","mind","night","return","special","start","stay","team","told","balloons","brother","care","check","choose","desk","doors","employ","employee","escort","favorite","folly","found","fourth","game","gonna","hair","happen","heard","helena","home","hours","leave","management","marshmallows","minute","minutes","ortbo","paintings","quarter","question","read","refinement","send","sit","sound","table","tonight","trust","understand","waterfall","wife","woe","wonderful","wondering","yesterday","agreed","apologize","appendix","appreciation","begin","behavior","betterment","block","board","break","bringing","brought","building","chapter","choice","circle","coffee","colleagues","completely","concerns","contingency","continue","count","dance","dark","departed","deserve","disclosure","dismissal","door","drink","duties","earth","empathy","eradicate","essence","excited","eye","fame","family","feelings","feels","fellow","fellowship","file","final","fine","focus","foot","forbids","forest","founder","funeral","funny","glasgow","goddamn","goodbye","grateful","gratitude","guys","hand","handbook","honor","hour","ill","imagine","immediately","inform","information","items","key","knowledge","late","lay","leader","learned","learning","macrodata","material","measure","meet","melon","milkshake","months","moved","music","natalie","occurred","one","otc","outies","overtime","path","people","period","permanent","personage","personal","policy","pool","pretty","privacy","progress","proper","protocol","provide","pull","pus","questions","reached","reaching","refiner","reforms","regular","remind","report","respect","response","retirement","round","rube","safeguard","sets","shambolic","shit","shortly","similar","single","smuggle","source","space","spoke","stairwell","stand","statement","step","steward","sudden","talk","tallest","tempers","thousand","throw","till","tomorrow","tough","transferred","transition","truth","violated","waffle","wait","waiting","walk","wanna","wellness","wintertide","wow","wrap","wrong","yeah"],"freq":[16,16,12,12,11,10,10,9,9,8,8,8,7,6,6,6,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],"fontFamily":"Noto Sans Mono","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":6.75,"backgroundColor":"#030303","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
@@ -291,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>syllable_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>syllable_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">replace_contraction</span>(dialogue),</span>
@@ -338,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
 <span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co">#girafe(ggobj = p)</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -354,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="common-words">Common words</h3>
 <p>Ok, maybe by “big” Lumon meant not that the words were multisyllabic but rather uncommon. We can use Fry’s 1000 word list (Fry (1997)) to help us see if Milchick uses uncommon words more frequently than the other characters. This list claims to contain words that make up 90% of all printed text, let’s see if Milchick is using more uncommon words than his counterparts.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>words_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>words_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">str_replace_all</span>(dialogue, <span class="st">"’"</span>, <span class="st">"'"</span>),</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">dialogue =</span> <span class="fu">replace_contraction</span>(dialogue),</span>
@@ -387,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="st">"Percentage of Common Words"</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="st">""</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Everyone else"</span>, <span class="st">"Milchick"</span>)) <span class="sc">+</span></span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_mdr</span>() <span class="sc">+</span> </span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -403,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="addendum">Addendum</h3>
 <p>Some folks want to see which words are specific to Milchick – instead of weighting by frequency like in our top word cloud, we could instead weight by the <code>tf-idf</code> (term frequency, inverse document frequency). This basically tells us <em>which</em> words are uniquely used by Milchick. I would argue this is <em>not</em> what Lumon claimed to do as they were trying to say he was using <em>too many</em> big words (which implies frequency), but in any case this is fun!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tf_idf <span class="ot">&lt;-</span> words_df <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tf_idf <span class="ot">&lt;-</span> words_df <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">case_when</span>(</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    word <span class="sc">==</span> <span class="st">"innie's"</span> <span class="sc">~</span> <span class="st">"innie"</span>,</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">.default =</span> word</span>
@@ -420,7 +426,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">wordcloud2</span>(tf_idf, </span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">backgroundColor =</span> <span class="st">"#030303"</span>,</span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">fontFamily =</span> <span class="st">"Noto Sans Mono"</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="fl">0.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="wordcloud2 html-widget html-fill-item" id="htmlwidget-fabafaaa4ca04f778403" style="width:100%;height:406px;"></div>
 <script type="application/json" data-for="htmlwidget-fabafaaa4ca04f778403">{"x":{"word":["childish","meantime","folly","fourth","marshmallows","agreed","appreciation","betterment","circle","concerns","continue","count","departed","disclosure","dismissal","duties","empathy","eradicate","essence","fame","fellow","foot","material","personage","policy","proper","pull","pus","reached","regular","respect","rube","safeguard","sets","shambolic","shortly","smuggle","statement","sudden","tallest","tough","transferred","transition","violated","waterfall","abandon","abdominal","absence","absorb","accessory","accompanied","ached","achieved","action","addressing","adjusting","advantage","aggressor","agog","aiding","allowing","almonds","altercation","ama","applause","approach","approve","arrive","assault","assure","attend","authorized","awaits","awoke","awoken","bathing","bedevil","bedroll","begged","behave","believed","bewailing","bistro","biting","bloat","brambles","bride","brooks","build","bump","calendar","calls","cameras","capacity","cart","catered","challenges","chaos's","checks","cheers","chips","choking","cited","claims","cleared","clutter","collegial","comfort","commence","communication","compensation","complicated","compliment","compliments","comprises","compunction","concerned","conditions","confident","consequences","consort","constitutes","consult","consulted","converse","copious","corrected","country","courtesy","cozies","curtailed","dealing","deduct","deemed","descend","designers","developed","devour","differences","disappointing","discarded","dissuade","distress","dizzy","driven","drowned","dusk","earnest","easily","elonga","emerged","emotionally","enamel","encountered","endearment","enriches","ensure","eradicating","eternal","eulogy","eustice","exhibition","explode","feasible","feculence","fertile","financial","fitting","fixation","floater","focusing","forbidden","formal","forthwith","fortunately","fortunes","foyer","fresh","friendships","frigid","gargling","gather","gaunt","genre","glass","global","graduate","grandeur","grief","grieve","grill","grotto","grounds","gullets","gunnel","handrail","handwriting","hanging","hankering","harder","hare","heal","heat","height","heinous","hills","holiest","hollow's","humbly","hymn","ideographic","incisors","independent","index","ingratitude","inquisitive","insisted","insubordination","intake","interactions","international","investigation","jailer","jurisdiction","kit","laid","lawrence","lead","length","lies","listener","location","luxury","malaysia","management's","manner","maraca","mates","meadows","meaningful","meats","miracle","moderation","monosyllabically","moss","motivator","mournful","mutiny","nanny","national","natural","nature's","nicely","nondisclosure","nonexistence","notified","nude","obvious","occasionally","official","orgs","orientation's","outhouse","overseas","owed","packing","paintball","pair","pal","paperwork","paraphrasing","partake","participation","penalty","perchance","performed","persons","phrase","players","ply","pond","popped","potential","preparations","prepped","primary","primed","processed","professional","progeny","protect","protected","public","punishments","punitive","purged","pursue","puzzling","queries","quietly","reacclimate","reaction","readying","recital","reeks","reflected","refreshments","regularly","relations","relegated","remonstration","remove","rendition","renovation","requires","rescind","restful","returning","revoke","reward","rhyming","rivaled","roil","rustling","rwanda","sacred","sadist","salt","sanctity","sap","sardines","satiate","scalp","screen","selection","sentient","settle","severely","sharp","shattered","shoulder","shuttle","signage","silently","site","situated","social","socket","sorts","spaces","spin","stations","stocked","strapping","stray","stressed","subordinate","suffered","sugar","suite","sunrise","superiors","supervisory","support","svalbard","tales","tall","tastier","temper","tents","termed","terminate","terrific","theremin","thickened","thickets","thieving","thoughtfully","throuple","tickling","timer","tissue","torches","tore","torrent","toss","totem","tri","tucked","tumult","tuned","unauthorized","unsolicited","unveil","unwashed","urge","usual","valediction","valid","vibe","vibration","victim","viscerally","walking","wantonness","washroom","waterfall's","watermelon","weak","weighing","whimper","whore","wire","woodland","workdays","workspace","wounded","wrath","wrathfully","yearning","dylan","mark","irving","helly","time","ms","outie","innie","office","cobel","day","scout","grow","huang","lumon","morning","feel","hey","eagan","floor","kier","miss","refiners","severed","mdr","party","burt","hope","seat","word","afraid","company","experience","happy","milchick","ready","remember","rest","stop","ahead","call","called","card","casey","department","dieter","drummond","elevator","enjoy","evening","excuse","eyes","fire","forward","happened","hate","head","life","love","means","mind","night","return","special","start","stay","team","told","balloons","care","check","choose","desk","doors","employ","employee","escort","favorite","found","game","gonna","hair","happen","heard","helena","helly's","hollow","home","hours","kier's","leave","minute","minutes","ortbo","paintings","quarter","question","read","refinement","send","sit","sound","table","tonight","trust","understand","wonderful","wondering","yesterday","apologize","appendix","begin","behavior","block","board","break","bringing","brother","brought","building","burt's","chapter","choice","coffee","colleagues","completely","contingency","dance","dark","deserve","door","drink","earth","excited","eye","family","feelings","feels","fellowship","file","final","fine","focus","forbids","forest","funeral","funny","glasgow","goddamn","goodbye","grateful","gratitude","guys","hand","handbook","harmony","honor","hour","ill","imagine","immediately","inform","information","items","key","knowledge","late","lay","leader","learned","learning","macrodata","management","mark's","measure","meet","melon","milkshake","months","moved","music","natalie","occurred","one's","outie's","outies","overtime","path","people","period","permanent","personal","petey","pool","pretty","privacy","progress","protocol","provide","questions","reaching","refiner","reforms","remind","report","response","retirement","round","seth","shit","similar","single","source","space","spoke","stairwell","stand","step","steward","talk","tempers","thousand","throw","till","tomorrow","truth","waffle","wait","waiting","walk","wanna","wellness","wife","wintertide","woe's","wow","wrap","wrong","yeah","accept","access","actions","affections","ago","alert","allergic","amazing","animal","announcements","answers","apologies","appreciated","art","assume","ate","attendance","avoid","awaken","awesome","bailiff","bar","based","bear","beauty","bed","bereavement","bet","black","bleeding","blessings","blue","blueprints","bomb","branch","brave","breakfast","breath","briefly","brings","broke","brother's","bud","busy","buy","calling","canceled","car","careful","cares","carol","carry","catch","caught","cave","center","challenge","chance","chat","cheer","chemistry","chief","chose","chosen","close","closet","cobel's","code","colloquially","coming","commandeered","conducting","congratulations","conscious","contact","core","courage","cozy","cries","cruise","current","cut","days","deal","dear","death","deaths","decision","deserves","desire","destroyed","detectors","devon","dictated","died","difficult","directly","disappointed","discuss","disguise","distracting","doctor","double","dozing","dr","drew","drown","duty","earned","eat","effective","egg","eggs","elevators","elongated","em","emergency","employer","employment","environment","equipped","erotic","ether","events","everything's","evoke","exact","excellent","executive","existed","expected","experiences","failed","fair","fall","father","fault","feeling","files","fill","fix","follow","food","footage","forever","form","founder","founder's","friend","friends","front","fruit","fucked","fun","gala","gemma","gentlemen","george","ghost","gift","graner","grasp","greatly","gretchen","gråkappan","guess","hale","half","hall","hands","hard","heading","heads","hearing","helped","hip","hire","history","hold","hoped","house","idea","including","industries","innies","installed","intended","intention","interaction","interview","involved","irv","irving's","issue","jesus","job","joke","jokes","knowing","ladies","laugh","learn","leash","left","level","lift","light","line","listen","literally","locked","looked","lumon's","macrodats","makes","manage","manager","marks","mde","mdr's","mention","mercy","messages","microphones","milk","mill","mine","missed","mistake","moments","monday","mouth","murder","names","nice","note","occurrence","officially","opinion","opportunity","option","otc","otc's","outburst","outdoor","outstanding","paid","pain","painful","parents","passed","passes","past","paupers","paycheck","performance","perk","perks","perpetuity","person","petey's","photo","physical","pick","piece","planet","plans","play","pleasure","position","pre","prefer","principle","principles","print","priority","privileges","process","productive","promise","provided","quota","raised","rare","raw","reach","recall","received","recent","refining","reform","refrain","regret","relax","remain","remotely","reporting","request","requested","research","resentment","responsibility","resume","retiring","retreat","review","ring","root","run","running","sacrifice","sad","sadly","safely","safety","save","scissor","security","seek","sense","sensitive","set","severance","severing","shame","share","shown","shut","siena","sir","sister's","skin","skull","smiles","soil","solace","someday","song","sounded","speech","spend","spending","spent","spirit","standard","started","status","stead","story","straight","stuff","stupidity","successfully","suddenly","supply","suppose","supposed","surface","sweet","switch","sympathize","takes","taking","talking","tamed","teasing","tech","telling","text","thankfully","thinking","thirty","threatened","thrilled","tightening","twin","unsevered","unwell","upstairs","valuable","video","violent","visitation","voyage","wake","waking","walked","watch","water","weeks","wife's","win","woe","woke","woman","words","workers","world","worry","writing"],"freq":[15.7,15.7,11.8,11.8,11.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,7.8,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,3.9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"fontFamily":"Noto Sans Mono","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":2.292993630573248,"backgroundColor":"#030303","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
@@ -431,7 +437,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="zipf-frequency">Zipf Frequency</h3>
 <p>Our refiner of the quarter, <a href="https://github.com/LeopoldTal">Leopold</a>, pointed out that we could use the <code>Zipf frequency</code> of the words to get a more granular look at whether Milchick is using common language (compared to our Fry approach which just dichotomized as common/not common). As the title of my main blog, <a href="https://livefreeordichotomize.com">livefreeordichotomize</a>, would suggest, I am ALWAYS here to avoid dichotomizing. The <code>Zipf frequency</code> is the log (base 10) of the number of times a word appears per billion words (i.e., a word with <code>Zipf frequency</code> of 3 appears once per million words). Ok, let’s try that! We’ve calculated this for our main guy, Milchick, along with some other characters to compare him to and plotted the density. The dashed lines represent the medians.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">use_virtualenv</span>(<span class="st">"rttmg"</span>, <span class="at">required =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>words_df <span class="ot">&lt;-</span> transcripts <span class="sc">|&gt;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -450,17 +456,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, dialogue) <span class="sc">|&gt;</span></span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">gsub</span>(<span class="st">"'s"</span>, <span class="st">""</span>, word))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">gsub</span>(<span class="st">"'s"</span>, <span class="st">""</span>, word))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordfreq <span class="im">import</span> zipf_frequency</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordfreq <span class="im">import</span> zipf_frequency</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> r.words_df</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>zipf <span class="op">=</span> df[<span class="st">'word'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> word: zipf_frequency(word, <span class="st">'en'</span>))</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>r.zipf <span class="op">=</span> zipf.tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>r.zipf <span class="op">=</span> zipf.tolist()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>words_df<span class="sc">$</span>zipf <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(zipf)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>words_df<span class="sc">$</span>zipf <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(zipf)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>words_df <span class="ot">&lt;-</span> words_df <span class="sc">|&gt;</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(zipf <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
@@ -484,7 +490,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_mdr</span>() <span class="sc">+</span> </span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -553,13 +559,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -593,16 +600,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
@@ -952,7 +959,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The Work Is Mysterious and Important: Severance Data"</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Lucy D'Agostino McGowan"</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2026-09-07"</span></span>
@@ -1311,7 +1318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-375"><a href="#cb9-375" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-376"><a href="#cb9-376" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-377"><a href="#cb9-377" aria-hidden="true" tabindex="-1"></a></span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
