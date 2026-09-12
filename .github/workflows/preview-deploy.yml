@@ -1,0 +1,63 @@
+name: Preview Deploy
+
+# Runs after Preview (preview.yml) finishes, in the context of the base
+# repo rather than the PR's own branch — this is what makes it safe to
+# grant write access even for PRs from forks: it never checks out or
+# executes the fork's code, only the already-rendered site artifact.
+on:
+  workflow_run:
+    workflows: [Preview]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  deploy:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: preview-deploy-${{ github.event.workflow_run.id }}
+    steps:
+      - name: Download preview artifact
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.payload.workflow_run.id,
+            });
+            const match = artifacts.data.artifacts.find(a => a.name === "preview-site");
+            if (!match) {
+              core.setFailed("No preview-site artifact found on this run");
+              return;
+            }
+            const download = await github.rest.actions.downloadArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: match.id,
+              archive_format: "zip",
+            });
+            const fs = require("fs");
+            fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/preview-site.zip`, Buffer.from(download.data));
+
+      - name: Unpack artifact
+        run: unzip -o preview-site.zip -d preview
+
+      - name: Read PR metadata
+        id: pr
+        run: |
+          echo "number=$(cat preview/pr-meta/pr-number.txt)" >> "$GITHUB_OUTPUT"
+          echo "action=$(cat preview/pr-meta/pr-action.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Deploy or remove preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: preview/_site
+          pr-number: ${{ steps.pr.outputs.number }}
+          action: ${{ steps.pr.outputs.action == 'closed' && 'remove' || 'deploy' }}
