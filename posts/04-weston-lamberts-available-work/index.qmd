@@ -1,0 +1,99 @@
+---
+title: "The Art of Web Scraping Art"  
+author: "Hadley Wickham"                              
+date: "2026-09-21"                               
+image: "featured.png"                             
+categories: [art, r, weston lambert, api]
+---
+
+
+## Context, Please
+
+There is an artist I follow on TikTok, [Weston Lambert](https://www.westonlambert.com/), and I really liked his work. He has hundreds of thousands of followers on TikTok and Instagram, so as soon as he drops anything, it gets sold immediately. I got sick of seeing his post on social media, going to the website and seeing it was already sold out, so I decided I would write a scraper that would scrape his website every fifteen minutes and then message me if anything went on sale. And that eventually worked. That is how I got this piece.
+
+![](hadley-art.gif)
+
+
+## Behind the Scenes
+
+This runs in R with [rvest](https://rvest.tidyverse.org/) on a GitHub Action every three hours, keeping a CSV of past listings in the [repo](https://github.com/hadley/available-work) so it could spot unsold products it hasn't seen before and get a push notification to my phone using [ntfy.sh](https://ntfy.sh/).
+
+## Analysis
+
+Weston Lambert's shop is a single page, so we just need to read that html. A helper `find_products()` grabs every link inside the product list.
+
+```{r}
+#| eval: false
+#| code-fold: false
+#| message: false
+#| warning: false
+library(rvest)
+
+find_products <- function(html) {
+  html |>
+    html_element("#productList") |>
+    html_elements("a")
+}
+
+url <- "http://www.westonlambert.com/available-work"
+html <- read_html(url)
+products <- find_products(html)
+```
+
+
+Then the helper function `extract_products()` turns those links into a data frame. The `sold_out` column tests for a `.sold-out` element. 
+
+```{r}
+#| eval: false
+#| code-fold: false
+#| message: false
+#| warning: false
+extract_products <- function(products) {
+  data.frame(
+    title = products |> html_element(".product-title") |> html_text(),
+    price = products |>
+      html_element(".product-price") |>
+      html_text() |>
+      gsub("[$,]", "", x = _) |>
+      as.numeric(),
+    sold_out = !(products |>
+      html_element(".sold-out") |>
+      html_text() |>
+      is.na()),
+    link = html_attr(products, "href")
+  )
+}
+
+cur <- extract_products(products)
+```
+
+Since I want to know only which pieces were *newly* for sale, the script stores the products in a CSV and then checks against this to only show me the new pieces.
+
+```{r}
+#| eval: false
+#| code-fold: false
+#| message: false
+#| warning: false
+products_path <- data_path("products.csv")
+old <- read.csv(products_path)
+write.csv(cur, products_path, row.names = FALSE)
+
+new <- subset(cur, !sold_out & !link %in% old$link)
+```
+
+The push notification goes through [ntfy.sh](https://ntfy.sh/), which needs an app and a topic name (you pick a topic name from the ntfy service and would paste that in the topic parameter). 
+
+```{r}
+#| eval: false
+#| code-fold: false
+#| message: false
+#| warning: false
+ntfy::ntfy_send(
+  message = paste0(nrow(new), " products available at ", url),
+  title = "Update at Weston Lambert",
+  topic = "INSERT NTFY TOPIC HERE",
+  click = url
+)
+```
+
+*The code behind this post lives in [hadley/available-work](https://github.com/hadley/available-work), which scrapes [Weston Lambert's](http://www.westonlambert.com/available-work) available work page with [rvest](https://rvest.tidyverse.org/) and sends notifications through [ntfy.sh](https://ntfy.sh/).*
