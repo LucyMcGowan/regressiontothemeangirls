@@ -1,6 +1,9 @@
 ---
 title: "Romance by the Numbers: First Sparks Across Tropes"
-author: "Sarah Lotspeich"
+author: 
+  - name: "Sarah Lotspeich"
+    url: https://sarahlotspeich.com
+    affiliation: Wake Forest University
 date: "2026-08-31"
 categories: [books, romance, analysis]
 image: "featured.png"

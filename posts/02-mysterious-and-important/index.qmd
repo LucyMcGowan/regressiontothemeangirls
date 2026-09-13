@@ -1,6 +1,9 @@
 ---
 title: "The Work Is Mysterious and Important: Severance Data"
-author: "Lucy D'Agostino McGowan"
+author: 
+  - name: "Lucy D'Agostino McGowan"
+    url: https://lucymcgowan.com
+    affiliation: Wake Forest University
 date: "2026-09-07"
 categories: [severance, r, analysis, word cloud, nlp, refiner]
 image: "featured.png"

@@ -1,6 +1,10 @@
 ---
 title: "The Speed of Justice, According to Law & Order"  
-author: "Christine Zhang"                              
+author: 
+  - name: "Christine Zhang"  
+    url: https://christineyzhang.com/ 
+    affiliation: The New York Times        
+    affiliation-url: https://www.nytimes.com/by/christine-zhang                    
 date: "2026-09-14"                               
 image: "featured.png"                             
 categories: [r, analysis, ggplot2, fandom, data analysis] 

@@ -43,7 +43,7 @@ The block between the `---` lines at the top.
 | Field | What goes in it |
 |-------|-----------------|
 | `title` | Post title. |
-| `author` | Your name, as you want it credited. |
+| `author` | Your name, url, and affiliation, as you want it credited. |
 | `date` | Publish date, `YYYY-MM-DD`. |
 | `image` | `featured.png` — the thumbnail (see step 5). |
 | `categories` | Lower-case tags in `[brackets]`. Reuse existing tags where you can. |
