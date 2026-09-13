@@ -20,6 +20,12 @@ jobs:
     concurrency:
       group: preview-deploy-${{ github.event.workflow_run.id }}
     steps:
+      # Must run before downloading/unpacking the artifact: actions/checkout
+      # defaults to clean:true, which runs `git clean -ffdx` and wipes any
+      # untracked files already in the workspace.
+      - name: Check out repository
+        uses: actions/checkout@v4
+
       - name: Download preview artifact
         uses: actions/github-script@v7
         with:
@@ -52,12 +58,31 @@ jobs:
           echo "number=$(cat preview/pr-meta/pr-number.txt)" >> "$GITHUB_OUTPUT"
           echo "action=$(cat preview/pr-meta/pr-action.txt)" >> "$GITHUB_OUTPUT"
 
-      - name: Check out repository
-        uses: actions/checkout@v4
-
+      # comment: false — pr-preview-action's built-in PR comment can't find a
+      # PR number under the workflow_run event, so it silently no-ops. We
+      # post our own comment below instead, passing the number explicitly.
       - name: Deploy or remove preview
+        id: preview
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: preview/_site
           pr-number: ${{ steps.pr.outputs.number }}
           action: ${{ steps.pr.outputs.action == 'closed' && 'remove' || 'deploy' }}
+          comment: false
+
+      - name: Comment preview link on PR
+        if: steps.pr.outputs.action != 'closed'
+        uses: marocchino/sticky-pull-request-comment@67d0dec7b07ed060a405f9b2a64b8ab319fdd7db # v2.9.2
+        with:
+          number: ${{ steps.pr.outputs.number }}
+          header: pr-preview
+          message: |
+            📖 Preview deployed: ${{ steps.preview.outputs.preview-url }}
+
+      - name: Remove preview comment
+        if: steps.pr.outputs.action == 'closed'
+        uses: marocchino/sticky-pull-request-comment@67d0dec7b07ed060a405f9b2a64b8ab319fdd7db # v2.9.2
+        with:
+          number: ${{ steps.pr.outputs.number }}
+          header: pr-preview
+          delete: true

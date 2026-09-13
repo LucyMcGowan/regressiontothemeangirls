@@ -47,7 +47,7 @@ The block between the `---` lines at the top.
 | `date` | Publish date, `YYYY-MM-DD`. |
 | `image` | `featured.png` — the thumbnail (see step 5). |
 | `categories` | Lower-case tags in `[brackets]`. Reuse existing tags where you can. |
-| `draft` | Leave it as `true`. It keeps your post off the home page while you work; we will remove it to publish. |
+
 
 ## 4. Write the post
 
@@ -74,7 +74,7 @@ the editor (from the Quarto extension), or run `quarto preview` in the terminal.
 
 ## 5. Add a featured image
 
-Put one image named **`featured.png`** in your post folder. It will be the thumbnail on the home page. Any other images you reference can also go in the same folder.
+Put one image named **`featured.png`** in your post folder. It will be the thumbnail on the home page. Any other images you reference can also go in the same folder. You can add this to your folder by right clicking on the folder name and then clicking "Upload...".
 
 ## 6. Render, then commit everything
 

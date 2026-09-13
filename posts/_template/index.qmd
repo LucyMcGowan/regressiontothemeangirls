@@ -4,7 +4,6 @@ author: "Your Name"
 date: "2026-01-31"                               
 image: "featured.png"                             
 categories: [severance, r, analysis] # lower-case tags (reuse existing ones where you can)
-draft: true # leave this for now
 ---
 
 
