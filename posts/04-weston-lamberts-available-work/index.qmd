@@ -1,6 +1,10 @@
 ---
 title: "The Art of Web Scraping Art"  
-author: "Hadley Wickham"                              
+author: 
+  - name: "Hadley Wickham"            
+    url: https://hadley.nz/
+    affiliation: Posit
+    affiliation-url: https://opensource.posit.co/people/hadley-wickham/                  
 date: "2026-09-21"                               
 image: "featured.png"                             
 categories: [art, r, weston lambert, api]
