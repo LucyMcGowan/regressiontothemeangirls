@@ -1,6 +1,10 @@
 ---
 title: "Your Post Title"  
-author: "Your Name"                              
+author: 
+  - name: "Your Name"   
+    url: "Your website"
+    affiliation: "Your affiliation"
+    affiliation-url: "If you want, an affiliation url, if not, you can delete this line"                           
 date: "2026-01-31"                               
 image: "featured.png"                             
 categories: [severance, r, analysis] # lower-case tags (reuse existing ones where you can)
