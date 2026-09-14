@@ -10,6 +10,8 @@ image: "featured.png"
 categories: [r, analysis, ggplot2, fandom, data analysis] 
 ---
 
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/1TOfs1eCOvhKVgqfLXj4h9?utm_source=generator&si=ea7915fdc35d4d95" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
 ## Context, Please
 
 [_Law & Order_](https://en.wikipedia.org/wiki/Law_%26_Order) is a TV show that has been on the air since 1990. (It originally aired from 1990 to 2010, then was revived in 2022.) Its basic formula is summarized neatly by the [opening narration](https://www.youtube.com/watch?v=lMalvNeJFLk), which is followed by a famous DUN-DUN sound: “In the criminal justice system, the people are represented by two separate, yet equally important, groups: the police, who investigate crime; and the district attorneys, who prosecute the offenders. These are their stories.”
