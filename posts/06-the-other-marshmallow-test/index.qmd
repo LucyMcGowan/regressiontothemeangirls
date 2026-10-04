@@ -4,7 +4,7 @@ author:
   - name: "Mattan S. Ben-Shachar"
     url: https://home.msbstats.info
     affiliation: Ben-Gurion University and Tel-Aviv University
-date: "2026-10-12"
+date: "2026-10-05"
 image: "featured.png"
 categories: [marshmallows, r, bayesian modeling]
 ---
