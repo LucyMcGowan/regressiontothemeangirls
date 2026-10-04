@@ -1,28 +1,28 @@
 [
   {
-    "objectID": "posts/07-the-other-marshmallow-test/index.html",
-    "href": "posts/07-the-other-marshmallow-test/index.html",
+    "objectID": "posts/06-the-other-marshmallow-test/index.html",
+    "href": "posts/06-the-other-marshmallow-test/index.html",
     "title": "The Marshmallow Test (Not That One)",
     "section": "",
     "text": "No debate in Israel is quite as heated as the one over the differences between white and pink marshmallows.\nWhile some argue that white marshmallows taste the best, others sneer and laugh at that notion – of course the pink marshmallows are far superior! And yet, there is a third group, equally mocked by the white- and pink-lovers: those that claim no difference between the two colors at all!\nSounds like an empirical question to me! Let’s go answer it!\n\nIs there a perceptible difference between white and pink marshmallows?"
   },
   {
-    "objectID": "posts/07-the-other-marshmallow-test/index.html#context-please",
-    "href": "posts/07-the-other-marshmallow-test/index.html#context-please",
+    "objectID": "posts/06-the-other-marshmallow-test/index.html#context-please",
+    "href": "posts/06-the-other-marshmallow-test/index.html#context-please",
     "title": "The Marshmallow Test (Not That One)",
     "section": "",
     "text": "No debate in Israel is quite as heated as the one over the differences between white and pink marshmallows.\nWhile some argue that white marshmallows taste the best, others sneer and laugh at that notion – of course the pink marshmallows are far superior! And yet, there is a third group, equally mocked by the white- and pink-lovers: those that claim no difference between the two colors at all!\nSounds like an empirical question to me! Let’s go answer it!\n\nIs there a perceptible difference between white and pink marshmallows?"
   },
   {
-    "objectID": "posts/07-the-other-marshmallow-test/index.html#behind-the-scenes",
-    "href": "posts/07-the-other-marshmallow-test/index.html#behind-the-scenes",
+    "objectID": "posts/06-the-other-marshmallow-test/index.html#behind-the-scenes",
+    "href": "posts/06-the-other-marshmallow-test/index.html#behind-the-scenes",
     "title": "The Marshmallow Test (Not That One)",
     "section": "Behind the Scenes",
     "text": "Behind the Scenes\n24 unassuming undergrad students in the Statistics and Data Analysis program at Ben-Gurion University and graduate students from the Psychology Department at Ben-Gurion University and the Psychology School at Tel Aviv University volunteered to eat some marshmallows. (Two additional data points were collected from me and my wife, Naama.)\nThe experiment had two parts: the triangle test and the identification test – a modern take on the lady tasting tea experiment.\nIn the triangle test, 3 marshmallows were placed in front of blindfolded participants: two were of the same color, and one was of a different color, with the order and colors randomly determined. Students were instructed to try and guess which was the odd-one-out. They were free to eat, taste, nibble, smell and do whatever they wanted.\nAfter completing the triangle test, they were handed a fourth marshmallow (still blindfolded) for the identification test. The color of this marshmallow was also randomly determined."
   },
   {
-    "objectID": "posts/07-the-other-marshmallow-test/index.html#analysis",
-    "href": "posts/07-the-other-marshmallow-test/index.html#analysis",
+    "objectID": "posts/06-the-other-marshmallow-test/index.html#analysis",
+    "href": "posts/06-the-other-marshmallow-test/index.html#analysis",
     "title": "The Marshmallow Test (Not That One)",
     "section": "Analysis",
     "text": "Analysis\nThe analysis uses the amazing brms package, the superb marginaleffects package for post-estimation processing, and the glorious ggdist for visualizing posterior distributions and uncertainty.\n\nThe Triangle Test\nFor the triangle test, a simple Bayesian logistic regression analysis was used to predict the probability of correctly identifying the odd-one-out. If there is a noticeable difference, we would expect this probability to be higher than chance - in this case 1/3. The color of the odd-one-out was also included to explore the possibility that it is easier/harder to detect an odd pink marshmallow than an odd white marshmallow.\nSo, Can people correctly identify the odd-colored marshmallow in a blind taste test?\nIt seems like people can - performing above chance (1/3), with a 90% HDI [0.36, 0.65], pd=97.35%! However, they seem to be better at doing this when the odd one out is pink than when it’s white…\n\n\n\nThe Identification Test\nAn additional Bayesian binomial model with a probit link was used, predicting participants’ responses from the actual color of the marshmallow. It can be shown that such a model can be used to estimate the Signal Detection Theory parameters, with the slope for the indicator variable being equal to \\(d'\\) and the intercept (\\(\\times -1\\)) being equal to the criterion \\(c\\).\nSo can people reliably identify the pink marshmallow from the white marshmallow?\nUsing Signal Detection Theory (SDT), discriminability is captured by d-prime, and is conceptualized as the distance of the distribution of perceptual evidence for the pink marshmallow (Signal+Noise) from the distribution of perceptual evidence for the white marshmallow (Noise fixed at \\(N(0, 1)\\)). Here there was an 82.33% posterior probability that discriminability is greater than 0, but there was also a posterior probability of 27.5% that discriminability is less than 0.15… So pretty inconclusive.\nBut a true Bayesian embraces uncertainty!\n\n\n\nAddendum\nFollowing the recording of the episode, I received an official response from a food scientist on behalf of the marshmallow company:\n\nThere are no differences in the ingredients besides the colors, and the pink marshmallow contains strawberry extract.\n\n\nThe data and code behind this post can be found here."
@@ -81,7 +81,7 @@
     "href": "index.html",
     "title": "Regression to the Mean Girls",
     "section": "",
-    "text": "The Marshmallow Test (Not That One)\n\n\n\n\n\n\n\n\nOct 12, 2026\n\n\nMattan S. Ben-Shachar\n\n\n\n\n\n\n\n\n\n\n\n\nElection Data Web Scraping\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nEmily Riederer\n\n\n\n\n\n\n\n\n\n\n\n\nThe Art of Web Scraping Art\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nHadley Wickham\n\n\n\n\n\n\n\n\n\n\n\n\nThe Speed of Justice, According to Law & Order\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nChristine Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Work Is Mysterious and Important: Severance Data\n\n\n\n\n\n\n\n\nSep 7, 2026\n\n\nLucy D’Agostino McGowan\n\n\n\n\n\n\n\n\n\n\n\n\nRomance by the Numbers: First Sparks Across Tropes\n\n\n\n\n\n\n\n\nAug 31, 2026\n\n\nSarah Lotspeich\n\n\n\n\n\nNo matching items"
+    "text": "The Marshmallow Test (Not That One)\n\n\n\n\n\n\n\n\nOct 5, 2026\n\n\nMattan S. Ben-Shachar\n\n\n\n\n\n\n\n\n\n\n\n\nElection Data Web Scraping\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nEmily Riederer\n\n\n\n\n\n\n\n\n\n\n\n\nThe Art of Web Scraping Art\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nHadley Wickham\n\n\n\n\n\n\n\n\n\n\n\n\nThe Speed of Justice, According to Law & Order\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nChristine Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Work Is Mysterious and Important: Severance Data\n\n\n\n\n\n\n\n\nSep 7, 2026\n\n\nLucy D’Agostino McGowan\n\n\n\n\n\n\n\n\n\n\n\n\nRomance by the Numbers: First Sparks Across Tropes\n\n\n\n\n\n\n\n\nAug 31, 2026\n\n\nSarah Lotspeich\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
