@@ -1,0 +1,41 @@
+---
+title: "Every Man's Causal Inference"
+author:
+  - name: "Roger Peng"
+    url: 
+    affiliation: University of Texas at Austin
+date: ""
+image: "featured.png"
+categories: [causal inference, ads, leanpub, business]
+---
+
+## Context, Please
+
+<!-- 09:01 -->
+A little over ten years ago, I and two colleagues, Jeff Leek and Brian Caffo, developed this massive open online course (MOOC) on data science. It was one of the first ones and it was hugely popular, to our surprise. At some point, I think it was Brian who said we should write a textbook for each of these classes, so we did a crash program of writing textbooks for each of the courses.
+
+<!-- 09:42 -->
+Then it came down to how do we distribute the books? We found a self-publishing platform called Leanpub and we put it on there. One of the interesting things about Leanpup was that it allowed people to set their own price. You could set it between zero and nine hundred and ninety-nine dollars or something like that. We had a suggested price, and most people, unsurprisingly, set it to zero, but some people paid.
+
+## Behind the Scenes
+
+<!-- 10:39 -->
+The publisher platform gives you data on all of your sales. You can click a button and you get this CSV file of every sale that occurs.
+
+## Analysis
+
+### The pre-post
+
+
+<!-- 10:51 -->
+We had so many people enrolled in this MOOC, and it was a synchronous program at the time, so everyone enrolled the first of the month. We send this email out on the second of the month, and the sales just skyrocketed on the third day of the month. It didn't originally occur to us that because there are a hundred thousand people enrolled in this class, even if ten percent of them decided to buy the book, it was the most number of sales that we've ever had in our entire lives. Now okay, most of them were for zero dollars. It wasn't like everyone was paying money. But that was my lesson number one in causal inference, a pre-post test.
+
+### The ten percent law
+
+<!-- 19:04 -->
+It was interesting to see who paid and who didn't. The distribution is bimodal. There is one mode at zero, and then at the suggested price, and then a couple of blips a little bit higher. And it seemed across the board, of all the books that we had available, ten percent seemed pretty universal, which I think is interesting. Granted, across the courses, the people are the same for the most part. But I had a podcast, and we had a Patreon and based on the rough numbers that we got from the podcast provider, it also was around ten percent of people who paid for the Patreon. So anyway, ten percent. That's the universal law.
+
+## Conclusions
+
+<!-- 35:31 -->
+I think side projects in general, especially in academia, are good just to keep yourself busy. In academia people often talk about being innovative. There's a lot of talk of innovation, but to me, that's the nature of what all these side projects are. Some of them turn into something and it's like, that person's so innovative. Well, yeah, but up until a minute ago, they were just wasting time. That's why side projects are important, because you're wasting time up until the point where it's ingenious.
