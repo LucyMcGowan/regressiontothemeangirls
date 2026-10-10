@@ -11,9 +11,6 @@ categories: [causal inference, ads, leanpub, business]
 
 ## Context, Please
 
-<!-- 07:31 -->
-I think there's a couple ways that I can present this side quest. One is more of a generalized career side quest to become a businessman. That's the high level way to talk about it, and the detailed, on the ground level way to talk about it is my exploration of Twitter and Facebook ads, and trying to do your every man's causal inference, essentially.
-
 <!-- 09:01 -->
 A little over ten years ago, I and two colleagues, Jeff Leek and Brian Caffo, developed this massive open online course (MOOC) on data science. It was one of the first ones and it was hugely popular, to our surprise. At some point, I think it was Brian who said we should write a textbook for each of these classes, so we did a crash program of writing textbooks for each of the courses.
 
@@ -27,7 +24,7 @@ The publisher platform gives you data on all of your sales. You can click a butt
 
 ## Analysis
 
-### Lesson one: the pre-post
+### The pre-post
 
 
 <!-- 10:51 -->
@@ -36,14 +33,7 @@ We had so many people enrolled in this MOOC, and it was a synchronous program at
 ### The ten percent law
 
 <!-- 19:04 -->
-It was interesting to see who paid and who didn't.
-
-<!-- 21:09 -->
-The distribution is bimodal. There is one mode at zero, and then at the suggested price, and then a couple of blips a little bit higher. And it seemed across the board, of all the books that we had available, ten percent seemed pretty universal, which I think is interesting. Granted, across the courses, the people are the same for the most part. But I had a podcast, and we had a Patreon and based on the rough numbers that we got from the podcast provider, it also was around ten percent of people who paid for the Patreon. So anyway, ten percent. That's the universal law.
-
-
-<!-- 26:21 -->
-This is one of those situations where everyone assumes that you're either gonna succeed or fail, but the modal experience was really just, well, I'm not really sure what happened. That's actually what real life is like, I think. Everyone assumes you're gonna have perfect information at the end of the day. But I walked away with more uncertainty than less.
+It was interesting to see who paid and who didn't. The distribution is bimodal. There is one mode at zero, and then at the suggested price, and then a couple of blips a little bit higher. And it seemed across the board, of all the books that we had available, ten percent seemed pretty universal, which I think is interesting. Granted, across the courses, the people are the same for the most part. But I had a podcast, and we had a Patreon and based on the rough numbers that we got from the podcast provider, it also was around ten percent of people who paid for the Patreon. So anyway, ten percent. That's the universal law.
 
 ## Conclusions
 
