@@ -10,6 +10,7 @@ categories: [love island, r, mixed effects models]
 
 ## Context, Please
 
+
 ### What is Love Island?
 
 Love Island is a  television show that started in the UK and now also has versions in the US and in Malta. Across all versions of the show, the basic premise is that 10-12 extremely hot people (5-6 men and 5-6 women) get put into a villa, where their goal is to form couples. Throughout each season, they go through various challenges and games, and then every week or so, the producers force them to “recouple” and dump some people from the villa. As people leave the villa, more hot people are brought in to mix up the existing couples, who are referred to as “bombshells”. At the end of the season, which lasts for 6-8 weeks, the public votes one of the lasting couples as the winner.
