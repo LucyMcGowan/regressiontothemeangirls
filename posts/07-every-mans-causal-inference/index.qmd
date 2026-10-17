@@ -4,7 +4,7 @@ author:
   - name: "Roger Peng"
     url: 
     affiliation: University of Texas at Austin
-date: ""
+date: "2026-10-12"                               
 image: "IMG_3276.jpeg"
 categories: [causal inference, ads, leanpub, business]
 ---
