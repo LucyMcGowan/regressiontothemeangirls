@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "posts/07-every-mans-causal-inference/index.html",
-    "href": "posts/07-every-mans-causal-inference/index.html",
-    "title": "Every Man’s Causal Inference",
-    "section": "",
-    "text": "A little over ten years ago, I and two colleagues, Jeff Leek and Brian Caffo, developed this massive open online course (MOOC) on data science. It was one of the first ones and it was hugely popular, to our surprise. At some point, I think it was Brian who said we should write a textbook for each of these classes, so we did a crash program of writing textbooks for each of the courses.\n\nThen it came down to how do we distribute the books? We found a self-publishing platform called Leanpub and we put it on there. One of the interesting things about Leanpup was that it allowed people to set their own price. You could set it between zero and nine hundred and ninety-nine dollars or something like that. We had a suggested price, and most people, unsurprisingly, set it to zero, but some people paid."
-  },
-  {
     "objectID": "posts/07-every-mans-causal-inference/index.html#context-please",
     "href": "posts/07-every-mans-causal-inference/index.html#context-please",
     "title": "Every Man’s Causal Inference",
-    "section": "",
-    "text": "A little over ten years ago, I and two colleagues, Jeff Leek and Brian Caffo, developed this massive open online course (MOOC) on data science. It was one of the first ones and it was hugely popular, to our surprise. At some point, I think it was Brian who said we should write a textbook for each of these classes, so we did a crash program of writing textbooks for each of the courses.\n\nThen it came down to how do we distribute the books? We found a self-publishing platform called Leanpub and we put it on there. One of the interesting things about Leanpup was that it allowed people to set their own price. You could set it between zero and nine hundred and ninety-nine dollars or something like that. We had a suggested price, and most people, unsurprisingly, set it to zero, but some people paid."
+    "section": "Context, Please",
+    "text": "Context, Please\n\nA little over ten years ago, I and two colleagues, Jeff Leek and Brian Caffo, developed this massive open online course (MOOC) on data science. It was one of the first ones and it was hugely popular, to our surprise. At some point, I think it was Brian who said we should write a textbook for each of these classes, so we did a crash program of writing textbooks for each of the courses.\n\nThen it came down to how do we distribute the books? We found a self-publishing platform called Leanpub and we put it on there. One of the interesting things about Leanpup was that it allowed people to set their own price. You could set it between zero and nine hundred and ninety-nine dollars or something like that. We had a suggested price, and most people, unsurprisingly, set it to zero, but some people paid."
   },
   {
     "objectID": "posts/07-every-mans-causal-inference/index.html#behind-the-scenes",
@@ -196,18 +189,11 @@
     "text": "Analysis\nWeston Lambert’s shop is a single page, so we just need to read that html. A helper find_products() grabs every link inside the product list.\n\nlibrary(rvest)\n\nfind_products &lt;- function(html) {\n  html |&gt;\n    html_element(\"#productList\") |&gt;\n    html_elements(\"a\")\n}\n\nurl &lt;- \"http://www.westonlambert.com/available-work\"\nhtml &lt;- read_html(url)\nproducts &lt;- find_products(html)\n\nThen the helper function extract_products() turns those links into a data frame. The sold_out column tests for a .sold-out element.\n\nextract_products &lt;- function(products) {\n  data.frame(\n    title = products |&gt; html_element(\".product-title\") |&gt; html_text(),\n    price = products |&gt;\n      html_element(\".product-price\") |&gt;\n      html_text() |&gt;\n      gsub(\"[$,]\", \"\", x = _) |&gt;\n      as.numeric(),\n    sold_out = !(products |&gt;\n      html_element(\".sold-out\") |&gt;\n      html_text() |&gt;\n      is.na()),\n    link = html_attr(products, \"href\")\n  )\n}\n\ncur &lt;- extract_products(products)\n\nSince I want to know only which pieces were newly for sale, the script stores the products in a CSV and then checks against this to only show me the new pieces.\n\nproducts_path &lt;- data_path(\"products.csv\")\nold &lt;- read.csv(products_path)\nwrite.csv(cur, products_path, row.names = FALSE)\n\nnew &lt;- subset(cur, !sold_out & !link %in% old$link)\n\nThe push notification goes through ntfy.sh, which needs an app and a topic name (you pick a topic name from the ntfy service and would paste that in the topic parameter).\n\nntfy::ntfy_send(\n  message = paste0(nrow(new), \" products available at \", url),\n  title = \"Update at Weston Lambert\",\n  topic = \"INSERT NTFY TOPIC HERE\",\n  click = url\n)\n\nThe code behind this post lives in hadley/available-work, which scrapes Weston Lambert’s available work page with rvest and sends notifications through ntfy.sh."
   },
   {
-    "objectID": "posts/06-the-other-marshmallow-test/index.html",
-    "href": "posts/06-the-other-marshmallow-test/index.html",
-    "title": "The Marshmallow Test (Not That One)",
-    "section": "",
-    "text": "No debate in Israel is quite as heated as the one over the differences between white and pink marshmallows.\nWhile some argue that white marshmallows taste the best, others sneer and laugh at that notion – of course the pink marshmallows are far superior! And yet, there is a third group, equally mocked by the white- and pink-lovers: those that claim no difference between the two colors at all!\nSounds like an empirical question to me! Let’s go answer it!\n\nIs there a perceptible difference between white and pink marshmallows?"
-  },
-  {
     "objectID": "posts/06-the-other-marshmallow-test/index.html#context-please",
     "href": "posts/06-the-other-marshmallow-test/index.html#context-please",
     "title": "The Marshmallow Test (Not That One)",
-    "section": "",
-    "text": "No debate in Israel is quite as heated as the one over the differences between white and pink marshmallows.\nWhile some argue that white marshmallows taste the best, others sneer and laugh at that notion – of course the pink marshmallows are far superior! And yet, there is a third group, equally mocked by the white- and pink-lovers: those that claim no difference between the two colors at all!\nSounds like an empirical question to me! Let’s go answer it!\n\nIs there a perceptible difference between white and pink marshmallows?"
+    "section": "Context, Please",
+    "text": "Context, Please\nNo debate in Israel is quite as heated as the one over the differences between white and pink marshmallows.\nWhile some argue that white marshmallows taste the best, others sneer and laugh at that notion – of course the pink marshmallows are far superior! And yet, there is a third group, equally mocked by the white- and pink-lovers: those that claim no difference between the two colors at all!\nSounds like an empirical question to me! Let’s go answer it!\n\nIs there a perceptible difference between white and pink marshmallows?"
   },
   {
     "objectID": "posts/06-the-other-marshmallow-test/index.html#behind-the-scenes",

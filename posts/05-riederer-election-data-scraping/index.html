@@ -752,91 +752,92 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [scraping, automation, data] # lower-case tags (reuse existing ones where you can)</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context, Please</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>On even numbered years, I spend a lot of my free time volunteering with downballot voter turnout initiatives. Over the years, I've worked across 10+ states -- each with their unique datasets and data debacles. While there are some standard vendors and APIs, much of the final voter turnout data is highly bespoke. Every state -- even *county* -- in the country can come up with it's own publishing format (federalism, eh?) leading to unique data collection challenges. </span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>Trying to scrape and wrangle this data has proven a fun survey on the wide breadth of automated data collection tools. Even moreso, it's cause to reflect on how different data formats cater to the needs of different audiences and how design choices as data publishers can be more or less constructive to different audiences. </span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>I also failed to give a good answer when asked on the pod how to help turnout voters because -- hey, I'm just the data person. But realistically the most important thing you can do is **tell people in your life to vote, ask them their plan, offer them a ride**. What the data *does* often imply is that you should never underestimate how many non-voters (although behavior is admittedly highly correlated) you probably know. Help them know their voice matters. </span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Behind the Scenes</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>The data can come from any number of state and county websites. Packages vary based on the setup, including:</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>direct file download with <span class="in">`requests`</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>basic static web scraping with <span class="in">`BeautifulSoup`</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>dynamic web scraping with <span class="in">`Playwright`</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>headless browser automation with <span class="in">`Playwright`</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>screenshotting and image parsing with <span class="in">`tesseract`</span> </span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>Examples of different pipelines and patterns can be found in:</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Goin' to Carolina on my Drive</span><span class="co">](https://www.emilyriederer.com/post/duckdb-carolina/index.html)</span> -- blog from 2022. Could be much further optimized now with advanced in polars and duckdb. CSV sniffing, for one, has improved a *lot* </span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">A Tale of Six States</span><span class="co">](https://www.emilyriederer.com/post/states-scraping-automation/index.html)</span> -- blog from 2021. Some states have changes formats since so are outdated</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">GitHub Repo</span><span class="co">](https://github.com/emilyriederer/data-scraping-states)</span> -- update of the 6 states from 2024. Less out of date? </span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>I've been tracking my more recent travails updating pre-existing data pipelines on <span class="co">[</span><span class="ot">Bluesky</span><span class="co">](https://bsky.app/profile/emilyriederer.bsky.social/post/3munrhupr2c2i)</span>.</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analysis</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>I think a lot of people know about basic web scraping already, so here, I will demonstrate my favorite and lesser used pattern: headless browser automation. While it has a crazy name, the simple idea is to ask your computer to do very human steps of navigating a browser: looking, finding, clicking, selecting, waiting, refreshing, etc. This is easily down with the python package <span class="in">`Playwright`</span>. </span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>To navigate and download files from the <span class="co">[</span><span class="ot">Texas Secretary of State</span><span class="co">]</span>, I wanted to follow the steps illustrated below:</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="al">![](tx.gif)</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>This is accomplished by this relatively minial <span class="co">[</span><span class="ot">script</span><span class="co">](https://github.com/emilyriederer/data-scraping-states/blob/main/04-browserauto-tx.py)</span>. The real trick is using your browser's developer tools to identify what fields you want to target. </span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> playwright.sync_api <span class="im">import</span> sync_playwright</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> retrieve_date(date, page):</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  <span class="co"># navigate to date-specific page </span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  target_date <span class="op">=</span> datetime.datetime.strptime(date, <span class="st">'%Y%m</span><span class="sc">%d</span><span class="st">'</span>)</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  target_date_str <span class="op">=</span> target_date.strftime(<span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st"> 00:00:00.0'</span>)</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  target_file <span class="op">=</span> <span class="st">'tx-'</span> <span class="op">+</span> target_date.strftime(<span class="st">'%Y%m</span><span class="sc">%d</span><span class="st">'</span>) <span class="op">+</span> <span class="st">'.csv'</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="co"># pick election</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  page.goto(<span class="st">'https://earlyvoting.texas-election.com/Elections/getElectionDetails.do'</span>)</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  page.select_option(<span class="st">'#idElection'</span>, label <span class="op">=</span> <span class="st">"2020 NOVEMBER 3RD GENERAL ELECTION"</span>)</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  page.click(<span class="st">'#electionsInfoForm button'</span>)</span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  page.wait_for_selector(<span class="st">'#selectedDate'</span>)</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="co"># pick day</span></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  page.select_option(<span class="st">'#selectedDate'</span>, value <span class="op">=</span> target_date_str)</span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  page.click(<span class="st">'#electionsInfoForm button:nth-child(2)'</span>)</span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  page.wait_for_selector(<span class="st">'"Generate Statewide Report"'</span>)</span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>  <span class="co"># download report  </span></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>  <span class="cf">with</span> page.expect_download() <span class="im">as</span> download_info:</span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    page.click(<span class="st">'"Generate Statewide Report"'</span>)</span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  download <span class="op">=</span> download_info.value</span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  download.save_as(<span class="ss">f'data/</span><span class="sc">{</span>target_file<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sync_playwright() <span class="im">as</span> p:</span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>  browser <span class="op">=</span> p.firefox.launch()</span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  <span class="co"># want to see it in action? Switch to firefox.launch(headless=False, slow_mo=50)</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  context <span class="op">=</span> browser.new_context(accept_downloads <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>  page <span class="op">=</span> context.new_page()</span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>  dates <span class="op">=</span> [<span class="st">'20201020'</span>,<span class="st">'20201021'</span>,<span class="st">'20201022'</span>]</span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> d <span class="kw">in</span> dates:</span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>    retrieve_date(d, page)</span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cleanup</span></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>  page.close()</span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>  context.close()</span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  browser.close()</span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>I personally am much more interested in collecting this data for mercenary operational purposes than for analysis, so I don't have pretty plots and charts to share. However, I will mention that the NC election data is a special type of **amazing** with rich history and metadata as required by state law. It's become one of my favorite datasets to do a quick test of different modeling ideas (my personal <span class="in">`penguins`</span>). If anyone wants it to play with or use for a class, please feel free to reach out and I would be happy to share. </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> data-testid</span><span class="op">=</span><span class="st">"embed-iframe"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"border-radius:12px"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://open.spotify.com/embed/episode/0QKfCm6hwaJBUr4cbfDwCH?utm_source=generator</span><span class="er">&amp;</span><span class="st">si=5a45d294dd284040"</span><span class="ot"> width</span><span class="op">=</span><span class="st">"100%"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"352"</span><span class="ot"> frameBorder</span><span class="op">=</span><span class="st">"0"</span><span class="ot"> allowfullscreen</span><span class="op">=</span><span class="st">""</span><span class="ot"> allow</span><span class="op">=</span><span class="st">"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"</span><span class="ot"> loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context, Please</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>On even numbered years, I spend a lot of my free time volunteering with downballot voter turnout initiatives. Over the years, I've worked across 10+ states -- each with their unique datasets and data debacles. While there are some standard vendors and APIs, much of the final voter turnout data is highly bespoke. Every state -- even *county* -- in the country can come up with it's own publishing format (federalism, eh?) leading to unique data collection challenges. </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>Trying to scrape and wrangle this data has proven a fun survey on the wide breadth of automated data collection tools. Even moreso, it's cause to reflect on how different data formats cater to the needs of different audiences and how design choices as data publishers can be more or less constructive to different audiences. </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>I also failed to give a good answer when asked on the pod how to help turnout voters because -- hey, I'm just the data person. But realistically the most important thing you can do is **tell people in your life to vote, ask them their plan, offer them a ride**. What the data *does* often imply is that you should never underestimate how many non-voters (although behavior is admittedly highly correlated) you probably know. Help them know their voice matters. </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Behind the Scenes</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>The data can come from any number of state and county websites. Packages vary based on the setup, including:</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>direct file download with <span class="in">`requests`</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>basic static web scraping with <span class="in">`BeautifulSoup`</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>dynamic web scraping with <span class="in">`Playwright`</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>headless browser automation with <span class="in">`Playwright`</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>screenshotting and image parsing with <span class="in">`tesseract`</span> </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>Examples of different pipelines and patterns can be found in:</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Goin' to Carolina on my Drive</span><span class="co">](https://www.emilyriederer.com/post/duckdb-carolina/index.html)</span> -- blog from 2022. Could be much further optimized now with advanced in polars and duckdb. CSV sniffing, for one, has improved a *lot* </span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">A Tale of Six States</span><span class="co">](https://www.emilyriederer.com/post/states-scraping-automation/index.html)</span> -- blog from 2021. Some states have changes formats since so are outdated</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">GitHub Repo</span><span class="co">](https://github.com/emilyriederer/data-scraping-states)</span> -- update of the 6 states from 2024. Less out of date? </span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>I've been tracking my more recent travails updating pre-existing data pipelines on <span class="co">[</span><span class="ot">Bluesky</span><span class="co">](https://bsky.app/profile/emilyriederer.bsky.social/post/3munrhupr2c2i)</span>.</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analysis</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>I think a lot of people know about basic web scraping already, so here, I will demonstrate my favorite and lesser used pattern: headless browser automation. While it has a crazy name, the simple idea is to ask your computer to do very human steps of navigating a browser: looking, finding, clicking, selecting, waiting, refreshing, etc. This is easily down with the python package <span class="in">`Playwright`</span>. </span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>To navigate and download files from the <span class="co">[</span><span class="ot">Texas Secretary of State</span><span class="co">]</span>, I wanted to follow the steps illustrated below:</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="al">![](tx.gif)</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>This is accomplished by this relatively minial <span class="co">[</span><span class="ot">script</span><span class="co">](https://github.com/emilyriederer/data-scraping-states/blob/main/04-browserauto-tx.py)</span>. The real trick is using your browser's developer tools to identify what fields you want to target. </span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> playwright.sync_api <span class="im">import</span> sync_playwright</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> retrieve_date(date, page):</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="co"># navigate to date-specific page </span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  target_date <span class="op">=</span> datetime.datetime.strptime(date, <span class="st">'%Y%m</span><span class="sc">%d</span><span class="st">'</span>)</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  target_date_str <span class="op">=</span> target_date.strftime(<span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st"> 00:00:00.0'</span>)</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  target_file <span class="op">=</span> <span class="st">'tx-'</span> <span class="op">+</span> target_date.strftime(<span class="st">'%Y%m</span><span class="sc">%d</span><span class="st">'</span>) <span class="op">+</span> <span class="st">'.csv'</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="co"># pick election</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  page.goto(<span class="st">'https://earlyvoting.texas-election.com/Elections/getElectionDetails.do'</span>)</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  page.select_option(<span class="st">'#idElection'</span>, label <span class="op">=</span> <span class="st">"2020 NOVEMBER 3RD GENERAL ELECTION"</span>)</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  page.click(<span class="st">'#electionsInfoForm button'</span>)</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  page.wait_for_selector(<span class="st">'#selectedDate'</span>)</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="co"># pick day</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  page.select_option(<span class="st">'#selectedDate'</span>, value <span class="op">=</span> target_date_str)</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  page.click(<span class="st">'#electionsInfoForm button:nth-child(2)'</span>)</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  page.wait_for_selector(<span class="st">'"Generate Statewide Report"'</span>)</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>  <span class="co"># download report  </span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>  <span class="cf">with</span> page.expect_download() <span class="im">as</span> download_info:</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    page.click(<span class="st">'"Generate Statewide Report"'</span>)</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  download <span class="op">=</span> download_info.value</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  download.save_as(<span class="ss">f'data/</span><span class="sc">{</span>target_file<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sync_playwright() <span class="im">as</span> p:</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  browser <span class="op">=</span> p.firefox.launch()</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  <span class="co"># want to see it in action? Switch to firefox.launch(headless=False, slow_mo=50)</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>  context <span class="op">=</span> browser.new_context(accept_downloads <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>  page <span class="op">=</span> context.new_page()</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>  dates <span class="op">=</span> [<span class="st">'20201020'</span>,<span class="st">'20201021'</span>,<span class="st">'20201022'</span>]</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> d <span class="kw">in</span> dates:</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>    retrieve_date(d, page)</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cleanup</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>  page.close()</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  context.close()</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>  browser.close()</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>I personally am much more interested in collecting this data for mercenary operational purposes than for analysis, so I don't have pretty plots and charts to share. However, I will mention that the NC election data is a special type of **amazing** with rich history and metadata as required by state law. It's become one of my favorite datasets to do a quick test of different modeling ideas (my personal <span class="in">`penguins`</span>). If anyone wants it to play with or use for a class, please feel free to reach out and I would be happy to share. </span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
