@@ -24,7 +24,7 @@ A DWTS season is the perfect set-up for a survival analysis. Everyone starts at 
 
 ### Data Source
 
-To answer these questions, we used a Dancing with the Stars dataset from Kaggle that includes our covariates of interest (sex, celebrity industry, week one average judge score, age) and the week they were eliminated. The dataset didn't originally include celebrity sex, so we used Claude to add that column before analysis, and verified its accuracy.
+To answer these questions, we used a Dancing with the Stars dataset from Kaggle that includes our covariates of interest (gender, celebrity industry, week one average judge score, age) and the week they were eliminated. The dataset didn't originally include celebrity gender, so we used Claude to add that column before analysis, and verified its accuracy.
 
 We excluded Season 15, an all-star season of returning contestants, and Season 26, a shortened season made up entirely of athletes, which were both atypical seasons in term of celebrity makeup. That left us with a final sample of 371 contestants.
 
@@ -45,7 +45,7 @@ This left us with an event rate of 78.9%.
 
 ### Covariates
 
-We looked at four covariates: two categorical (celebrity sex and celebrity industry) and two numeric (celebrity age during the season and their average judge score in week 1, which we used as a measure of baseline dance ability). Industry had a lot of small categories, so we collapsed it into Actor/Actress (n = 117), Athlete (n = 76), TV Personality (n = 59), Singer/Rapper (n = 57), and Other (n = 62), which lumped together everyone else.
+We looked at four covariates: two categorical (celebrity gender and celebrity industry) and two numeric (celebrity age during the season and their average judge score in week 1, which we used as a measure of baseline dance ability). Industry had a lot of small categories, so we collapsed it into Actor/Actress (n = 117), Athlete (n = 76), TV Personality (n = 59), Singer/Rapper (n = 57), and Other (n = 62), which lumped together everyone else.
 
 
 ### Packages
@@ -89,9 +89,9 @@ ggsurvplot(km_overall, data = dwts_data,
 
 Of our 371 contestants, 281 were eliminated and the rest made it to the finale. As @fig-overall shows, the curve drops steadily across the season, which makes sense: with eliminations every week, everyone's risk of going home accumulates over time. The median survival time was 0.70 (95% CI: 0.67 to 0.80), meaning that by 70% of the way through a season, half the contestants have been sent home.
 
-### Categorical Covariates: Does sex or industry matter?
+### Categorical Covariates: Does gender or industry matter?
 
-Next, we compared survival across groups using Kaplan-Meier curves and log-rank tests. For celebrity sex, the curves for men and women are practically on top of each other (@fig-sex).
+Next, we compared survival across groups using Kaplan-Meier curves and log-rank tests. For celebrity gender, the curves for men and women are practically on top of each other (@fig-sex).
 
 ```{r}
 #| label: km-sex
@@ -103,7 +103,7 @@ logrank_sex <- survdiff(Surv(perc_season, event) ~ celebrity_sex,
                         data = dwts_data, rho = 0)
 ```
 
-![Kaplan-Meier curves for time to elimination by celebrity sex, with 95% confidence bands.](fig2.png){#fig-sex}
+![Kaplan-Meier curves for time to elimination by celebrity gender, with 95% confidence bands.](fig2.png){#fig-sex}
 
 Industry was more interesting to look at. In @fig-industry, the "Other" category drops off noticeably earlier than everyone else, losing about a quarter of its contestants within the first 20% of the season. Actors, athletes, singers, and TV personalities all track pretty closely together. This tracks with our hypothesis that contestants who have experience performing in the public eye, which are all characteristics actors,  athletes, singers and TV personalities share, may last longer in the DWTS season.
 
@@ -119,11 +119,11 @@ logrank_industry <- survdiff(Surv(perc_season, event) ~ celebrity_industry,
 
 ![Kaplan-Meier curves for time to elimination by celebrity industry.](fig3.png){#fig-industry}
 
-However, neither difference held up statistically. The log-rank tests failed to reject the null hypothesis for both covariates, so we can't conclude that sex or industry is related to time to elimination. 
+However, neither difference held up statistically. The log-rank tests failed to reject the null hypothesis for both covariates, so we can't conclude that gender or industry is related to time to elimination. 
 
 | Variable | Chi-Square | P-value |
 |---|---|---|
-| Celebrity Sex | 0.014 | 0.906 |
+| Celebrity Gender | 0.014 | 0.906 |
 | Celebrity Industry | 2.989 | 0.560 |
 
 : Log-rank test results for the categorical covariates.
@@ -192,4 +192,4 @@ The model does a decent job early on but drifts toward a coin flip as the season
 
 ## Conclusion
 
-So who survives the ballroom? Based on our analysis, it's not about whether you're a man or a woman or what made you famous. It's about being younger and walking in with some baseline dance ability. Age and week 1 score were both strong predictors of how long a celebrity lasts, while sex and industry showed no significant relationship with elimination.One thing we wish we had access to with the Kaggle dataset was some measure of a contestants popularity with America, like average votes across their time on the season. Even though judges score are important in remaining on the season, fan base is a very important factor, too (example: king Guillermo!!!!). This project was an engaging way to apply our coursework from our survival course with Dr. Sarah Lotspiech in a fun and meaningful way. We are excited to see who will bring home this season's mirrorball (we're rooting for Ezra or Maura!!!).
+So who survives the ballroom? Based on our analysis, it's not about whether you're a man or a woman or what made you famous. It's about being younger and walking in with some baseline dance ability. Age and week 1 score were both strong predictors of how long a celebrity lasts, while gender and industry showed no significant relationship with elimination.One thing we wish we had access to with the Kaggle dataset was some measure of a contestants popularity with America, like average votes across their time on the season. Even though judges score are important in remaining on the season, fan base is a very important factor, too (example: king Guillermo!!!!). This project was an engaging way to apply our coursework from our survival course with Dr. Sarah Lotspiech in a fun and meaningful way. We are excited to see who will bring home this season's mirrorball (we're rooting for Ezra or Maura!!!).
