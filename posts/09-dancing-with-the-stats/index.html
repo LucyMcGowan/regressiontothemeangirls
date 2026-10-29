@@ -9,7 +9,7 @@
 <meta name="author" content="Grayson Weavil and collaborators (Madeline Merrill and Wesley Krieger)">
 <meta name="dcterms.date" content="2026-10-28">
 
-<title>Dancing with the Stats Survival Analysis – Regression to the Mean Girls</title>
+<title>Dancing with the Stats: Who Survives the Ballroom? – Regression to the Mean Girls</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">Dancing with the Stats Survival Analysis</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+      <div class="quarto-title-block"><div><h1 class="title">Dancing with the Stats: Who Survives the Ballroom?</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
                                 <div class="quarto-categories">
                 <div class="quarto-category">survival</div>
                 <div class="quarto-category">r</div>
@@ -929,7 +929,7 @@ Figure&nbsp;3: Kaplan-Meier curves for time to elimination by celebrity industry
 <span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Source</span></span>
 <span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>To answer these questions, we used a Dancing with the Stars dataset from Kaggle that includes our covariates of interest (sex, celebrity industry, week one average judge score, age) and the week they were eliminated. The dataset didn't originally include celebrity sex, so we used Claude to add that column before analysis, and verified its accuracy.</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>To answer these questions, we used a Dancing with the Stars dataset from Kaggle that includes our covariates of interest (gender, celebrity industry, week one average judge score, age) and the week they were eliminated. The dataset didn't originally include celebrity gender, so we used Claude to add that column before analysis, and verified its accuracy.</span>
 <span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>We excluded Season 15, an all-star season of returning contestants, and Season 26, a shortened season made up entirely of athletes, which were both atypical seasons in term of celebrity makeup. That left us with a final sample of 371 contestants.</span>
 <span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
@@ -950,7 +950,7 @@ Figure&nbsp;3: Kaplan-Meier curves for time to elimination by celebrity industry
 <span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="fu">### Covariates</span></span>
 <span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>We looked at four covariates: two categorical (celebrity sex and celebrity industry) and two numeric (celebrity age during the season and their average judge score in week 1, which we used as a measure of baseline dance ability). Industry had a lot of small categories, so we collapsed it into Actor/Actress (n = 117), Athlete (n = 76), TV Personality (n = 59), Singer/Rapper (n = 57), and Other (n = 62), which lumped together everyone else.</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>We looked at four covariates: two categorical (celebrity gender and celebrity industry) and two numeric (celebrity age during the season and their average judge score in week 1, which we used as a measure of baseline dance ability). Industry had a lot of small categories, so we collapsed it into Actor/Actress (n = 117), Athlete (n = 76), TV Personality (n = 59), Singer/Rapper (n = 57), and Other (n = 62), which lumped together everyone else.</span>
 <span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### Packages</span></span>
@@ -994,9 +994,9 @@ Figure&nbsp;3: Kaplan-Meier curves for time to elimination by celebrity industry
 <span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>Of our 371 contestants, 281 were eliminated and the rest made it to the finale. As @fig-overall shows, the curve drops steadily across the season, which makes sense: with eliminations every week, everyone's risk of going home accumulates over time. The median survival time was 0.70 (95% CI: 0.67 to 0.80), meaning that by 70% of the way through a season, half the contestants have been sent home.</span>
 <span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Categorical Covariates: Does sex or industry matter?</span></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Categorical Covariates: Does gender or industry matter?</span></span>
 <span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>Next, we compared survival across groups using Kaplan-Meier curves and log-rank tests. For celebrity sex, the curves for men and women are practically on top of each other (@fig-sex).</span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>Next, we compared survival across groups using Kaplan-Meier curves and log-rank tests. For celebrity gender, the curves for men and women are practically on top of each other (@fig-sex).</span>
 <span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: km-sex</span></span>
@@ -1008,7 +1008,7 @@ Figure&nbsp;3: Kaplan-Meier curves for time to elimination by celebrity industry
 <span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>                        <span class="at">data =</span> dwts_data, <span class="at">rho =</span> <span class="dv">0</span>)</span>
 <span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="al">![Kaplan-Meier curves for time to elimination by celebrity sex, with 95% confidence bands.](fig2.png)</span>{#fig-sex}</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="al">![Kaplan-Meier curves for time to elimination by celebrity gender, with 95% confidence bands.](fig2.png)</span>{#fig-sex}</span>
 <span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>Industry was more interesting to look at. In @fig-industry, the "Other" category drops off noticeably earlier than everyone else, losing about a quarter of its contestants within the first 20% of the season. Actors, athletes, singers, and TV personalities all track pretty closely together. This tracks with our hypothesis that contestants who have experience performing in the public eye, which are all characteristics actors,  athletes, singers and TV personalities share, may last longer in the DWTS season.</span>
 <span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a></span>
@@ -1024,11 +1024,11 @@ Figure&nbsp;3: Kaplan-Meier curves for time to elimination by celebrity industry
 <span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="al">![Kaplan-Meier curves for time to elimination by celebrity industry.](fig3.png)</span>{#fig-industry}</span>
 <span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>However, neither difference held up statistically. The log-rank tests failed to reject the null hypothesis for both covariates, so we can't conclude that sex or industry is related to time to elimination. </span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>However, neither difference held up statistically. The log-rank tests failed to reject the null hypothesis for both covariates, so we can't conclude that gender or industry is related to time to elimination. </span>
 <span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Variable <span class="pp">|</span> Chi-Square <span class="pp">|</span> P-value <span class="pp">|</span></span>
 <span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Celebrity Sex <span class="pp">|</span> 0.014 <span class="pp">|</span> 0.906 <span class="pp">|</span></span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Celebrity Gender <span class="pp">|</span> 0.014 <span class="pp">|</span> 0.906 <span class="pp">|</span></span>
 <span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Celebrity Industry <span class="pp">|</span> 2.989 <span class="pp">|</span> 0.560 <span class="pp">|</span></span>
 <span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>: Log-rank test results for the categorical covariates.</span>
@@ -1097,7 +1097,7 @@ Figure&nbsp;3: Kaplan-Meier curves for time to elimination by celebrity industry
 <span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
 <span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>So who survives the ballroom? Based on our analysis, it's not about whether you're a man or a woman or what made you famous. It's about being younger and walking in with some baseline dance ability. Age and week 1 score were both strong predictors of how long a celebrity lasts, while sex and industry showed no significant relationship with elimination.One thing we wish we had access to with the Kaggle dataset was some measure of a contestants popularity with America, like average votes across their time on the season. Even though judges score are important in remaining on the season, fan base is a very important factor, too (example: king Guillermo!!!!). This project was an engaging way to apply our coursework from our survival course with Dr. Sarah Lotspiech in a fun and meaningful way. We are excited to see who will bring home this season's mirrorball (we're rooting for Ezra or Maura!!!).</span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>So who survives the ballroom? Based on our analysis, it's not about whether you're a man or a woman or what made you famous. It's about being younger and walking in with some baseline dance ability. Age and week 1 score were both strong predictors of how long a celebrity lasts, while gender and industry showed no significant relationship with elimination.One thing we wish we had access to with the Kaggle dataset was some measure of a contestants popularity with America, like average votes across their time on the season. Even though judges score are important in remaining on the season, fan base is a very important factor, too (example: king Guillermo!!!!). This project was an engaging way to apply our coursework from our survival course with Dr. Sarah Lotspiech in a fun and meaningful way. We are excited to see who will bring home this season's mirrorball (we're rooting for Ezra or Maura!!!).</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
