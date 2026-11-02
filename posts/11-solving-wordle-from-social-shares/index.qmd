@@ -19,7 +19,7 @@ This is an offert to "solve" Wordle from the social media shares on Blue Sky. Li
 
 * [Source Code](https://github.com/astrowonk/BlueSkyWordle)
 * [Web App to Explore the data and solutions](https://marcoshuerta.com/dash/bs_wordle_solver/)
-* [Original Longer Blog Post on this topic](https://marcoshuerta.com/posts/wordle_bluesky/)
+* [Original Longer Blog Post on this topic](https://marcoshuerta.com/posts/wordle_bluesky/)^[Longer but with a much less fun theme.]
 
 :::
 
