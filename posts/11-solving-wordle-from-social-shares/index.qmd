@@ -23,7 +23,7 @@ This is an offert to "solve" Wordle from the social media shares on Blue Sky. Li
 
 :::
 
-[Wordle](https://www.nytimes.com/games/wordle/index.html) is a online game now owned and hosted by the New York Times. There is 5 letter word solution, and players have six guesses to get the solution. Every guess returns information on how close you were to the answer. A green square (🟩) means right letter, right location. A yellow square (🟨), means the letter is present but it's in the wrong location. ⬜ or ⬛ means the letter is not in the answer at all.
+[Wordle](https://www.nytimes.com/games/wordle/index.html) is a online game now owned and hosted by the New York Times. There is 5 letter word solution, and players have six guesses to get the solution. Every guess returns information on how close you were to the answer. A green square (🟩) means right letter, right location. A yellow square (🟨), means the letter is present but it's in the wrong location. ⬜ or ⬛ means the letter is not in the answer at all.^[This is a little like the game [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)).]
 
 Back in 2022, I was inspired by [Ben Hamner's Kaggle project](https://www.kaggle.com/benhamner/wordle-1-6) in which he tried to find the *answer* to the daily Wordle based *entirely* on the shared scores on Twitter that look like this:
 
@@ -37,21 +37,21 @@ Wordle 1,575 5/6
 🟩🟩🟩🟩🟩
 ```
 
-He had an approach that worked pretty well, I think around 90-95% accuracy, and used the frequency of how often a share pattern appeared and the words that could create that pattern. I built upon his ideas and made a solver that scored each posible solution. 
+He had an approach that worked pretty well, I think around 90-95% accuracy, and used the frequency of how often a share pattern appeared and the words that could create that pattern. I built upon his ideas and made a solver that scored each posible solution and achieved (at the time) 100% accuracy.
 
 ## Behind the Scenes
 
-Initially, the Wordle shares I tried to solve came from the kaggle dataset which scraped Wordle shares from the Twitter API. Today, I use the Bluesky API.
-
-A significant change in getting shares from Bluesky is that I can get maybe 1000 shared scores, but not > 5000 I was retrieving from Twitter. For older Wordles, I was lucky to get a few hundred. This means that by default I'm not using any minimum count for the patterns. If `🟨⬜⬜⬜🟩` appears only once from one account, then it's going into my analysis.
+Initially, the Wordle shares I tried to solve came from the kaggle dataset which scraped Wordle shares from the Twitter API. Today, I use the Bluesky API and I updated by code this year to retrieve data from Bluesky, not Twitter.
 
 ### Wordle Data
 
 For solving, I need all the unique patterns (e.g.`🟨⬜🟩🟨🟩`) that were shared on social media for a particular wordle. A problem is that sometimes people share results from other non-New York Times Wordles - like in other languages. Or they'll solve 2 wordles on the same day. So, I have to filter down the results from Blue Sky with some fairly aggressive regular expressions to remove any spurious Wordle solutions. A non-official Wordle solution in my data set can lead to an incorrect solve.
 
-### Word Data
+A significant change in getting shares from Bluesky is that I can get maybe ~1000 shared scores, but not > 5000, I had retrieving from Twitter. For older Wordles, I was lucky to get a few hundred. This means that by default I'm not using any minimum count for the patterns. If `🟨⬜⬜⬜🟩` appears only once from one account, then it's going into my analysis.
 
-To solve the wordle I build a giant dictionary. For every solution e.g. "abbey", how likely is every pattern? I create a sum of all the likelihoods of the pattern for every candidate solution. I used the [same word frequency data](https://www.kaggle.com/datasets/rtatman/english-word-frequency/data) as the Kaggle project, and essentially create a running sum of frequency of the found patterns (i.e. how common are the words that could make `🟨⬜🟩🟩⬜`, etc.) are for a given solution.
+### Word Frequency Data
+
+To solve the wordle I build a giant dictionary. For every solution e.g. "abbey", how *likely* is every pattern? I create a sum of all the likelihoods of the pattern for every candidate solution. I used the [same word frequency data](https://www.kaggle.com/datasets/rtatman/english-word-frequency/data) as the Kaggle project, and essentially create a running sum of frequency of the found patterns (i.e. how common are the words that could make `🟨⬜🟩🟩⬜`, etc.) are for a given solution.
 
 ### Solving
 
@@ -92,9 +92,11 @@ The current strategy is : use the normalized score, but if it's not a strong sig
 
 ## Analysis
 
-With my post-hoc combination of 4 parameters, the code now "solves" 100% of the Wordles with one guess based on the shared scores on Blue Sky. However, this is only becaues I have been constantly tweaking the heuristics to account for all the edge cases when my prior methods failed. For example, I had initially reduced my candidates to the top 20 via my "normalized score" metric before reranking ... until that failed Wordle 821 and I had to expand to the top 50, because the score metric of the true answer was so poor.
+With my post-hoc combination of 4 parameters, the code now "solves" 100% of the Wordles with one guess based on the shared scores on Blue Sky. However, this is only becaues I have been constantly tweaking the heuristics to account for all the edge cases when my prior methods failed.
 
-In any event, it is probably only a matter of time before the latest version of my "100% accurate" algorithm fails again. 
+For example, I had initially reduced my candidates to the top 20 via my "normalized score" metric before reranking ... until that failed Wordle 821 and I had to expand to the top 50, because the score metric of the true answer was so poor.
+
+In any event, it is probably only a matter of time before the latest version of my "100% accurate" algorithm fails again. But it's fun to see it work for now!
 
 You can view my 100% (ha!) success rate and explore the data via [this dash app](https://marcoshuerta.com/dash/bs_wordle_solver/). 
 
