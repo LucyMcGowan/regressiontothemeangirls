@@ -1,0 +1,106 @@
+---
+title: "Solving Wordle the Hard Way - with Social Shares"  
+author: 
+  - name: "Marcos Huerta"   
+    url: "https://marcoshuerta.com"
+    affiliation: "Carmax"
+                        
+date: "2026-11-9"                               
+image: "wordle_no_animate.jpg"                             
+categories: [wordle, python, analysis] # lower-case tags (reuse existing ones where you can)
+
+---
+
+
+## Context, Please
+
+::: {.callout-important}
+This is an offert to "solve" Wordle from the social media shares on Blue Sky. Links to:
+
+* [Source Code](https://github.com/astrowonk/BlueSkyWordle)
+* [Web App to Explore the data and solutions](https://marcoshuerta.com/dash/bs_wordle_solver/)
+* [Original Longer Blog Post on this topic](https://marcoshuerta.com/posts/wordle_bluesky/)^[Longer but with a much less fun theme.]
+
+:::
+
+[Wordle](https://www.nytimes.com/games/wordle/index.html) is a online game now owned and hosted by the New York Times. There is 5 letter word solution, and players have six guesses to get the solution. Every guess returns information on how close you were to the answer. A green square (🟩) means right letter, right location. A yellow square (🟨), means the letter is present but it's in the wrong location. ⬜ or ⬛ means the letter is not in the answer at all.^[This is a little like the game [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)).]
+
+Back in 2022, I was inspired by [Ben Hamner's Kaggle project](https://www.kaggle.com/benhamner/wordle-1-6) in which he tried to find the *answer* to the daily Wordle based *entirely* on the shared scores on Twitter that look like this:
+
+```
+Wordle 1,575 5/6
+
+🟩🟨⬜⬜🟨
+🟩🟩🟩⬜⬜
+⬜⬜⬜⬜⬜
+🟨⬜⬜⬜🟩
+🟩🟩🟩🟩🟩
+```
+
+He had an approach that worked pretty well, I think around 90-95% accuracy, and used the frequency of how often a share pattern appeared and the words that could create that pattern. I built upon his ideas and made a solver that scored each posible solution and achieved (at the time) 100% accuracy.
+
+## Behind the Scenes
+
+Initially, the Wordle shares I tried to solve came from the kaggle dataset which scraped Wordle shares from the Twitter API. Today, I use the Bluesky API and I updated by code this year to retrieve data from Bluesky, not Twitter.
+
+### Wordle Data
+
+For solving, I need all the unique patterns (e.g.`🟨⬜🟩🟨🟩`) that were shared on social media for a particular wordle. A problem is that sometimes people share results from other non-New York Times Wordles - like in other languages. Or they'll solve 2 wordles on the same day. So, I have to filter down the results from Blue Sky with some fairly aggressive regular expressions to remove any spurious Wordle solutions. A non-official Wordle solution in my data set can lead to an incorrect solve.
+
+A significant change in getting shares from Bluesky is that I can get maybe ~1000 shared scores, but not > 5000, I had retrieving from Twitter. For older Wordles, I was lucky to get a few hundred. This means that by default I'm not using any minimum count for the patterns. If `🟨⬜⬜⬜🟩` appears only once from one account, then it's going into my analysis.
+
+### Word Frequency Data
+
+To solve the wordle I build a giant dictionary. For every solution e.g. "abbey", how *likely* is every pattern? I create a sum of all the likelihoods of the pattern for every candidate solution. I used the [same word frequency data](https://www.kaggle.com/datasets/rtatman/english-word-frequency/data) as the Kaggle project, and essentially create a running sum of frequency of the found patterns (i.e. how common are the words that could make `🟨⬜🟩🟩⬜`, etc.) are for a given solution.
+
+### Solving
+
+The basic premise is that any particular score line (e.g 🟨⬜⬜⬜🟩) is more likely for some solutions than others, based on the guesses that can make that pattern. Also, some patterns are *impossible* for certain solutions. For example if the solution is `twirl` then the pattern ⬜⬜🟩🟩🟩 is very unlikely (scores a 0) and the pattern ⬜🟨⬜⬜🟨 adds in a score of 2561779497.
+
+I don't just add, I also *subtract*. For example, only one word ends in `uery`, and that is `query`. It is *impossible* to make a guess and get ⬜🟩🟩🟩 as a result if `query` is the solution. Therefore if ⬜🟩🟩🟩 occurred in a post, the code would subtract a penalty term for `query` as a candidate, and for any other "impossible patterns." Then I rank the scores and pick the highest one.
+
+Except, in the Blue Sky era, the old scoring system proved inadequate and got the wrong answer for several puzzles! So I needed to add in more features than just my old score:
+
+### The New Features
+
+#### **Fraction of possible patterns found.** 
+
+What fraction of the candidate word's *total possible patterns* were found in the social media shares? (Note: this was upwards of 90% in Twitter data when I had 5000 or more posts, now it's usually in the 50-60% range)
+
+#### **KS Statistic based on Opener Frequency**
+
+This is is the [two-sample Kolmogorov-Smirnov test statistic from SciPy](https://docs.scipy.org/doc/scipy-1.11.4/reference/generated/scipy.stats.ks_2samp.html). "The null hypothesis is that the two distributions are identical." So, I'm comparing the prevalence of the score patterns in the *first guess* against the NYT's data of what people actually guess first. 
+  
+As you may [have heard](https://www.nytimes.com/2022/09/01/crosswords/wordle-starting-words-adieu.html?unlocked_article_code=1.uE8.vhfy.1tUiLm_4i5HY&smid=url-share), certain openers are consistently popular (*adieu*, *radio*, *crane*, etc.). This data is shown on the NYT [Wordlebot](https://www.nytimes.com/interactive/2022/upshot/wordle-bot.html), and can be extracted to get the counts of each first guess. I generate the frequency of the *score patterns* for each candidate these guesses correspond to, then compare to what first guess patterns I observe.
+
+This tells me "*is this solution consistent with the patterns of the first guesses, knowing that certain first guesses are consistently popular*.""
+
+One flaw is that I just extracted the opener frequencies for some relatively recent random day - it may not work perfectly in the past nor is it guaranteed to work in the future if opener patterns change. I should get at least a few weeks of this data to get better statistics - it seems that the percentage of 'adieu' openers has a reasonable amount of daily variation.
+
+#### **Impossible Pattern Count**
+
+While the scoring system penalizes for impossible patterns by subtracting a penalty value, the right penalty term value has never been clear (the code iterates on the penalty term). Certain patterns just can't occur for particular solutions. For example if the solution was `purse` the pattern can never be `🟨⬛🟩🟨🟩`. I use the [allowable word list](https://gist.github.com/dracos/dd0668f281e685bad51479e5acaadb93) to figure out if a pattern is possible or not, and I keep count of how many impossible patterns there are for each candidate as I iterate through all possible guesses and found patterns.
+
+This should be *zero* for the actual solution, but in practice sometimes some errant score share shows an impossible pattern. Because I am not using any minimum count, I had to be more rigorous at filtering out random non-NYT wordle shares, like from `wordle.at` or other sites, etc - and those are other changes I made to make this code work. Anyway, I explictly use the pattern count as a feature. (And not just the N unique imposssibel patterns but how often they appear in the shares.)
+
+Also, sometimes one ore more *incorrect* solutions has an impossible pattern count of 0.
+
+### Combining the score and the new metrics
+
+The current strategy is : use the normalized score, but if it's not a strong signal compared to the runner up:  rerank with the sum of the ranks of fraction_found, the KS statistic, the original normalized score, and - you'll love this - the square of `(impossible_pattern_count + 1)`. It will also rerank if the impossible pattern count of the top candidate is > 0.^[I don't even remember which Wordle made me add that random and clearly-not-hacky condition.]
+
+
+## Analysis
+
+With my post-hoc combination of 4 parameters, the code now "solves" 100% of the Wordles with one guess based on the shared scores on Blue Sky. However, this is only becaues I have been constantly tweaking the heuristics to account for all the edge cases when my prior methods failed.
+
+For example, I had initially reduced my candidates to the top 20 via my "normalized score" metric before reranking ... until that failed Wordle 821 and I had to expand to the top 50, because the score metric of the true answer was so poor.
+
+In any event, it is probably only a matter of time before the latest version of my "100% accurate" algorithm fails again. But it's fun to see it work for now!
+
+You can view my 100% (ha!) success rate and explore the data via [this dash app](https://marcoshuerta.com/dash/bs_wordle_solver/). 
+
+## Other Topics I mentioned on the podcast!
+
+* [Google's dubious ad about baseball and the Full Moon Myth](https://marcoshuerta.com/posts/full-moon-myth/). I merged together moon phase data and baseball stats to show any correlation with the full moon and baseball stats was like bad p-hacking and small number statistics result.
+* [A rebuttal to the "A baby's sex may not be a coin toss" paper](https://marcoshuerta.com/posts/baby-births/). There was a paper that got a lot of press attention thaht suggested some moms are predisposed to be more likely to have boys or girls (a beta binomial distribution, some moms are 60% boys, etc.). I ran simulations and analyzed their data to show it's a stopping effect. (i.e. people are more likely to choose to have a third baby when the first two are the same sex.)
