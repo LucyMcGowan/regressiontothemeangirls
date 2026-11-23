@@ -1,0 +1,169 @@
+Show,Couple,Mentions,AlreadyTogether,FirstKiss_Season,FirstKiss_Episode,Exclude,Exclude_Why,IMDB_ID,Num_Seasons,Year of Start
+The Office (US),Jim & Pam,20,FALSE,2,22,FALSE,,tt0386676,9,2005
+New Girl,Jess & Nick,17,FALSE,2,15,FALSE,,tt1826940,7,2011
+Cheers,Diane & Sam,16,FALSE,1,22,FALSE,,tt0083399,11,1982
+Friends,Rachel & Ross,16,FALSE,2,7,FALSE,,tt0108778,10,1994
+The X-Files,Mulder & Scully,16,FALSE,7,4,FALSE,,tt0106179,11,1993
+Bones,Booth & Brennan,13,FALSE,3,9,FALSE,,tt0460627,12,2005
+Gilmore Girls,Lorelai & Luke,12,FALSE,4,22,FALSE,,tt0238784,7,2000
+Moonlighting,David & Maddie,9,FALSE,2,15,FALSE,,tt0088571,5,1985
+Castle,Castle & Beckett,8,FALSE,3,13,FALSE,,tt0083399,11,2009
+Frasier,Daphne & Niles,7,FALSE,7,24,FALSE,,tt0106004,11,1993
+Gossip Girl,Blair & Chuck,7,FALSE,1,7,FALSE,,tt0397442,6,2007
+S*x and the City,Carrie & Mr. Big,7,FALSE,1,6,FALSE,,tt0159206,6,1998
+Grey's Anatomy,Derek & Meredith,6,FALSE,1,1,TRUE,First Kiss in Season 1 Episode 1,,,2005
+How I Met Your Mother,Barney & Robin,6,FALSE,3,16,FALSE,,tt0460649,9,2005
+Buffy the Vampire Slayer,Buffy & Angel,5,FALSE,1,7,FALSE,,tt0118276,7,1997
+Buffy the Vampire Slayer,Buffy & Spike,5,FALSE,6,7,FALSE,,tt0118276,7,1997
+Glee,Finn & Rachel,5,FALSE,1,2,FALSE,,tt1327801,6,2009
+Law and Order: Special Victims Unit,Elliot & Olivia,5,FALSE,999,999,TRUE,Haven't Kissed,,,1999
+Parks and Recreation,Ben & Leslie,5,FALSE,3,14,FALSE,,tt1266020,7,2009
+Psych,Juliet & Shawn,5,FALSE,5,9,FALSE,,tt0491738,8,2006
+Scrubs,Elliot & J. D. ,5,FALSE,1,14,FALSE,,tt0285403,9,2001
+Superstore,Amy & Jonah,5,FALSE,2,22,FALSE,,tt4477976,6,2015
+True Blood,Eric & Sookie,5,FALSE,3,10,FALSE,,tt0844441,7,2008
+Brooklyn Nine-Nine,Jake & Amy,4,FALSE,2,23,FALSE,,tt2467372,8,2013
+Chuck,Chuck & Sarah,4,FALSE,1,9,FALSE,,tt0934814,5,2007
+Community,Annie & Jeff,4,FALSE,1,23,FALSE,,tt1439629,6,2009
+Dawson's Creek,Joey & Pacey,4,FALSE,3,17,FALSE,,tt0118300,6,1998
+Doctor Who,The Doctor & Rose,4,FALSE,999,999,TRUE,Haven't Kissed,,,1963
+Downton Abbey,Lady Mary & Matthew,4,FALSE,1,6,FALSE,,tt1606375,6,2010
+How I Met Your Mother,Robin & Ted,4,FALSE,1,2,FALSE,,tt0460649,9,2005
+Orange Is the New Black,Alex & Piper,4,FALSE,1,9,FALSE,,tt2372162,7,2013
+Smallville,Clark & Lana,4,FALSE,2,22,FALSE,,tt0279600,10,2001
+The Mindy Project,Danny & Mindy,4,FALSE,2,14,FALSE,,tt2211129,6,2012
+The Wonder Years,Kevin & Winnie,4,FALSE,1,1,TRUE,First Kiss in Season 1 Episode 1,,,1988
+Veronica Mars,Logan & Veronica,4,FALSE,1,18,FALSE,,tt0412253,4,2004
+Dawson's Creek,Dawson & Joey,3,FALSE,2,1,FALSE,,tt0118300,6,1998
+House,Cuddy & House,3,FALSE,5,6,FALSE,,tt0412142,8,2004
+Jane the Virgin,Jane & Rafael,3,FALSE,1,6,FALSE,,tt3566726,5,2014
+My So-Called Life,Angela & Jordan,3,FALSE,1,7,FALSE,,tt0108872,1,1994
+NCIS,Anthony & Ziva,3,FALSE,11,2,FALSE,,tt0364845,21,2003
+New Girl,Cece & Schmidt,3,FALSE,1,13,FALSE,,tt1826940,7,2011
+Remington Steele,Laura & Remington,3,FALSE,1,3,FALSE,,tt0083470,5,1982
+The Vampire Diaries,Damon & Elena,3,FALSE,2,22,FALSE,,tt1405406,8,2009
+Younger,Charles & Liza,3,FALSE,2,12,FALSE,,tt3288518,7,2015
+Younger,Josh & Liza,3,FALSE,1,2,FALSE,,tt3288518,7,2015
+Abbott Elementary,Janine & Gregory,2,FALSE,2,16,FALSE,,tt14218830,3,2021
+Agents of S.H.I.E.L.D.,Fitz & Simmons,2,FALSE,3,8,FALSE,,tt2364582,7,2013
+Alias,Sydney & Vaughn,2,FALSE,2,13,FALSE,,tt0285333,5,2001
+Arrow,Oliver & Felicity,2,FALSE,3,1,FALSE,,tt2193021,8,2012
+Boy Meets World,Cory & Topanga,2,FALSE,1,4,FALSE,,tt0105958,7,1993
+Ed,Carol & Ed,2,FALSE,999,999,TRUE,Missing Data,,,2000
+Desperate Housewives,Mike & Susan,2,FALSE,1,5,FALSE,,tt0410975,8,2004
+ER,Carol & Doug,2,FALSE,1,7,FALSE,,tt0108757,15,1994
+Firefly,Inara & Mal,2,FALSE,999,999,TRUE,Haven't Kissed,,,2002
+Felicity,Ben & Felicity,2,FALSE,1,22,FALSE,,tt0134247,4,1998
+Fringe,Olivia & Peter,2,FALSE,2,22,FALSE,,tt1119644,5,2008
+Futurama,Fry & Leela,2,FALSE,3,11,FALSE,,tt0149460,12,1999
+Gilmore Girls,Jess & Rory,2,FALSE,2,22,FALSE,,tt0238784,7,2000
+Insecure,Issa & Lawrence,2,TRUE,999,999,TRUE,Already Together,,,2016
+Glee,Blaine & Kurt,2,FALSE,2,16,FALSE,,tt1327801,6,2009
+Living Single,Max & Kyle,2,FALSE,2,27,FALSE,,tt0106056,5,1993
+LOST,Jack & Kate,2,FALSE,2,9,FALSE,,tt0411008,6,2004
+Never Have I Ever,Ben & Devi,2,FALSE,1,10,FALSE,,tt10062292,4,2020
+One Tree Hill,Haley & Nathan,2,FALSE,1,8,FALSE,,tt0368530,9,2003
+One Tree Hill,Lucas & Peyton,2,FALSE,1,7,FALSE,,tt0368530,9,2003
+Scandal,Fitz & Olivia,2,TRUE,1,1,TRUE,First Kiss in Season 1 Episode 1,,,2012
+Saved by the Bell,Kelly & Zach,2,FALSE,2,1,FALSE,,tt0096694,4,1989
+Stranger Things,Nancy & Jonathan,2,FALSE,2,6,FALSE,,tt4574334,5,2016
+That 70's Show,Donna & Eric,2,FALSE,1,1,TRUE,First Kiss in Season 1 Episode 1,,,1998
+The 100,Bellamy & Clarke,2,FALSE,999,999,TRUE,Haven't Kissed,,,2014
+Teen Wolf,Lydia & Stiles,2,FALSE,3,11,FALSE,,tt1567432,6,2011
+The Big Bang Theory,Leonard & Penny,2,FALSE,1,6,FALSE,,tt0898266,12,2007
+The Good Place,Chidi & Eleanor,2,FALSE,2,13,FALSE,,tt4955642,4,2016
+The Muppets,Kermit & Miss Piggy,2,FALSE,999,999,TRUE,Haven't Kissed,,,1974
+The Good Wife,Alicia & Will,2,FALSE,1,17,FALSE,,tt1442462,7,2009
+The Nanny,Fran & Maxwell,2,FALSE,1,18,FALSE,,tt0106080,6,1993
+The O.C.,Seth & Summer,2,FALSE,1,6,FALSE,,tt0362359,4,2003
+The Office (US),Dwight & Angela,2,FALSE,2,22,FALSE,,tt0386676,9,2005
+The Sopranos,Jennifer & Tony,2,FALSE,3,9,FALSE,,tt0141842,6,1999
+Ugly Betty,Betty & Daniel,2,FALSE,999,999,TRUE,Haven't Kissed,,,2006
+The Vampire Diaries,Damon & Elena,2,FALSE,3,10,FALSE,,tt1405406,8,2009
+90210,Annie & Liam,1,FALSE,3,1,FALSE,,tt1225901,5,2008
+7th Heaven,Matt & Heather,1,FALSE,1,21,FALSE,,tt0115083,11,1996
+Agents of S.H.I.E.L.D.,Coulson & Melinda,1,FALSE,4,12,FALSE,,tt2364582,7,2013
+Arrested Development,George Michael & Maeby,1,FALSE,1,1,TRUE,Kiss Was a Prank,,,2003
+Awkward,Matty & Jenna,1,FALSE,1,1,TRUE,First Kiss in Season 1 Episode 1,,,2011
+Anne With An E,Anne & Gilbert,1,FALSE,3,10,FALSE,,tt5421602,3,2017
+Baby Daddy,Danny & Riley,1,FALSE,4,22,FALSE,,tt2177489,6,2012
+Battlestar Galactica,Kara & Lee,1,FALSE,4,13,FALSE,,tt0407362,4,1978
+Better Call Saul,Jimmy & Kim,1,FALSE,1,8,FALSE,,tt3032476,6,2015
+"Beverly Hills, 90210",Donna & David,1,FALSE,1,22,FALSE,,tt0098749,10,2008
+"Beverly Hills, 90210",Dylan & Kelly,1,FALSE,3,19,FALSE,,tt0098749,10,2008
+Buffy the Vampire Slayer,Rupert & Joyce,1,FALSE,3,6,FALSE,,tt0118276,7,1997
+Californication,Hank & Karen,1,TRUE,1,12,FALSE,,tt0904208,7,2007
+Cheers,Rebecca & Sam,1,FALSE,6,10,FALSE,,tt0083399,11,1982
+Cloak and Dagger,Tandy & Tyrone,1,FALSE,999,999,TRUE,Haven't Kissed,,,2018
+Chicago Med,Natalie & Will,1,FALSE,1,10,FALSE,,tt4655480,8,2015
+Crazy Ex-Girlfriend,Josh & Rebecca,1,FALSE,1,13,FALSE,,tt4094300,4,2015
+Crazy Ex-Girlfriend,Nathaniel & Rebecca,1,FALSE,2,11,FALSE,,tt4094300,4,2015
+Doug,Doug & Patti,1,FALSE,2,16,FALSE,,tt0101084,5,1991
+Farscape,Aeryn & John,1,FALSE,1,16,FALSE,,tt0187636,4,1999
+Fleabag,Fleabag & Hot Priest,1,FALSE,2,4,FALSE,,tt5687612,2,2016
+Frasier,Frasier & Rob,1,FALSE,999,999,TRUE,Haven't Kissed,,,1993
+Friends,Mike & Phoebe,1,FALSE,9,3,FALSE,,tt0108778,10,1994
+Friends,Monica & Chandler,1,FALSE,3,11,FALSE,,tt0108778,10,1994
+Girls,Charlie & Marnie,1,FALSE,999,999,TRUE,Already Together,,,2012
+Glee,Brittany & Santana,1,FALSE,2,4,FALSE,,tt1327801,6,2009
+Good Girls,Beth & Rio,1,FALSE,2,9,FALSE,,tt6474378,4,2018
+Gotham,Bruce & Selina,1,FALSE,1,10,FALSE,,tt3749900,5,2014
+Grey's Anatomy,April & Jackson,1,FALSE,8,21,FALSE,,tt0413573,20,2005
+Grey's Anatomy,Lexie & Mark,1,FALSE,5,10,FALSE,,tt0413573,20,2005
+Hannibal,Hannibal & Will,1,FALSE,999,999,TRUE,Haven't Kissed,,,2013
+How To Get Away With Murder,Connor & Oliver,1,FALSE,1,1,TRUE,First Kiss in Season 1 Episode 1,,,2014
+Jane the Virgin,Jane & Michael,1,TRUE,999,999,TRUE,Already Together,,,2014
+Killing Eve,Eve & Villanelle,1,FALSE,3,3,FALSE,,tt7016936,4,2018
+Lucifer,Lucifer & Chloe,1,FALSE,2,11,FALSE,,tt4052886,6,2016
+Mad Men,Peggy & Stan,1,FALSE,7,14,FALSE,,tt0804503,7,2007
+Melissa & Joey,Melissa & Joey,1,FALSE,1,30,FALSE,,tt1597420,4,2010
+Miss Fisher's Murder Mysteries,Jack & Phryne,1,FALSE,1,7,FALSE,,tt1988386,3,2012
+Ned's Declassified School Survival Guide,Ned & Suzie,1,FALSE,2,1,FALSE,,tt0405576,3,2004
+Never Have I Ever,Devi & Paxton,1,FALSE,1,8,FALSE,,tt10062292,4,2020
+Nikita,Michael & Nikita,1,FALSE,1,6,FALSE,,tt1592154,4,2010
+Once Upon a Time,Emma & Hook,1,FALSE,3,5,FALSE,,tt1843230,7,2011
+Parks and Recreation,Andy & April,1,FALSE,2,24,FALSE,,tt1266020,7,2009
+Parks and Recreation,Ann & Chris,1,FALSE,2,23,FALSE,,tt1266020,7,2009
+Pretty Little Liars,Aria & Ezra,1,TRUE,999,999,TRUE,Already Together,,,2010
+Pretty Little Liars,Caleb & Hanna,1,FALSE,1,19,FALSE,,tt1578873,7,2010
+Riverdale,Alice & FP,1,TRUE,999,999,TRUE,Already Together,,,2017
+Road to Avonlea,Felicity & Gus,1,FALSE,2,2,FALSE,,tt0098900,7,1990
+Sabrina the Teenage Witch,Harvey & Sabrina,1,FALSE,1,17,FALSE,,tt0115341,7,1996
+Scarecrow and Mrs. King,Amanda & Lee,1,FALSE,3,7,FALSE,,tt0085088,4,1983
+Selfie,Eliza & Henry,1,FALSE,999,999,TRUE,Haven't Kissed,,,2014
+Sense8,Kala & Wolfgang,1,FALSE,2,12,FALSE,,tt2431438,2,2015
+S*x Education,Otis & Maeve,1,FALSE,3,7,FALSE,,tt7767422,4,2019
+Shadowhunters,Isabelle & Simon,1,FALSE,3,21,FALSE,,tt4145054,3,2016
+Shameless,Ian & Mickey,1,FALSE,1,7,FALSE,,tt1586680,11,2011
+Skins,Cassie & Sid,1,FALSE,1,8,FALSE,,tt0840196,7,2007
+Sleepy Hollow,Abbie & Ichabod,1,FALSE,999,999,TRUE,Haven't Kissed,,,2013
+Sons of Anarchy,Jax & Tara,1,TRUE,1,8,FALSE,,tt1124373,7,2008
+Star Trek: The Next Generation,William & Deanna,1,FALSE,999,999,TRUE,Unknown,,,1987
+Suits,Donna & Harvey,1,FALSE,7,10,FALSE,,tt1632701,9,2011
+Supergirl,Kara & Mon-El,1,FALSE,2,8,FALSE,,tt4016454,6,2015
+Supernatural,Castiel & Dean,1,FALSE,999,999,TRUE,Haven't Kissed,,,2005
+Supernatural,Castiel & Meg,1,FALSE,6,10,FALSE,,tt0460681,15,2005
+Take Two,Eddie & Sam,1,FALSE,1,12,FALSE,,tt5612866,1,2018
+That 70's Show,Hyde & Jackie,1,FALSE,5,1,FALSE,,tt0165598,8,1998
+The Alienist,Laszlo & Sara,1,FALSE,999,999,TRUE,Haven't Kissed,,,2018
+The Americans,Elizabeth & Philip,1,TRUE,999,999,TRUE,Already Together,,,2013
+The Big Bang Theory,Amy & Sheldon,1,FALSE,7,15,FALSE,,tt0898266,12,2007
+The Flash,Barry & Iris,1,FALSE,3,2,FALSE,,tt3107288,9,2014
+The Gifted,Clarice & John,1,FALSE,1,3,FALSE,,tt4396630,2,2017
+The Marvelous Mrs. Maisel,Midge & Joel,1,TRUE,999,999,TRUE,Already Together,,,2017
+The Mentalist,Patrick & Teresa,1,FALSE,6,22,FALSE,,tt1196946,7,2008
+The Nanny,Fran & Mr. Sheffield,1,FALSE,1,18,FALSE,,tt0106080,6,1993
+Lois & Clark: The New Adventures of Superman,Clark & Lois,1,FALSE,2,16,FALSE,,tt0106057,4,1993
+The O.C.,Marissa & Ryan,1,FALSE,1,9,FALSE,,tt0362359,4,2003
+The Office (US),Kelly & Ryan,1,FALSE,2,16,FALSE,,tt0386676,9,2005
+The Office (UK),Dawn & Tim,1,FALSE,2,5,FALSE,,tt0290978,3,2001
+The Office (US),Jan & Michael,1,FALSE,2,7,FALSE,,tt0386676,9,2005
+The Rookie,Lucy & Tim,1,FALSE,4,22,FALSE,,tt7587890,6,2018
+The Vampire Diaries,Caroline & Stefan,1,FALSE,6,14,FALSE,,tt1405406,8,2009
+The Vampire Diaries,Elena & Stefan,1,FALSE,1,2,FALSE,,tt1405406,8,2009
+The West Wing,Donna & Josh,1,FALSE,7,13,FALSE,,tt0200276,7,1999
+This Is Us,Kevin & Sophie,1,TRUE,1,14,FALSE,,tt5555260,6,2016
+This Is Us,Kevin & Zoe,1,FALSE,2,18,FALSE,,tt5555260,6,2016
+Timeless,Flynn & Lucy,1,FALSE,999,999,TRUE,Unknown,,,2016
+Who's the Boss?,Angela & Tony,1,FALSE,1,22,FALSE,,tt0086827,8,1984
+Wings,Helen & Joe,1,FALSE,2,1,FALSE,,tt0098948,8,1990
