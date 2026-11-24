@@ -231,11 +231,20 @@ p, li, td, th {
 }
 
 /* Every other paragraph gets a tiny rotation for chaos */
-p:nth-child(even) {
+/* Restrict handwritten rotation to article paragraphs */
+article > p:nth-child(even),
+.column-body > p:nth-child(even) {
   transform: rotate(0.25deg);
 }
-p:nth-child(odd) {
+
+article > p:nth-child(odd),
+.column-body > p:nth-child(odd) {
   transform: rotate(-0.15deg);
+}
+
+/* Never transform tooltip content */
+[data-tippy-root] p {
+  transform: none !important;
 }
 
 /* ─── LINKS ──────────────────────────────────────────────── */
@@ -684,3 +693,37 @@ figure:nth-of-type(3n)::after {
     font-size: 2rem;
   }
 }
+
+/* Put Quarto's footnote tooltip above page content */
+
+/* Raise the entire tooltip above the page */
+[data-tippy-root] p {
+  transform: none !important;
+}
+/* Quarto footnote tooltip */
+[data-tippy-root] {
+  z-index: 2147483647 !important;
+}
+
+[data-tippy-root] .tippy-box {
+  background: #FFFAF6 !important;
+  color: #1A0A10 !important;
+  opacity: 1 !important;
+  border: 2px solid #FF8EC7 !important;
+  border-radius: 4px !important;
+  box-shadow: 4px 4px 0 rgba(200, 0, 28, 0.25) !important;
+}
+
+[data-tippy-root] .tippy-content,
+[data-tippy-root] .tippy-content p {
+  background: #FFFAF6 !important;
+  color: #1A0A10 !important;
+  transform: none !important;
+}
+
+<!--
+Source - https://stackoverflow.com/a/79002956
+Posted by julien.leroux5
+Retrieved 2026-11-02, License - CC BY-SA 4.0
+-->
+
