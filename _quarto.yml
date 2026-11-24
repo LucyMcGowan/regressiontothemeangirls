@@ -6,6 +6,7 @@ project:
 
 website:
   title: "Regression to the Mean Girls"
+  site-url: https://regressiontothemeangirls.com
   draft-mode: unlinked
   navbar:
     right:

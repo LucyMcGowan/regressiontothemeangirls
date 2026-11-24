@@ -5,7 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# quarto publish pushes the rendered site to the gh-pages branch.
+# Renders the site and pushes it to the gh-pages branch. PR previews also
+# live on gh-pages, under pr-preview/ (see preview-deploy.yml), so the
+# deploy step leaves that folder alone rather than replacing the whole
+# branch the way `quarto publish` did.
 permissions:
   contents: write
 
@@ -13,7 +16,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     concurrency:
-      group: publish-${{ github.ref }}
+      group: gh-pages-deploy
+      cancel-in-progress: false
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -21,11 +25,17 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      # No R or Python setup: all computational output is committed under
-      # _freeze/, so Quarto only needs to assemble the site.
-      - name: Render and publish to GitHub Pages
-        uses: quarto-dev/quarto-actions/publish@v2
+
+      - name: Render site
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Add .nojekyll
+        run: touch _site/.nojekyll
+
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          folder: _site
+          branch: gh-pages
+          clean-exclude: pr-preview/
+          force: false
